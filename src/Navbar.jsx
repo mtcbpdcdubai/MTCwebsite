@@ -70,7 +70,7 @@
 //                 to={to}
 //                 onClick={() => setIsOpen(false)}
 //                 className={({ isActive }) =>
-//                   `text-white no-underline text-base px-3 py-2 rounded transition-colors duration-300 
+//                   `text-white no-underline text-base px-3 py-2 rounded transition-colors duration-300
 //                   ${
 //                     isActive
 //                       ? "bg-gray-500 text-white"
@@ -95,10 +95,10 @@ import {
   NavbarMenuItem,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
 } from "@heroui/react";
-import logo from './assets/MTClogo.svg';
+import { Link, useLocation } from "react-router-dom";
+import logo from "./assets/MTClogo.svg";
 
 // export const MTClogo = () => {
 //   return (
@@ -107,17 +107,14 @@ import logo from './assets/MTClogo.svg';
 // };
 
 export default function App() {
+  const location = useLocation();
+
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/events", label: "Events" },
+    { path: "/media", label: "Media" },
+    { path: "/articles", label: "Partners" },
   ];
 
   return (
@@ -141,50 +138,35 @@ export default function App() {
           <img src={logo} alt="MTC Logo" width="36" height="36" />
           <p className="font-bold text-inherit">MTC</p>
         </NavbarBrand>
-        <NavbarItem>
-          <Link href="/" color="foreground" className="font-semibold">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/about" color="foreground" className="font-semibold">
-            About
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/membership" color="foreground" className="font-semibold">
-            Membership
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/events" color="foreground" className="font-semibold">
-            Events
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/articles" color="foreground" className="font-semibold">
-            Articles
-          </Link>
-        </NavbarItem>
+        {menuItems.map((item) => (
+          <NavbarItem key={item.path}>
+            <Link
+              to={item.path}
+              className={`font-semibold transition-colors ${
+                location.pathname === item.path
+                  ? "text-stone-400"
+                  : "text-white hover:text-stone-400"
+              }`}
+            >
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
 
       {/* Mobile Menu Content */}
       <NavbarMenu className="text-white">
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.path}-${index}`}>
             <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
-              size="lg"
+              to={item.path}
+              className={`w-full text-lg transition-colors ${
+                location.pathname === item.path
+                  ? "text-stone-400"
+                  : "text-white hover:text-stone-400"
+              }`}
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}

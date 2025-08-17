@@ -9,6 +9,7 @@ import About from "./About";
 import Membership from "./Membership";
 import Events from "./Events";
 import Workshops from "./Workshops";
+import Media from "./Media";
 // import Contact    from './pages/Contact/Contact';
 import Articles from "./Articles";
 import NotFound from "./NotFoundPage";
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/membership" element={<Membership />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/media" element={<Media />} />
           <Route path="/workshops" element={<Workshops />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/articles" element={<Articles />} />

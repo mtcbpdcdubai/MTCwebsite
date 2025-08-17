@@ -65,7 +65,7 @@ export default function Home() {
 
       {/* Offer Section */}
       <Balatro
-        isRotate={true}
+        isRotate={false}
         mouseInteraction={true}
         pixelFilter={700}
         color1="#000000" // darkest base
