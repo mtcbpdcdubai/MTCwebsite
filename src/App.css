@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* Global font family override */
+* {
+  font-family: "Poppins", "ui-sans-serif", "system-ui", "-apple-system",
+    "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+    "Noto Sans", "sans-serif";
+}
+
+body {
+  font-family: "Poppins", "ui-sans-serif", "system-ui", "-apple-system",
+    "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+    "Noto Sans", "sans-serif";
+}
+
+/* Global scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3d3d3d #000000;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000 !important;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #3d3d3d !important;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555555 !important;
+}
+
+/* Ensure scrollbar styling persists when modal is open */
+body {
+  scrollbar-width: thin !important;
+  scrollbar-color: #3d3d3d #000000 !important;
+}
+
+body::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000 !important;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #3d3d3d !important;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #555555 !important;
+}
+
+/* Override any modal-related scrollbar changes */
+.modal-open,
+.modal-open body,
+[data-scroll-locked],
+[data-scroll-locked] body {
+  scrollbar-width: thin !important;
+  scrollbar-color: #3d3d3d #000000 !important;
+}
+
+.modal-open::-webkit-scrollbar,
+.modal-open body::-webkit-scrollbar,
+[data-scroll-locked]::-webkit-scrollbar,
+[data-scroll-locked] body::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.modal-open::-webkit-scrollbar-track,
+.modal-open body::-webkit-scrollbar-track,
+[data-scroll-locked]::-webkit-scrollbar-track,
+[data-scroll-locked] body::-webkit-scrollbar-track {
+  background: #000000 !important;
+  border-radius: 4px;
+}
+
+.modal-open::-webkit-scrollbar-thumb,
+.modal-open body::-webkit-scrollbar-thumb,
+[data-scroll-locked]::-webkit-scrollbar-thumb,
+[data-scroll-locked] body::-webkit-scrollbar-thumb {
+  background: #3d3d3d !important;
+  border-radius: 4px;
+}
+
+.modal-open::-webkit-scrollbar-thumb:hover,
+.modal-open body::-webkit-scrollbar-thumb:hover,
+[data-scroll-locked]::-webkit-scrollbar-thumb:hover,
+[data-scroll-locked] body::-webkit-scrollbar-thumb:hover {
+  background: #555555 !important;
+}
+
+/* Custom scroll class for modal */
+.custom-scroll {
+  scrollbar-width: thin !important;
+  scrollbar-color: #3d3d3d #000000 !important;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #000000 !important;
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #3d3d3d !important;
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555555 !important;
+}
+
+/* Modal z-index overrides to ensure it appears above navbar */
+div[data-slot="wrapper"] {
+  z-index: 1100 !important;
+}
+
+div[data-slot="backdrop"] {
+  z-index: 1050 !important;
+}
+
+div[data-slot="base"] {
+  z-index: 1100 !important;
+}
+
+/* Ensure HeroUI modal wrapper has proper z-index */
+.heroui-modal-wrapper {
+  z-index: 1100 !important;
+}
+
+/* General fix to prevent content hiding behind navbar */
+main,
+section:first-of-type,
+.main-content {
+  position: relative;
+  z-index: 1;
+}
