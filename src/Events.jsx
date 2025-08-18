@@ -6,7 +6,7 @@ import IdeaSubmissionForm from "./Events/IdeaSubmissionForm.jsx";
 
 const Events = () => {
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-transparent text-white relative overflow-hidden">
       <Balatro
         isRotate={true}
         mouseInteraction={true}
