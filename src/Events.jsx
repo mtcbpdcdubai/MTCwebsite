@@ -1,35 +1,52 @@
-export default function Events() {
+import React from "react";
+import Balatro from "./components/Balatro.jsx";
+import EventCarousel from "./Events/EventCarousel.jsx";
+import UpcomingEvents from "./Events/UpcomingEvents.jsx";
+import IdeaSubmissionForm from "./Events/IdeaSubmissionForm.jsx";
+
+const Events = () => {
   return (
-    <div className="bg-[#1e1e1e] text-white min-h-screen py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-6xl text-center mb-8">Events</h1>
-        <p className="text-lg md:text-2xl text-gray-300 text-center mb-12">
-          Discover our upcoming and past events
-        </p>
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      <Balatro
+        isRotate={true}
+        mouseInteraction={true}
+        pixelFilter={700}
+        color1="#000000"
+        color2="#0a0a0a"
+        color3="#111111"
+      />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-gray-800 rounded-lg p-6">
-            <h3 className="text-xl mb-4">Upcoming Events</h3>
-            <p className="text-gray-300">
-              Stay tuned for exciting upcoming events!
+      <div className="relative z-10">
+        <div className="container mx-auto px-6 py-16">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-4">
+              MTC Events
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Discover our journey through innovation, learning, and community
+              building
             </p>
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-6">
-            <h3 className="text-xl mb-4">Past Events</h3>
-            <p className="text-gray-300">
-              Check out our successful past events.
-            </p>
+          {/* Past Events Carousel */}
+          <div className="mb-20">
+            <EventCarousel />
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-6">
-            <h3 className="text-xl mb-4">Workshops</h3>
-            <p className="text-gray-300">
-              Technical workshops and learning sessions.
-            </p>
+          {/* Upcoming Events */}
+          <div className="mb-20">
+            <UpcomingEvents />
+          </div>
+
+          {/* Idea Submission Form */}
+          <div className="mb-16">
+            <IdeaSubmissionForm />
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Events;

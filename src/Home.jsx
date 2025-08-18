@@ -8,11 +8,6 @@ import imgOffer_speakerSessions from "./assets/home/offer_speaker_sessions.jpg";
 import imgOffer_technicalBlogs from "./assets/home/offer_technical_blogs.jpg";
 import imgOffer_competitions from "./assets/home/offer_competitions.jpg";
 
-import imgSocial_mythMonday from "./assets/home/social_myth_monday.jpg";
-import imgSocial_quizQuest from "./assets/home/social_quiz_quest.jpg";
-import imgSocial_tipTuesday from "./assets/home/social_tip_tuesday.jpg";
-import imgSocial_techTribune from "./assets/home/social_tech_tribune.jpg";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -332,7 +327,7 @@ export default function Home() {
       {/* FAQ section */}
       <BlurText
         text="Frequently Asked Questions"
-        className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl mt-20"
+        className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
       />
       <Accordion
         className="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl w-full rounded-xl border border-neutral-700 shadow-lg backdrop-blur-lg mt-5"
@@ -403,26 +398,13 @@ export default function Home() {
 
       {/* Social Media Cards */}
       <section className="mt-20 px-4 text-center rounded-t-lg">
-        <h2 className="text-4xl md:text-6xl">Follow Us</h2>
+        <BlurText
+        text="Follow Us"
+        className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
+      />
         <p className="text-lg md:text-2xl text-gray-300 my-6 md:mx-[15%]">
           Stay ahead in the tech world with MTC’s dynamic social media lineup!
         </p>
-
-        <div className="grid md:grid-cols-2 gap-6 max-w-fit mx-auto">
-          {[
-            imgSocial_mythMonday,
-            imgSocial_quizQuest,
-            imgSocial_tipTuesday,
-            imgSocial_techTribune,
-          ].map((img, idx) => (
-            <div
-              key={idx}
-              className="overflow-hidden rounded-lg shadow-lg max-w-[400px] transform transition hover:scale-105"
-            >
-              <img src={img} className="object-cover" />
-            </div>
-          ))}
-        </div>
       </section>
     </div>
   );
