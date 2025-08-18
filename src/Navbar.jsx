@@ -118,7 +118,11 @@ export default function App() {
   ];
 
   return (
-    <Navbar disableAnimation isBordered className="text-white w-full">
+    <Navbar
+      disableAnimation
+      isBordered
+      className="text-white w-full"
+    >
       {/* Mobile - Hamburger Menu */}
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
@@ -132,12 +136,16 @@ export default function App() {
         </NavbarBrand>
       </NavbarContent>
 
-      {/* Desktop - Full Nav */}
-      <NavbarContent className="hidden sm:flex gap-4 w-full" justify="center">
+      {/* Desktop - Logo Left */}
+      <NavbarContent className="hidden sm:flex" justify="start">
         <NavbarBrand className="flex items-center gap-2">
           <img src={logo} alt="MTC Logo" width="36" height="36" />
           <p className="font-bold text-inherit">MTC</p>
         </NavbarBrand>
+      </NavbarContent>
+
+      {/* Desktop - Menu Right */}
+      <NavbarContent className="hidden sm:flex gap-6" justify="end">
         {menuItems.map((item) => (
           <NavbarItem key={item.path}>
             <Link

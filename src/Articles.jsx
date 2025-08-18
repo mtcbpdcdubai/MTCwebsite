@@ -1,8 +1,8 @@
-export default function Articles() {
+export default function Partners() {
   return (
     <div className="bg-[#1e1e1e] text-white min-h-screen py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-6xl text-center mb-8">Articles</h1>
+        <h1 className="text-4xl md:text-6xl text-center mb-8">Partners</h1>
         <p className="text-lg md:text-2xl text-gray-300 text-center mb-12">
           Technical blogs and insights from our community
         </p>

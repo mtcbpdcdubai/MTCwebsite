@@ -13,6 +13,11 @@ import imgSocial_quizQuest from "./assets/home/social_quiz_quest.jpg";
 import imgSocial_tipTuesday from "./assets/home/social_tip_tuesday.jpg";
 import imgSocial_techTribune from "./assets/home/social_tech_tribune.jpg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {faPhone} from "@fortawesome/free-solid-svg-icons";
+
 // Components
 import LinkButton from "./components/LinkButton.jsx";
 
@@ -29,6 +34,8 @@ import {
   useDisclosure,
 } from "@heroui/react";
 import { Accordion, AccordionItem } from "@heroui/react";
+import RotatingText from "./components/RotatingText.jsx";
+import MTClogo from "./assets/MTClogo.png";
 
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -61,19 +68,48 @@ export default function Home() {
       {/* <div className="h-screen w-full overflow-hidden relative">
         <Spline scene="https://draft.spline.design/LWpJVH6Z3lriwJZk/scene.splinecode" />
       </div> */}
-      <div className="h-screen w-full overflow-hidden relative"></div>
-
-      {/* Offer Section */}
+      <div className="h-screen w-full overflow-hidden relative flex flex-col items-center justify-center text-4xl font-semibold">
+        <p className="text-6xl">Microsoft Tech Club</p>
+        <p className="text-6xl pb-2 font-normal">BITS Pilani Dubai Campus</p>
+        <div className="flex items-center pt-10 flex-row">
+          <p>Build </p>
+          <RotatingText
+            className="bg-white text-black mx-2 rounded-lg px-2 py-1"
+            texts={["Projects", "Skills", "Connections"]}
+          />
+        </div>
+        <div className="flex items-center mt-10 gap-2 bg-white text-black rounded-3xl px-4 py-3 text-xl">
+          <span className="mr-2">Contact Us</span>
+          <a
+            href="mailto:mtc@bpdc.org"
+            className="flex items-center gap-2 hover:bg-black hover:text-white transition-colors rounded-3xl p-2"
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+          <a
+            href="https://instagram.com/mtcbpdc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:bg-black hover:text-white transition-colors rounded-3xl p-2"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a
+            href="tel:+1234567890"
+            className="flex items-center gap-2 hover:bg-black hover:text-white transition-colors rounded-3xl p-2"
+          >
+            <FontAwesomeIcon icon={faPhone} />
+          </a>
+        </div>
+      </div>
       <Balatro
         isRotate={false}
         mouseInteraction={true}
         pixelFilter={700}
-        color1="#000000" // darkest base
-        color2="#0a0a0a" // slightly lighter
-        color3="#111111" // soft contrast
-      >
-        
-      </Balatro>
+        color1="#000000"
+        color2="#0a0a0a"
+        color3="#111111"
+      ></Balatro>
 
       <section className="pt-20 px-4 text-center flex flex-col items-center text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
         <BlurText
@@ -343,7 +379,7 @@ export default function Home() {
           key="4"
           aria-label="Accordion 4"
           title="What resources are available for learning?"
-        className="border-b border-neutral-700"
+          className="border-b border-neutral-700"
         >
           <p className="text-gray-300 text-lg md:text-xl p-4">
             We offer a variety of resources including online courses, workshops,
@@ -356,7 +392,7 @@ export default function Home() {
           key="5"
           aria-label="Accordion 5"
           title="How can I get involved with MTC?"
-        className="border-b border-neutral-700"
+          className="border-b border-neutral-700"
         >
           <p className="text-gray-300 text-lg md:text-xl p-4">
             You can get involved with MTC by attending our events, joining our
