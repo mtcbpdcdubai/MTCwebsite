@@ -8,7 +8,7 @@ const Events = () => {
   return (
     <div className="min-h-screen bg-transparent text-white relative overflow-hidden">
       <Balatro
-        isRotate={true}
+        isRotate={false}
         mouseInteraction={true}
         pixelFilter={700}
         color1="#000000"
