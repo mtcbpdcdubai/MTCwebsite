@@ -6,6 +6,8 @@ import image3 from "./assets/unused/GW-1.jpg";
 import Balatro from "./components/Balatro.jsx"
 const images = [image1, image2, image3];
 const authors = ["Alice", "Bob", "Charlie"];
+import IdeaSubmissionForm from "./Media/Mediaform.jsx";
+
 
 export default function Media() {
   const [startIdx, setStartIdx] = useState(0);
@@ -41,7 +43,7 @@ export default function Media() {
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h1 className="text-4xl md:text-6xl text-center mb-8 flex justify-center">
-          <BlurText text="Media"></BlurText>
+          <BlurText text="Media" delay={100}></BlurText>
         </h1>
 
         <p className="text-lg md:text-2xl text-gray-300 text-center mb-12">
@@ -98,459 +100,141 @@ export default function Media() {
         <p className="text-lg md:text-2xl text-gray-300 text-center mb-12">
           explore recent trends in technology with our monthly blog posts on Medium
         </p>
-
-        {/* ---- ARTICLES SECTION ---- */}
-        <div className="max-w-5xl mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* First Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Getting Started with Azure</h3>
-              <img
-                src={image1}
-                alt="Azure"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Learn the basics of Microsoft Azure cloud platform and its core
-                services.
-              </p>
-              <span className="text-white text-sm block">
-                March 15, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Alice
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Second Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">React Best Practices</h3>
-              <img
-                src={image2}
-                alt="React"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Essential tips and patterns for building scalable React applications.
-              </p>
-              <span className="text-white text-sm block">
-                March 10, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Bob
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Third Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Fouth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Fifth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Sixth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Seventh Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Eighth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Ninth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Tenth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Eleventh Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Twelveth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Thirteenth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Fourteenth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-            {/* Fifteenth Article */}
-            <div className="bg-gray-800 rounded-lg p-6 hover:scale-105 transition flex flex-col">
-              <h3 className="text-xl mb-4">Machine Learning Fundamentals</h3>
-              <img
-                src={image3}
-                alt="ML"
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-              <p className="text-gray-300 mb-4">
-                Introduction to ML concepts and practical implementation examples.
-              </p>
-              <span className="text-white text-sm block">
-                March 5, 2024
-              </span>
-              <span className="text-gray-400 text-sm mt-2 block">
-                By: Charlie
-              </span>
-              <a
-                href="https://medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-              >
-                Read More
-              </a>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <button className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition">
-              Load More Articles
-            </button>
-          </div>
-          <div className="max-w-3xl mx-auto mt-16 px-4">
-  <p className="text-lg md:text-2xl text-gray-300 text-center mb-12">
-    Your story could be our next headline
-  </p>
-  
-  <form className="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col gap-6">
-    {/* First + Last Name */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <input
-        type="text"
-        placeholder="First Name"
-        className="p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        className="p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </div>
-
-    {/* Email */}
-    <input
-      type="email"
-      placeholder="Email ID"
-      className="p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-    />
-
-    {/* Headline */}
-    <input
-      type="text"
-      placeholder="Headline"
-      className="p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-    />
-
-    {/* Brief Description */}
-    <textarea
-      rows="5"
-      placeholder="Brief Description"
-      className="p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-    ></textarea>
-
-    {/* Submit Button */}
-    <button
-      type="submit"
-      className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-    >
-      Submit Story
-    </button>
-  </form>
-</div>
+<div className="max-w-5xl mx-auto px-4 md:px-6">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {[
+      {
+        title: "Getting Started with Azure",
+        img: image1,
+        desc: "Learn the basics of Microsoft Azure cloud platform and its core services.",
+        date: "March 15, 2024",
+        author: "Alice",
+      },
+      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },
+      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },      {
+        title: "React Best Practices",
+        img: image2,
+        desc: "Essential tips and patterns for building scalable React applications.",
+        date: "March 10, 2024",
+        author: "Bob",
+      },
+    ].map((article, idx) => (
+      <div
+        key={idx}
+        className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-xl transform transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl flex flex-col"
+        style={{ perspective: "1000px" }}
+      >
+        <div className="p-6 flex flex-col h-full">
+          <h3 className="text-2xl font-bold mb-4">{article.title}</h3>
+          <img
+            src={article.img}
+            alt={article.title}
+            className="w-full h-40 object-cover rounded-lg mb-4"
+          />
+          <p className="text-gray-300 mb-4 flex-grow">{article.desc}</p>
+          <span className="text-white text-sm block mb-1">{article.date}</span>
+          <span className="text-gray-400 text-sm mb-4 block">By: {article.author}</span>
+          <a
+            href="https://medium.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-auto bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
+          >
+            Read More
+          </a>
         </div>
+      </div>
+    ))}
+  </div>
+  <div className="text-center mt-12">
+    <button className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition">
+      Load More Articles
+    </button>
+  </div>
+  <div className="mb-16">
+    <IdeaSubmissionForm />
+  </div>
+</div>
+
+
       </div>
     </div>
   );
