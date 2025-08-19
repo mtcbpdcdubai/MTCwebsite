@@ -3,11 +3,11 @@ import BlurText from "./components//BlurText.jsx";
 import image1 from "./assets/unused/typingContest.jpg";
 import image2 from "./assets/unused/DataScience.jpg";
 import image3 from "./assets/unused/GW-1.jpg";
-import Balatro from "./components/Balatro.jsx"
+import Balatro from "./components/Balatro.jsx";
+import { CardBody, CardContainer, CardItem } from "./components/3d-card";
 const images = [image1, image2, image3];
 const authors = ["Alice", "Bob", "Charlie"];
 import IdeaSubmissionForm from "./Media/Mediaform.jsx";
-
 
 export default function Media() {
   const [startIdx, setStartIdx] = useState(0);
@@ -76,7 +76,9 @@ export default function Media() {
                       className="w-full h-64 object-cover transition duration-500 group-hover:blur-sm group-hover:brightness-75"
                     />
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                      <h3 className="text-2xl font-bold text-white mb-2">{`Title ${imgIdx + 1}`}</h3>
+                      <h3 className="text-2xl font-bold text-white mb-2">{`Title ${
+                        imgIdx + 1
+                      }`}</h3>
                       <p className="text-white max-w-xs">
                         A brief description about image {imgIdx + 1}.
                       </p>
@@ -98,143 +100,115 @@ export default function Media() {
 
         {/* Info line */}
         <p className="text-lg md:text-2xl text-gray-300 text-center mb-12">
-          explore recent trends in technology with our monthly blog posts on Medium
+          explore recent trends in technology with our monthly blog posts on
+          Medium
         </p>
-<div className="max-w-5xl mx-auto px-4 md:px-6">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {[
-      {
-        title: "Getting Started with Azure",
-        img: image1,
-        desc: "Learn the basics of Microsoft Azure cloud platform and its core services.",
-        date: "March 15, 2024",
-        author: "Alice",
-      },
-      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },
-      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },      {
-        title: "React Best Practices",
-        img: image2,
-        desc: "Essential tips and patterns for building scalable React applications.",
-        date: "March 10, 2024",
-        author: "Bob",
-      },
-    ].map((article, idx) => (
-      <div
-        key={idx}
-        className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-xl transform transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl flex flex-col"
-        style={{ perspective: "1000px" }}
-      >
-        <div className="p-6 flex flex-col h-full">
-          <h3 className="text-2xl font-bold mb-4">{article.title}</h3>
-          <img
-            src={article.img}
-            alt={article.title}
-            className="w-full h-40 object-cover rounded-lg mb-4"
-          />
-          <p className="text-gray-300 mb-4 flex-grow">{article.desc}</p>
-          <span className="text-white text-sm block mb-1">{article.date}</span>
-          <span className="text-gray-400 text-sm mb-4 block">By: {article.author}</span>
-          <a
-            href="https://medium.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-auto bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105"
-          >
-            Read More
-          </a>
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            {[
+              {
+                title: "Getting Started with Azure",
+                img: image1,
+                desc: "Learn the basics of Microsoft Azure cloud platform and its core services.",
+                date: "March 15, 2024",
+                author: "Alice",
+              },
+              {
+                title: "React Best Practices",
+                img: image2,
+                desc: "Essential tips and patterns for building scalable React applications.",
+                date: "March 10, 2024",
+                author: "Bob",
+              },
+              {
+                title: "Data Science Fundamentals",
+                img: image3,
+                desc: "Introduction to data science concepts and machine learning basics.",
+                date: "March 5, 2024",
+                author: "Charlie",
+              },
+              {
+                title: "JavaScript ES6+ Features",
+                img: image1,
+                desc: "Modern JavaScript features that every developer should know.",
+                date: "February 28, 2024",
+                author: "Alice",
+              },
+              {
+                title: "Cloud Computing Trends",
+                img: image2,
+                desc: "Latest trends and technologies in cloud computing industry.",
+                date: "February 20, 2024",
+                author: "Bob",
+              },
+              {
+                title: "AI and Machine Learning",
+                img: image3,
+                desc: "Understanding artificial intelligence and its applications.",
+                date: "February 15, 2024",
+                author: "Charlie",
+              },
+            ].map((article, idx) => (
+              <CardContainer className="inter-var bg-transparent" key={idx}>
+                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] lg:w-[23rem] h-auto rounded-2xl p-6">
+                  <CardItem
+                    translateZ="50"
+                    className="text-2xl font-bold text-neutral-600 dark:text-white mb-4"
+                  >
+                    {article.title}
+                  </CardItem>
+
+                  <CardItem translateZ="100" className="w-full mb-4">
+                    <img
+                      src={article.img}
+                      alt={article.title}
+                      className="h-40 w-full object-cover rounded-lg group-hover/card:shadow-xl"
+                    />
+                  </CardItem>
+
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-neutral-500 text-base max-w-sm mb-4 dark:text-neutral-300 flex-grow"
+                  >
+                    {article.desc}
+                  </CardItem>
+
+                  <CardItem translateZ="50" className="text-white text-sm mb-1">
+                    {article.date}
+                  </CardItem>
+
+                  <CardItem
+                    translateZ="50"
+                    className="text-gray-400 text-sm mb-4"
+                  >
+                    By: {article.author}
+                  </CardItem>
+
+                  <CardItem
+                    translateZ={20}
+                    as="a"
+                    href="https://medium.com/@microsofttechclub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105 block"
+                  >
+                    Read More →
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <button className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition">
+              Load More Articles
+            </button>
+          </div>
+
+          <div className="mb-16 mt-16">
+            <IdeaSubmissionForm />
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-  <div className="text-center mt-12">
-    <button className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition">
-      Load More Articles
-    </button>
-  </div>
-  <div className="mb-16">
-    <IdeaSubmissionForm />
-  </div>
-</div>
-
-
       </div>
     </div>
   );

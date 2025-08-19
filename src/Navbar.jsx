@@ -100,12 +100,6 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import logo from "./assets/MTClogo.svg";
 
-// export const MTClogo = () => {
-//   return (
-//     <img src={MTClogo} alt="MTC Logo" width="36" height="36" />
-//   );
-// };
-
 export default function App() {
   const location = useLocation();
 
@@ -121,7 +115,7 @@ export default function App() {
     <Navbar
       disableAnimation
       isBordered
-      className="text-white w-full"
+      className="text-white w-full flex justify-between items-center"
     >
       {/* Mobile - Hamburger Menu */}
       <NavbarContent className="sm:hidden" justify="start">
