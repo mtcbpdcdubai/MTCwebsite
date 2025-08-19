@@ -232,26 +232,38 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full Screen Overlay */}
       {menuOpen && (
-        <div className="sm:hidden px-4 pb-4 bg-black/90 backdrop-blur-lg border-t border-divider">
-          <div className="flex flex-col gap-4 pt-4">
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMenuOpen(false)}
-                className={`text-lg transition-colors py-2 px-3 rounded-lg ${
-                  location.pathname === item.path
-                    ? "text-stone-400 bg-white/5"
-                    : "text-white hover:text-stone-400 hover:bg-white/5"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+        <>
+          {/* Backdrop blur overlay */}
+          <div 
+            className="fixed inset-0 bg-black/20 backdrop-blur-lg z-[999] sm:hidden"
+            onClick={() => setMenuOpen(false)}
+            style={{ top: '73px' }} // Start below navbar
+          />
+          
+          {/* Menu content */}
+          <div className="fixed left-0 right-0 bg-black/90 backdrop-blur-lg border-t border-divider z-[1000] sm:hidden" style={{ top: '73px' }}>
+            <div className="px-6 py-8">
+              <div className="flex flex-col gap-6">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={`text-xl font-medium transition-colors py-3 px-4 rounded-lg ${
+                      location.pathname === item.path
+                        ? "text-stone-400 bg-white/10"
+                        : "text-white hover:text-stone-400 hover:bg-white/5"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );
