@@ -87,20 +87,104 @@
 //     </nav>
 //   );
 // }
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarContent,
-  NavbarItem,
-  Button,
-} from "@heroui/react";
+// import {
+//   Navbar,
+//   NavbarBrand,
+//   NavbarMenuToggle,
+//   NavbarMenu,
+//   NavbarMenuItem,
+//   NavbarContent,
+//   NavbarItem,
+//   Button,
+// } from "@heroui/react";
+// import { Link, useLocation } from "react-router-dom";
+// import logo from "./assets/MTClogo.svg";
+
+// // export const MTClogo = () => {
+// //   return (
+// //     <img src={MTClogo} alt="MTC Logo" width="36" height="36" />
+// //   );
+// // };
+
+// export default function App() {
+//   const location = useLocation();
+
+//   const menuItems = [
+//     { path: "/", label: "Home" },
+//     { path: "/about", label: "About" },
+//     { path: "/events", label: "Events" },
+//     { path: "/media", label: "Media" },
+//     { path: "/articles", label: "Partners" },
+//   ];
+
+//   return (
+//     <Navbar disableAnimation isBordered className="text-white w-full">
+//       {/* Mobile - Hamburger Menu */}
+//       <NavbarContent className="sm:hidden" justify="start">
+//         <NavbarMenuToggle />
+//       </NavbarContent>
+
+//       {/* Mobile - Logo Centered */}
+//       <NavbarContent className="sm:hidden pr-3" justify="center">
+//         <NavbarBrand className="flex items-center gap-2">
+//           <img src={logo} alt="MTC Logo" width="36" height="36" />
+//           <p className="font-bold text-inherit">MTC</p>
+//         </NavbarBrand>
+//       </NavbarContent>
+
+//       {/* Desktop - Logo and Menu spaced out */}
+//       <NavbarContent className="hidden sm:flex w-full max-w-none justify-between items-center">
+//         <NavbarBrand className="flex items-center gap-2">
+//           <img src={logo} alt="MTC Logo" width="36" height="36" />
+//           <p className="font-bold text-inherit">MTC</p>
+//         </NavbarBrand>
+
+//         <div className="flex gap-6">
+//           {menuItems.map((item) => (
+//             <NavbarItem key={item.path}>
+//               <Link
+//                 to={item.path}
+//                 className={`font-semibold transition-colors ${
+//                   location.pathname === item.path
+//                     ? "text-stone-400"
+//                     : "text-white hover:text-stone-400"
+//                 }`}
+//               >
+//                 {item.label}
+//               </Link>
+//             </NavbarItem>
+//           ))}
+//         </div>
+//       </NavbarContent>
+
+//       {/* Mobile Menu Content */}
+//       <NavbarMenu className="text-white">
+//         {menuItems.map((item, index) => (
+//           <NavbarMenuItem key={`${item.path}-${index}`}>
+//             <Link
+//               to={item.path}
+//               className={`w-full text-lg transition-colors ${
+//                 location.pathname === item.path
+//                   ? "text-stone-400"
+//                   : "text-white hover:text-stone-400"
+//               }`}
+//             >
+//               {item.label}
+//             </Link>
+//           </NavbarMenuItem>
+//         ))}
+//       </NavbarMenu>
+//     </Navbar>
+//   );
+// }
+
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { HiMenu, HiX } from "react-icons/hi"; // for mobile toggle icons
 import logo from "./assets/MTClogo.svg";
 
-export default function App() {
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   const menuItems = [
@@ -112,67 +196,63 @@ export default function App() {
   ];
 
   return (
-    <Navbar
-      disableAnimation
-      isBordered
-      className="text-white w-full flex justify-between items-center"
-    >
-      {/* Mobile - Hamburger Menu */}
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle />
-      </NavbarContent>
+    <nav className="w-full bg-black/20 backdrop-blur-lg text-white border-b border-divider sticky top-0 z-[1000] supports-backdrop-blur:bg-black/60">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <img src={logo} alt="MTC Logo" className="w-9 h-9" />
+          <span className="font-bold text-xl">MTC</span>
+        </div>
 
-      {/* Mobile - Logo Centered */}
-      <NavbarContent className="sm:hidden pr-3" justify="center">
-        <NavbarBrand className="flex items-center gap-2">
-          <img src={logo} alt="MTC Logo" width="36" height="36" />
-          <p className="font-bold text-inherit">MTC</p>
-        </NavbarBrand>
-      </NavbarContent>
-
-      {/* Desktop - Logo Left */}
-      <NavbarContent className="hidden sm:flex" justify="start">
-        <NavbarBrand className="flex items-center gap-2">
-          <img src={logo} alt="MTC Logo" width="36" height="36" />
-          <p className="font-bold text-inherit">MTC</p>
-        </NavbarBrand>
-      </NavbarContent>
-
-      {/* Desktop - Menu Right */}
-      <NavbarContent className="hidden sm:flex gap-6" justify="end">
-        {menuItems.map((item) => (
-          <NavbarItem key={item.path}>
+        {/* Desktop Menu */}
+        <div className="hidden sm:flex gap-6">
+          {menuItems.map((item) => (
             <Link
+              key={item.path}
               to={item.path}
-              className={`font-semibold transition-colors ${
+              className={`text-sm font-semibold transition-colors px-3 py-2 rounded-lg ${
                 location.pathname === item.path
-                  ? "text-stone-400"
-                  : "text-white hover:text-stone-400"
+                  ? "text-stone-400 bg-white/5"
+                  : "text-white hover:text-stone-400 hover:bg-white/5"
               }`}
             >
               {item.label}
             </Link>
-          </NavbarItem>
-        ))}
-      </NavbarContent>
+          ))}
+        </div>
 
-      {/* Mobile Menu Content */}
-      <NavbarMenu className="text-white">
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.path}-${index}`}>
-            <Link
-              to={item.path}
-              className={`w-full text-lg transition-colors ${
-                location.pathname === item.path
-                  ? "text-stone-400"
-                  : "text-white hover:text-stone-400"
-              }`}
-            >
-              {item.label}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+        {/* Mobile Menu Toggle */}
+        <div className="sm:hidden">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="sm:hidden px-4 pb-4 bg-black/90 backdrop-blur-lg border-t border-divider">
+          <div className="flex flex-col gap-4 pt-4">
+            {menuItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setMenuOpen(false)}
+                className={`text-lg transition-colors py-2 px-3 rounded-lg ${
+                  location.pathname === item.path
+                    ? "text-stone-400 bg-white/5"
+                    : "text-white hover:text-stone-400 hover:bg-white/5"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }
