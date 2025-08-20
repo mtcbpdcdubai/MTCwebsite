@@ -128,7 +128,7 @@ export default function Home() {
         </ScrollReveal> */}
         <BlurText
           text="Microsoft Tech Club fosters collaboration through workshops, competitions, and events. Whether you’re into web development, programming, or data analysis, there’s something here for you."
-          className="text-2xl md:text-3xl font-normal max-w-7xl leading-[1] p-2"
+          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-2"
           delay={150}
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
@@ -218,6 +218,123 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Membership Section */}
+      <section className="pt-20">
+        <BlurText
+          text="Unlock MTC Membership"
+          className="text-4xl md:text-6xl font-semibold w-full leading-[1]"
+          delay={100}
+        />
+        <BlurText
+          text="Step into a world of innovation, opportunity, and lifelong connections. Whether you’re just joining or renewing, your journey with MTC keeps getting better!"
+          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-2"
+          delay={150}
+        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+          {[
+            {
+              title: "Become a Member",
+              content: {
+                intro:
+                  "Join Dubai's boldest tech community! Access exclusive events, hands-on workshops, and real challenges to boost your skills and confidence.",
+                points: [
+                  {
+                    title: "Competitions that Inspire",
+                    desc: "Compete for epic prizes and test what you know—entry is always free for members!",
+                  },
+                  {
+                    title: "Workshops that Wow",
+                    desc: "Master new technologies and build your portfolio with every session.",
+                  },
+                  {
+                    title: "Visionary Speakers",
+                    desc: "Learn from those shaping the future of tech—directly, live, and for free.",
+                  },
+                ],
+              },
+              buttonText: "Register Now",
+              buttonLink: "/membership",
+              gradient: "from-blue-600/20 to-purple-600/20",
+            },
+            {
+              title: "Renew Your Journey",
+              content: {
+                intro:
+                  "We're excited to have you back! Returning members get first dibs on new opportunities, perks, and real-world experiences.",
+                points: [
+                  {
+                    title: "Insider Updates",
+                    desc: "Be the first to know about all our upcoming events and surprises.",
+                  },
+                  {
+                    title: "Exclusive Articles",
+                    desc: "Get access to member-only blog content you won't find anywhere else.",
+                  },
+                  {
+                    title: "Unmatched Perks",
+                    desc: "Unlock loyalty rewards and a vibrant network that grows with you.",
+                  },
+                ],
+              },
+              buttonText: "Renew Now",
+              buttonLink: "/membership",
+              gradient: "from-emerald-600/20 to-teal-600/20",
+            },
+          ].map((card, idx) => (
+            <CardContainer
+              className="inter-var bg-transparent w-full"
+              key={idx}
+            >
+              <CardBody
+                className={`bg-gradient-to-br ${card.gradient} backdrop-blur-xl relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border-white/[0.2] w-full h-auto rounded-2xl p-6 md:p-7 border-2 transition-all duration-300 hover:scale-[1.02]`}
+              >
+                <CardItem
+                  translateZ="50"
+                  className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-5"
+                >
+                  {card.title}
+                </CardItem>
+
+                <CardItem
+                  as="p"
+                  translateZ="40"
+                  className="text-gray-200 text-base md:text-lg leading-relaxed mb-5 md:mb-6"
+                >
+                  {card.content.intro}
+                </CardItem>
+
+                <div className="space-y-3 md:space-y-4 mb-6 md:mb-7">
+                  {card.content.points.map((point, pointIdx) => (
+                    <CardItem
+                      key={pointIdx}
+                      translateZ="30"
+                      className="flex flex-col gap-1 md:gap-2"
+                    >
+                      <h4 className="text-white font-semibold text-base md:text-lg flex items-center gap-2">
+                        <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex-shrink-0"></span>
+                        {point.title}
+                      </h4>
+                      <p className="text-gray-300 text-sm md:text-base leading-relaxed ml-4">
+                        {point.desc}
+                      </p>
+                    </CardItem>
+                  ))}
+                </div>
+
+                <CardItem translateZ="60" className="flex justify-center">
+                  <LinkButton
+                    to={card.buttonLink}
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 border-2 border-white/20 backdrop-blur-sm w-full sm:w-auto"
+                  >
+                    {card.buttonText}
+                  </LinkButton>
+                </CardItem>
+              </CardBody>
+            </CardContainer>
+          ))}
+        </div>
+      </section>
+
       {/* Ambassador Section */}
       <section className="py-20 px-4 text-center flex flex-col items-center bg-transparent rounded-t-lg text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
         <BlurText
@@ -238,7 +355,7 @@ export default function Home() {
         </ScrollReveal> */}
         <BlurText
           text="MTC Student Ambassador program provides an invaluable opportunity for first-year students to actively participate in MTC by assuming the role of a council member in your chosen domain."
-          className="text-2xl md:text-3xl font-normal max-w-7xl leading-[1] p-2"
+          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-2"
           delay={150}
         />
 
