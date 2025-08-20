@@ -128,18 +128,6 @@ const About = () => {
           <GenerateAllTeams />
         </div>
 
-        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-0.5">
-          <h2 className="text-3xl md:text-5xl font-bold mb-1 mt-8">
-            Past Ambassador Testimonials
-          </h2>
-          <h2 className="text-3xl md:text-2xl font-bold mb-1 mt-1">
-            Don’t take our word for it. Take theirs:
-          </h2>
-          <div>
-            <AnimatedTestimonials testimonials={testimonials} />
-          </div>
-        </section>
-
         <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-bold mb-10 mt-10">
             Your journey starts here — council or ambassador, take the gear.
@@ -277,6 +265,18 @@ const About = () => {
               )}
             </ModalContent>
           </Modal>
+        </section>
+
+        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-0.5">
+          <h2 className="text-3xl md:text-5xl font-bold mb-1 mt-8">
+            Past Ambassador Testimonials
+          </h2>
+          <h2 className="text-3xl md:text-2xl font-bold mb-1 mt-1">
+            Don’t take our word for it. Take theirs:
+          </h2>
+          <div>
+            <AnimatedTestimonials testimonials={testimonials} />
+          </div>
         </section>
       </div>
     </div>
