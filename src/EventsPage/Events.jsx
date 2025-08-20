@@ -1,8 +1,8 @@
 import React from "react";
-import Balatro from "./components/Balatro.jsx";
-import EventCarousel from "./Events/EventCarousel.jsx";
-import UpcomingEvents from "./Events/UpcomingEvents.jsx";
-import IdeaSubmissionForm from "./Events/IdeaSubmissionForm.jsx";
+import Balatro from "../components/ui/Balatro.jsx";
+import EventCarousel from "./EventCarousel.jsx";
+import UpcomingEvents from "./UpcomingEvents.jsx";
+import IdeaSubmissionForm from "./IdeaSubmissionForm.jsx";
 
 const Events = () => {
   return (

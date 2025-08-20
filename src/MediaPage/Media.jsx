@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import BlurText from "./components//BlurText.jsx";
-import image1 from "./assets/unused/typingContest.jpg";
-import image2 from "./assets/unused/DataScience.jpg";
-import image3 from "./assets/unused/GW-1.jpg";
-import Balatro from "./components/Balatro.jsx";
-import { CardBody, CardContainer, CardItem } from "./components/3d-card";
+import BlurText from "../components/ui/BlurText.jsx";
+import image1 from "../assets/unused/typingContest.jpg";
+import image2 from "../assets/unused/DataScience.jpg";
+import image3 from "../assets/unused/GW-1.jpg";
+import Balatro from "../components/ui/Balatro.jsx";
+import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card.jsx";
+import IdeaSubmissionForm from "./MediaForm.jsx";
+
 const images = [image1, image2, image3];
-const authors = ["Alice", "Bob", "Charlie"];
-import IdeaSubmissionForm from "./Media/Mediaform.jsx";
 
 export default function Media() {
   const [startIdx, setStartIdx] = useState(0);

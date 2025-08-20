@@ -11,14 +11,14 @@ import imgOffer_competitions from "./assets/home/offer_competitions.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import {faPhone} from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 // Components
-import LinkButton from "./components/LinkButton.jsx";
+import LinkButton from "./components/ui/LinkButton.jsx";
 
-import BlurText from "./components/BlurText.jsx";
-import { CardBody, CardContainer, CardItem } from "./components/3d-card";
-import Balatro from "./components/Balatro.jsx";
+import BlurText from "./components/ui/BlurText.jsx";
+import { CardBody, CardContainer, CardItem } from "./components/ui/3d-card.jsx";
+import Balatro from "./components/ui/Balatro.jsx";
 import {
   Modal,
   ModalContent,
@@ -29,7 +29,7 @@ import {
   useDisclosure,
 } from "@heroui/react";
 import { Accordion, AccordionItem } from "@heroui/react";
-import RotatingText from "./components/RotatingText.jsx";
+import RotatingText from "./components/ui/RotatingText.jsx";
 import MTClogo from "./assets/MTClogo.png";
 
 export default function Home() {
@@ -129,7 +129,8 @@ export default function Home() {
           className="text-2xl md:text-3xl font-normal max-w-7xl leading-[1] p-2"
           delay={150}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-4 gap-x-5 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
+          {/* Previous grid layout: grid-cols-1 md:grid-cols-3 3xl:grid-cols-4 gap-x-5 */}
           {[
             {
               img: imgOffer_workshops,
@@ -153,20 +154,23 @@ export default function Home() {
             },
           ].map((card, idx) => (
             <CardContainer className="inter-var bg-transparent" key={idx}>
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] lg:w-[23rem] h-auto rounded-2xl p-4">
+              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[16rem] lg:w-[17rem] h-auto rounded-2xl p-4 border-2">
+                {/* Previous card width: sm:w-[20rem] lg:w-[21rem] */}
                 <CardItem
                   translateZ="50"
-                  className="text-2xl font-bold text-neutral-600 dark:text-white"
+                  className="text-xl font-bold text-neutral-600 dark:text-white"
                 >
+                  {/* Previous title size: text-2xl */}
                   {card.title}
                 </CardItem>
 
                 <CardItem translateZ="100" className="w-full mt-4">
+                  {/* Previous image height: h-64 */}
                   <img
                     src={card.img}
                     height="1000"
                     width="1000"
-                    className="h-64 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    className="h-48 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                     alt={card.title}
                   />
                 </CardItem>
@@ -174,8 +178,9 @@ export default function Home() {
                 <CardItem
                   as="p"
                   translateZ="60"
-                  className="text-neutral-500 text-lg max-w-sm mt-2 dark:text-neutral-300"
+                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
                 >
+                  {/* Previous description text size: text-lg */}
                   Explore our {card.title.toLowerCase()} to level up your skills
                   and connect with like-minded individuals.
                 </CardItem>
@@ -399,9 +404,9 @@ export default function Home() {
       {/* Social Media Cards */}
       <section className="mt-20 px-4 text-center rounded-t-lg">
         <BlurText
-        text="Follow Us"
-        className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
-      />
+          text="Follow Us"
+          className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
+        />
         <p className="text-lg md:text-2xl text-gray-300 my-6 md:mx-[15%]">
           Stay ahead in the tech world with MTC’s dynamic social media lineup!
         </p>

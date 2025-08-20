@@ -19,7 +19,7 @@
 // }
 
 import React, { useEffect, useRef } from "react";
-import Balatro from "./components/Balatro.jsx";
+import Balatro from "./components/ui/Balatro.jsx";
 
 const NotFound = ({
   children,

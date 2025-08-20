@@ -3,13 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HeroUIProvider } from "@heroui/react";
 
 import "./App.css";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import Home from "./Home";
-import About from "./About";
+import About from "./AboutPage/About";
 import Membership from "./Membership";
-import Events from "./Events";
-import Workshops from "./Workshops";
-import Media from "./Media";
+import Events from "./EventsPage/Events";
+import Media from "./MediaPage/Media";
 // import Contact    from './pages/Contact/Contact';
 import Articles from "./Articles";
 import NotFound from "./NotFoundPage";
@@ -25,10 +24,10 @@ const App = () => {
           <Route path="/membership" element={<Membership />} />
           <Route path="/events" element={<Events />} />
           <Route path="/media" element={<Media />} />
-          <Route path="/workshops" element={<Workshops />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/articles" element={<Articles />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/partners" element={<Articles />} />
         </Routes>
       </BrowserRouter>
     </HeroUIProvider>
