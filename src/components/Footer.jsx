@@ -9,11 +9,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/events", label: "Events" },
-    { path: "/media", label: "Media" },
+    { path: "/about#ambassador", label: "Ambassador Program" },
     { path: "/partners", label: "Partners" },
+    { path: "/sponsors", label: "Sponsors" },
+    { path: "/media#blogs", label: "Blogs" },
   ];
 
   const programs = [
@@ -36,11 +35,6 @@ export default function Footer() {
       label: "Competitions",
       href: "https://mtcbpdc.org",
       external: true,
-    },
-    {
-      label: "Ambassador Program",
-      href: "/about",
-      external: false,
     },
   ];
 
@@ -69,7 +63,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-black/20 backdrop-blur-lg border-t border-t text-white mt-20">
+    <footer className="w-full bg-black/20 backdrop-blur-lg border-t border-white/20 text-white mt-20">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}

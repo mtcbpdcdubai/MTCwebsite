@@ -5,6 +5,7 @@ import { HeroUIProvider } from "@heroui/react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { useScrollToTop } from "./hooks/useScrollToTop";
 import Home from "./Home";
 import About from "./AboutPage/About";
 import Membership from "./Membership";
@@ -14,10 +15,16 @@ import Media from "./MediaPage/Media";
 import Articles from "./Articles";
 import NotFound from "./NotFoundPage";
 
+function ScrollToTop() {
+  useScrollToTop();
+  return null;
+}
+
 const App = () => {
   return (
     <HeroUIProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
