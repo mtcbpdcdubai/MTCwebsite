@@ -58,7 +58,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-transparent text-white flex flex-col items-center relative z-1">
+    <div className="bg-transparent text-white flex flex-col items-center relative">
       {/* Banner */}
       {/* <div className="h-screen w-full overflow-hidden relative">
         <Spline scene="https://draft.spline.design/LWpJVH6Z3lriwJZk/scene.splinecode" />
@@ -97,14 +97,16 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <Balatro
-        isRotate={false}
-        mouseInteraction={true}
-        pixelFilter={700}
-        color1="#000000"
-        color2="#0a0a0a"
-        color3="#111111"
-      ></Balatro>
+      <div className="fixed inset-0 -z-10">
+        <Balatro
+          isRotate={false}
+          mouseInteraction={true}
+          pixelFilter={700}
+          color1="#000000"
+          color2="#0a0a0a"
+          color3="#111111"
+        />
+      </div>
 
       <section className="pt-20 px-4 text-center flex flex-col items-center text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
         <BlurText

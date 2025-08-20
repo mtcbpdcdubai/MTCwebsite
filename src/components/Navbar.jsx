@@ -64,8 +64,8 @@ export default function Navbar() {
 
           {/* Menu content */}
           <div
-            className="fixed left-0 right-0 bg-black/90 backdrop-blur-lg border-t border-divider z-[1000] sm:hidden"
-            style={{ top: "73px" }}
+            className="fixed left-0 right-0 bg-black/90 backdrop-blur-3xl border-divider z-[1000] sm:hidden h-screen"
+            // style={{ top: "73px" }}
           >
             <div className="px-6 py-8">
               <div className="flex flex-col gap-6">

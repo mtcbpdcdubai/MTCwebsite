@@ -4,6 +4,7 @@ import { HeroUIProvider } from "@heroui/react";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./Home";
 import About from "./AboutPage/About";
 import Membership from "./Membership";
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/partners" element={<Articles />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </HeroUIProvider>
   );
