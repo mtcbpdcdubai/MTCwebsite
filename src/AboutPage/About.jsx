@@ -13,7 +13,7 @@ import Balatro from "../components/ui/Balatro.jsx";
 import { AnimatedTestimonials } from "../components/ui/animated-testimonials.jsx";
 import { GenerateAllTeams } from "./TeamCard.jsx";
 import SplitText from "../components/ui/SplitText.jsx";
-// import CustomCarousel from "./components/CustomCarousel";
+import CustomCarousel from "./CustomCarousel.jsx";
 
 const About = () => {
   const {
@@ -66,6 +66,7 @@ const About = () => {
       </div>
       {/* Banner Image */}
       <div className="relative z-10 w-full bg-transparent flex flex-col items-center">
+
         <div className="max-w-7xl mx-auto px-4 w-full">
           <img
             src={aboutImage}
@@ -74,7 +75,7 @@ const About = () => {
           />
         </div>
 
-        {/* <CustomCarousel /> */}
+        <CustomCarousel />
 
         {/* About Section */}
         {/* <section className="w-full max-w-3xl px-4 flex flex-col items-center text-center mb-12"> */}
