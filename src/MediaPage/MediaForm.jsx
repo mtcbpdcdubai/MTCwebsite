@@ -27,9 +27,11 @@ const MediaForm = () => {
     <div className="bg-black border border-gray-700 rounded-2xl p-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <div className="flex justify-center mb-4">
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full">
-            <Lightbulb className="text-white" size={32} />
-          </div>
+<div className="p-3 rounded-full border-2 border-white dark:border-white/[0.2] bg-neutral-900 relative overflow-hidden group">
+  {/* Shine effect overlay */}
+  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out rounded-full" />
+  <Lightbulb className="text-white relative z-10" size={32} />
+</div>
         </div>
         <h2 className="text-3xl font-bold text-white mb-2">
           Your idea today, our next headline.
@@ -175,20 +177,20 @@ const MediaForm = () => {
               })}
               rows={6}
               className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-white/50 focus:outline-none transition-colors resize-none"
-              placeholder="Describe your idea in detail. What problem does it solve? How would you implement it? What makes it unique?"
+              placeholder="Describe your idea in detail"
             />
             {errors.idea && (
               <p className="text-red-400 text-sm mt-1">{errors.idea.message}</p>
             )}
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
-          >
-            <Send size={20} />
-            Submit Your Idea
-          </button>
+<button
+  type="submit"
+  className="w-full bg-neutral-900 text-white font-semibold py-4 px-6 rounded-xl border-2 border-white dark:border-white/[0.2] transition-all duration-300 ease-out transform hover:scale-105 hover:bg-neutral-800 flex items-center justify-center gap-2 cursor-pointer"
+>
+  <Send size={20} />
+  Submit Your Idea
+</button>
 
           {/* <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
             <p className="text-blue-400 text-sm">
