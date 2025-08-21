@@ -14,6 +14,13 @@ import { AnimatedTestimonials } from "../components/ui/animated-testimonials.jsx
 import { GenerateAllTeams } from "./TeamCard.jsx";
 import SplitText from "../components/ui/SplitText.jsx";
 import CustomCarousel from "./CustomCarousel.jsx";
+import amintaPhoto from "./mtc-members-photos/testemonial-photos/Aminta.jpg"
+import chhaviPhoto from "./mtc-members-photos/testemonial-photos/Chhavi.jpg"
+import priyanshuPhoto from "./mtc-members-photos/testemonial-photos/Priyanshu.jpg"
+import smredhiPhoto from "./mtc-members-photos/testemonial-photos/Smredhi.jpeg"
+import surajPhoto from "./mtc-members-photos/testemonial-photos/Suraj.jpg"
+import tanishaPhoto from "./mtc-members-photos/testemonial-photos/Tanisha.jpg"
+
 
 const About = () => {
   const {
@@ -30,24 +37,45 @@ const About = () => {
   const testimonials = [
     {
       quote:
-        "This past semester, being the Creative Ambassador at MTC has been an incredibly rewarding experience. It has offered various opportunities for personal growth and skill development. I was able to understand the functioning of the club and collaborate with an amazing team. All the council members were always so supportive and motivating, that working on all the assigned tasks was genuinely enjoyable. Overall, this program has broadened my horizons and bolstered my confidence and I'd highly recommend this program for anyone looking to elevate themselves personally and professionally.",
-      name: "Ameiya Wankhede",
-      designation: "2nd Year",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Being part of the program was an amazing experience. At first, stepping out of my comfort zone felt daunting, but it quickly became worthwhile. I enjoyed making content, drafting social media posts, and trying out new platforms. Working on different tasks boosted my confidence and creativity with tools. The best part was being part of a friendly, supportive group where I made new friends and gained skills that I will use for a long time. I highly recommend this program to anyone looking to grow and make great friends :)",
+      name: "Aminta Binu Thomas",
+      designation: "Marketing Ambassador",
+      src: amintaPhoto,
+    },
+    {
+      quote:
+        "The Ambassadorship Program gave me a front-row seat to understanding how a club truly functions. I used to think it was all about professionalism, but being an MTC Ambassador felt more like being part of a close-knit friend group than just a tech club — it felt like family. I gained hands-on experience that helped me grow both personally and professionally.",
+      name: "Chhavi",
+      designation: "Technical & Creative Ambassador",
+      src: chhaviPhoto,
+    },
+    {
+      quote:
+        "As a first year student, working as the Creative Ambassador helped me not only improve my skills in the creative role, but also gave me a chance to explore skills outside it.  The Council was extremely supportive and provided me with the right feedback and encouragement that pushed me to go into other roles throughout my time as a fresher. I would always be grateful for MTC and their Ambasadorship Program for helping me find my way through college clubs/events as a first year!!",
+      name: "Smredhi Shankar",
+      designation: "Creative Ambassador",
+      src: smredhiPhoto,
+    },
+    {
+      quote:
+        "The Ambassadorship Program gave me the chance to represent my club, learn leadership skills and connect with amazing people. It’s a great way to grow personally and professionally.",
+      name: "Tanisha Handa",
+      designation: "Technical Ambassador",
+      src: tanishaPhoto,
     },
     {
       quote:
         "I am thrilled to share my experience as a proud member of the Ambassadorship Program of MTC. This opportunity has been an incredible journey filled with many valuable learning experiences, growth and fun moments with the council. I can positively say that the members of the council guided me throughout my shortcomings and profoundly impacted my personal and professional development. I would definitely recommend freshers to join the Ambassadorship Program.",
-      name: "Siddhi Mishra",
-      designation: "2nd Year",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Suraj Kumar Singh ",
+      designation: "Marketing Ambassador",
+      src: surajPhoto,
     },
     {
       quote:
         "The MTC ambassadorship programme helped me improve my technical skills & gain practical experience and the confidence I needed by being involved in various events of the club. I got to learn & assist in the development of coding questions & programming puzzles for many different tasks & competitions too.",
-      name: "Vania Roy",
-      designation: "2nd Year",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Priyanshu Kumar Singh ",
+      designation: "Technical Ambassador",
+      src: priyanshuPhoto,
     },
   ];
 
@@ -67,19 +95,17 @@ const About = () => {
       {/* Banner Image */}
       <div className="relative z-10 w-full bg-transparent flex flex-col items-center">
 
-        <div className="max-w-7xl mx-auto px-4 w-full">
+        {/* <div className="max-w-7xl mx-auto px-4 w-full">
           <img
             src={aboutImage}
             alt="About Us"
             className="max-h-[500px] object-cover mb-10 mt-10 rounded-2xl border-2 mx-auto"
           />
-        </div>
-
-        <CustomCarousel />
+        </div> */}
 
         {/* About Section */}
         {/* <section className="w-full max-w-3xl px-4 flex flex-col items-center text-center mb-12"> */}
-        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-2 mt-4">
+        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-2 mt-20">
           <SplitText
             text="About Us"
             className="text-6xl font-bold text-center mb-4"
@@ -92,10 +118,10 @@ const About = () => {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-            // onLetterAnimationComplete={handleAnimationComplete}
+          // onLetterAnimationComplete={handleAnimationComplete}
           />
           <SplitText
-            text="The Microsoft Tech Club is a student-led organization dedicated to fostering a community of like-minded individuals passionate about technology and innovation."
+            text="The Microsoft Tech Club is a student-led organization dedicated to fostering a community of like-minded individuals passionate about technology and innovation.Our goal is to provide members with opportunities to learn, grow, and connect with each other. Join us today and become a part of this exciting community!"
             className="text-2xl font-semibold text-center mb-4"
             delay={100}
             duration={0.6}
@@ -106,10 +132,10 @@ const About = () => {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-            // onLetterAnimationComplete={handleAnimationComplete}
+          // onLetterAnimationComplete={handleAnimationComplete}
           />
           <SplitText
-            text="Our goal is to provide members with opportunities to learn, grow, and connect with each other. Join us today and become a part of this exciting community!"
+            text="Meet the minds driving innovation and community at Microsoft Tech Club."
             className="text-2xl font-semibold text-center mb-4"
             delay={100}
             duration={0.6}
@@ -120,18 +146,20 @@ const About = () => {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-            // onLetterAnimationComplete={handleAnimationComplete}
+          // onLetterAnimationComplete={handleAnimationComplete}
           />
         </section>
+
+        {/* <CustomCarousel /> */}
 
         <div className="w-full max-w-7xl mx-auto px-4">
           <GenerateAllTeams />
         </div>
 
         <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-8">
-          <h2 className="text-3xl md:text-5xl font-bold mb-10 mt-10">
+          {/* <h2 className="text-3xl md:text-5xl font-bold mb-10 mt-10">
             Your journey starts here — council or ambassador, take the gear.
-          </h2>
+          </h2> */}
           <div className="flex flex-row gap-x-4 justify-center">
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -145,13 +173,13 @@ const About = () => {
                 damping: 20,
               }}
             >
-              <Button
+              {/* <Button
                 radius="full"
-                className="font-semibold bg-purple-900 text-white hover:bg-purple-800 transition-colors duration-300 border-2 border-purple-700"
+                className="w-full sm:w-auto text-white bg-black border border-white hover:bg-white hover:text-black focus:ring-2 focus:outline-none focus:ring-white/40 font-semibold rounded-lg px-10 py-6 text-lg transition-colors duration-300 ease-in-out "
                 onPress={onAmbassadorModalOpen}
               >
                 Ambassador Program (For First Year Students)
-              </Button>
+              </Button> */}
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -267,7 +295,7 @@ const About = () => {
           </Modal>
         </section>
 
-        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-0.5">
+        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-30">
           <h2 className="text-3xl md:text-5xl font-bold mb-1 mt-8">
             Past Ambassador Testimonials
           </h2>

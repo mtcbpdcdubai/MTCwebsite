@@ -27,7 +27,7 @@ const AllTeams = teamComponents.map((item) => item.component);
 
 const MemberCard = ({ member }) => {
   return (
-    <CardContainer className="inter-var rounded-2xl">
+    <CardContainer className="inter-var border-3 rounded-2xl">
       <CardBody className="bg-black relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-64 h-84 rounded-xl p-4 border flex flex-col items-center">
         <CardItem translateZ="100" className="w-full flex justify-center mb-3">
           <img
@@ -57,7 +57,7 @@ const MemberCard = ({ member }) => {
 
         <CardItem
           translateZ="80"
-          className="flex justify-center space-x-6 mt-auto"
+          className="flex justify-center space-x-4 mt-auto"
         >
           {member.instagram && (
             <a
