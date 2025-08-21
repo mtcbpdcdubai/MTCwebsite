@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import BlurText from "../components/ui/BlurText.jsx";
-import image1 from "../assets/unused/typingContest.jpg";
+import image1 from "../assets/events/2024-11-21_typing_contest.jpg";
 import image2 from "../assets/unused/DataScience.jpg";
-import image3 from "../assets/unused/GW-1.jpg";
+import image3 from "../assets/events/2025-02-12_cybersecurity_workshop.jpg";
 import image4 from "../assets/unused/ambassador_program_old.jpg";
 import image5 from "../assets/unused/background.jpg";
 import image6 from "../assets/unused/Orientation-5.jpg";
@@ -12,6 +12,11 @@ import image9 from "../assets/about_us1.jpg";
 import image10 from "../assets/about_us2.jpg";
 import image11 from "../assets/MTClogo.png";
 import image12 from "../assets/ThinkAi'24.jpg";
+import image13 from "../assets/events/2025-02-17_hackabot.jpg";
+import image14 from "../assets/events/2025-02-05_membership_stall.jpg";
+import image15 from "../assets/events/2024-12-12_research_talk.jpg";
+
+
 
 
 import Balatro from "../components/ui/Balatro.jsx";
@@ -66,65 +71,113 @@ export default function Media() {
   ];
   const galleryImages = [
     {
-      src: image1,
-      title: "Typing Contest",
-      desc: "Showcasing our annual speed typing event and its winners.",
-    },
-    {
-      src: image2,
-      title: "Data Science Workshop",
-      desc: "Hands-on learning session on data science and analytics.",
+      src: image13,
+      title: "ACM-W x MTC: Hack-A-Bot",
+      desc: "Build a creative chatbot + landing page — free for members, AED 5 for others!",
     },
     {
       src: image3,
-      title: "Guest Webinar",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      title: "Cybersecurity Workshop",
+      desc: "Cybersecurity Workshop - Foundations of Penetration Testing",
+    },
+    {
+      src: image14,
+      title: "Membership Stall",
+      desc: "MTC’s Squid Game stall: flip, answer, win — fun, strategy, and prizes!",
     },
         {
-      src: image4,
-      title: "4",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      src: image15,
+      title: "Research Talk",
+      desc: "MTC hosted Dr. R. Balasubramanian for an inspiring Research Talk on cutting-edge AI innovations.",
     },
         {
       src: image5,
-      title: "5",
-      desc: "Industry experts sharing insights on emerging technologies.",
-    },
-        {
-      src: image6,
-      title: "6",
-      desc: "Industry experts sharing insights on emerging technologies.",
-    },
-        {
-      src: image7,
-      title: "7",
-      desc: "Industry experts sharing insights on emerging technologies.",
-    },
-        {
-      src: image8,
-      title: "8",
-      desc: "Industry experts sharing insights on emerging technologies.",
-    },
-        {
-      src: image9,
-      title: "9",
-      desc: "Industry experts sharing insights on emerging technologies.",
-    },
-        {
-      src: image10,
-      title: "10",
-      desc: "Industry experts sharing insights on emerging technologies.",
-    },
-        {
-      src: image11,
-      title: "11",
+      title: "Typing Contest 2024",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
         {
       src: image12,
-      title: "12",
+      title: "ThinkAI’24",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
+        {
+      src: image7,
+      title: "Midsem Preparation Workshops",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+        {
+      src: image8,
+      title: "Cybersecurity Talk",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+        {
+      src: image9,
+      title: "Excel Championship",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+        {
+      src: image10,
+      title: "Time Series Analysis",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+        {
+      src: image11,
+      title: "Introduction to Power BI",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+        {
+      src: image12,
+      title: "Introduction to Data Science",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+            {
+      src: image12,
+      title: "MTC x Reflexions Mediathon",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },        {
+      src: image12,
+      title: "MTC Orientation",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },        {
+      src: image12,
+      title: "Icebreakers Day",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },        {
+      src: image12,
+      title: "GameWeek Series",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },        {
+      src: image12,
+      title: "Speaker Session with Professor Nick Pears",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+    {
+      src: image12,
+      title: "ThinkAI’23",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+    {
+      src: image12,
+      title: "VS Code Workshop",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+    {
+      src: image12,
+      title: "SignQuest",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+    {
+      src: image12,
+      title: "Typing Contest 2023",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+    {
+      src: image12,
+      title: "How To Start Programming",
+      desc: "Industry experts sharing insights on emerging technologies.",
+    },
+
+    
   ];
   return (
     <div className="bg-transparent text-white min-h-screen py-20 px-4">
@@ -224,7 +277,7 @@ export default function Media() {
           <BlurText text ="Explore recent trends in technology with our monthly blog posts on Medium"/>
         </p>
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-stretch">
             {[
               {
                 title: (<>I Agree…<br />Now What?</>),
@@ -276,56 +329,91 @@ export default function Media() {
               },
 
             ].map((article, idx) => (
-              <CardContainer className="inter-var bg-transparent" key={idx}>
-<CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black border-2 border-white dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] lg:w-[23rem] h-[30rem] rounded-2xl p-6 flex flex-col items-center">
-                  <CardItem
-                    translateZ="50"
-                    className="text-2xl font-bold text-neutral-600 dark:text-white mb-4 text-center"
-                  >
-                    {article.title}
-                  </CardItem>
+    <CardContainer className="inter-var bg-transparent h-full" key={idx}>
+      <CardBody
+        className="
+          bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]
+          dark:bg-black border-2 border-white dark:border-white/[0.2] border-black/[0.1]
+          w-full h-full rounded-2xl p-6
+          flex flex-col
+          min-h-[34rem] md:min-h-[36rem] lg:min-h-[38rem]
+        "
+      >
+        {/* Title — clamp to 2 lines for uniform height */}
+        <CardItem
+          translateZ="50"
+          className="text-2xl font-bold text-neutral-600 dark:text-white mb-4 text-center"
+          style={{
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            minHeight: "3.5rem"
+          }}
+        >
+          {article.title}
+        </CardItem>
 
-                  <CardItem translateZ="100" className="w-full mb-4">
-                    <img
-                      src={article.img}
-                      alt={article.title}
-                      className="h-40 w-full object-cover rounded-lg group-hover/card:shadow-xl"
-                    />
-                  </CardItem>
+        {/* Image — fixed height */}
+        <CardItem translateZ="100" className="w-full mb-4">
+          <img
+            src={article.img}
+            alt={
+              typeof article.title === "string"
+                ? article.title
+                : "Article cover"
+            }
+            className="h-48 w-full object-cover rounded-lg group-hover/card:shadow-xl"
+            loading="lazy"
+            draggable={false}
+          />
+        </CardItem>
 
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-base max-w-sm mb-4 dark:text-neutral-300 flex-grow text-center"
-                  >
-                    {article.desc}
-                  </CardItem>
+        {/* Description — clamp to 4 lines */}
+        <CardItem
+          as="p"
+          translateZ="60"
+          className="text-neutral-500 text-base dark:text-neutral-300 text-center mb-4"
+          style={{
+            display: "-webkit-box",
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            minHeight: "5.5rem"
+          }}
+        >
+          {article.desc}
+        </CardItem>
 
-                  <CardItem translateZ="50" className="text-white text-sm mb-1">
-                    {article.date}
-                  </CardItem>
+        {/* Meta */}
+        <CardItem translateZ="50" className="text-white text-sm mb-1 text-center">
+          {article.date}
+        </CardItem>
+        <CardItem translateZ="50" className="text-gray-400 text-sm mb-4 text-center">
+          By: {article.author}
+        </CardItem>
 
-                  <CardItem
-                    translateZ="50"
-                    className="text-gray-400 text-sm mb-4"
-                  >
-                    By: {article.author}
-                  </CardItem>
-
-                  <CardItem
-                    translateZ={20}
-                    as="a"
-                    href={article.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105 block"
-                  >
-                    Read More →
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
-            ))}
-          </div>
+        {/* Button — pinned to bottom, full width, mobile-safe */}
+        <CardItem
+          translateZ={20}
+          as="a"
+          href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            mt-auto block w-full
+            bg-blue-600 text-white rounded-lg px-6 py-3 text-base font-semibold text-center
+            transition-all duration-200 ease-in-out
+            hover:bg-white hover:text-blue-600 hover:scale-[1.02]
+            focus:outline-none focus:ring-2 focus:ring-blue-400/40
+          "
+        >
+          Read More →
+        </CardItem>
+      </CardBody>
+    </CardContainer>
+  ))}
+</div>
 <div className="text-center mt-12 mb-8">
   <ShinyButton
     onClick={() =>
