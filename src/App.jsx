@@ -11,9 +11,11 @@ import About from "./AboutPage/About";
 import Membership from "./Membership";
 import Events from "./EventsPage/Events";
 import Media from "./MediaPage/Media";
+import Partners from "./PartnersPage/Partners";
 // import Contact    from './pages/Contact/Contact';
 import Articles from "./Articles";
 import NotFound from "./NotFoundPage";
+
 
 function ScrollToTop() {
   useScrollToTop();
@@ -35,7 +37,7 @@ const App = () => {
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/articles" element={<Articles />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/partners" element={<Articles />} />
+          <Route path="/partners" element={<Partners />} />
         </Routes>
         <Footer />
       </BrowserRouter>
