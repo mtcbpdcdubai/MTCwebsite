@@ -11,7 +11,7 @@ const pastEvents = [
     description: 'Welcome session for freshers to get acquainted with MTC community',
     image: null,
     location: 'To be added',
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+    fullDescription: 'this was too good'
   },
   {
     id: '2',

@@ -1,8 +1,35 @@
 import React, { useState } from 'react';
-import { ChevronDown, Calendar, Trophy, Code, Mic, Users, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, Calendar, Trophy, Code, Mic, Users } from 'lucide-react';
 import EventCard from './EventCard';
-import EventModal from './EventModal';
 import GlitchText from './GlitchText';
+
+import image1 from "../assets/events/2024-11-21_typing_contest.jpg";
+import image2 from "../assets/unused/DataScience.jpg";
+import image3 from "../assets/events/2025-02-12_cybersecurity_workshop.jpg";
+import image4 from "../assets/events/2024-09-12_introduction_to_power_bi.jpg";
+import image5 from "../assets/events/2024-10-02_excel_championship.jpg";
+import image6 from "../assets/events/2024-09-17_time_series_analysis.jpg";
+import image7 from "../assets/events/2024-09-02_mtc_x_reflexions_mediathon.jpg";
+import image8 from "../assets/events/2024-09-02_mtc_orientation.jpg";
+import image9 from "../assets/events/2024-08-29_icebreakers_day.jpg";
+import image10 from "../assets/events/2023-12-19_speaker_session_with_prof_nick_pears.jpg";
+import image11 from "../assets/events/2024-08-05_game_week_series.jpg";
+import image12 from "../assets/ThinkAi'24.jpg";
+import image13 from "../assets/events/2025-02-17_hackabot.jpg";
+import image14 from "../assets/events/2025-02-05_membership_stall.jpg";
+import image15 from "../assets/events/2024-12-12_research_talk.jpg";
+import image16 from "../assets/events/2024-10-13_midsem_prep.jpg";
+import image17 from "../assets/events/2024-10-11_cybersecurity_talk.jpg";
+import image18 from "../assets/events/2023-11-28_think_ai23.jpg";
+import image19 from "../assets/events/2023-11-20_vs_code_workshop.jpg";
+import image20 from "../assets/events/2023-10-05_sign_quest.jpg";
+import image21 from "../assets/events/2023-09-20_typing_contest.jpg";
+import image22 from "../assets/events/2023-09-06_how_to_start_programming.jpg";
+import image23 from "../assets/events/2023-09-13_matlab_workshop.jpg";
+
+// new event images to be added here
+import Event01_2025 from "../assets/2025events/2025-08-03_microsoft_powerpynt.png";
+import Event02_2025 from "../assets/2025events/2025-08-17_AI GENESIS.png";
 
 const allEvents = [
   // Past Events (August 2024 - May 2025)
@@ -11,8 +38,8 @@ const allEvents = [
     title: 'Ice Breakers',
     month: 'August 2024',
     description: 'Welcome session for freshers to get acquainted with MTC community',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    image: image9,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -20,8 +47,8 @@ const allEvents = [
     title: 'Mediathon',
     month: 'September 2024',
     description: 'Healthcare innovation hackathon focusing on medical technology solutions',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image7,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -29,8 +56,8 @@ const allEvents = [
     title: 'DS Bootcamp',
     month: 'September 2024',
     description: 'Intensive data science workshop covering machine learning fundamentals',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image2,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -38,8 +65,8 @@ const allEvents = [
     title: 'Excel Championship',
     month: 'October 2024',
     description: 'Competitive Excel skills tournament with real-world challenges',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image5,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -47,8 +74,8 @@ const allEvents = [
     title: 'Cybersecurity Talk',
     month: 'October 2024',
     description: 'Expert insights on modern cybersecurity threats and prevention',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image17,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -56,8 +83,8 @@ const allEvents = [
     title: 'Think AI',
     month: 'November 2024',
     description: 'Artificial Intelligence conference exploring future possibilities',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image12,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -65,8 +92,8 @@ const allEvents = [
     title: 'Typing Contest',
     month: 'November 2024',
     description: 'Fast-paced typing competition testing speed and accuracy',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image1,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -75,7 +102,7 @@ const allEvents = [
     month: 'January 2025',
     description: 'Educational workshop collaboration with Kings School students',
     image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -83,8 +110,8 @@ const allEvents = [
     title: 'Hack-A-Bot',
     month: 'February 2025',
     description: 'Robotics hackathon focusing on automation and AI integration',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image13,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -92,8 +119,8 @@ const allEvents = [
     title: 'Cybersecurity Talk',
     month: 'February 2025',
     description: 'Advanced cybersecurity insights and threat prevention strategies',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image3,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -101,8 +128,8 @@ const allEvents = [
     title: 'Membership Stall',
     month: 'February 2025',
     description: 'MTC membership drive and community engagement event',
-    image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: image14,
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -111,7 +138,7 @@ const allEvents = [
     month: 'March 2025',
     description: 'Practice School 2 discussion and guidance session',
     image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -120,7 +147,7 @@ const allEvents = [
     month: 'April 2025',
     description: 'Cryptography and cybersecurity challenge competition',
     image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -129,7 +156,7 @@ const allEvents = [
     month: 'April 2025',
     description: 'Three-phase no-code development competition with magical themes',
     image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -138,7 +165,7 @@ const allEvents = [
     month: 'May 2025',
     description: 'Advanced workshop on autonomous AI agents and their applications',
     image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   {
@@ -147,7 +174,7 @@ const allEvents = [
     month: 'May 2025',
     description: 'University Rover Challenge preparation and competition event',
     image: null,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
   // Competitions
@@ -156,8 +183,8 @@ const allEvents = [
     title: 'Microsoft Powerpynt',
     month: 'August 2025',
     description: 'Pick a tech company and build a PowerPoint presentation explaining why they failed, using Python',
-    image: null,
-    fullDescription: 'Pick a tech company and build a Powerpoint presentation explaining why they failed, using python (primarily the pptx library, but feel free to use any and as many libraries as you wish)',
+    image: Event01_2025,
+    fullDescription: 'Pick a tech company and build a Powerpoint presentation explaining why they failed...',
     category: 'competition',
     descriptionImages: []
   },
@@ -167,8 +194,8 @@ const allEvents = [
     title: 'AI Genesis',
     month: 'November 2025',
     description: 'A worldwide hybrid hackathon bringing 4000+ talented developers for a week long online challenge',
-    image: null,
-    fullDescription: 'In collaboration with MTC as Official Student and media partners. A worldwide hybrid hackathon bringing 4000+ talented developers for a week long online challenge.',
+    image: Event02_2025,
+    fullDescription: 'In collaboration with MTC as Official Student and media partners...',
     category: 'hackathon',
     descriptionImages: []
   }
@@ -178,12 +205,6 @@ const FeaturingMTCEvents = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [carouselIndices, setCarouselIndices] = useState({
-    past: 0,
-    competition: 0,
-    hackathon: 0
-  });
 
   const categories = [
     { value: 'all', label: 'All Events', icon: Calendar },
@@ -193,89 +214,40 @@ const FeaturingMTCEvents = () => {
     { value: 'workshops', label: 'Workshops', icon: Users }
   ];
 
-  const handleEventClick = (event) => {
-    setSelectedEvent(event);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedEvent(null);
-  };
-
-  const nextSlide = (category) => {
-    const events = getEventsByCategory(category);
-    const maxIndex = Math.max(0, events.length - 3);
-    setCarouselIndices(prev => ({
-      ...prev,
-      [category]: Math.min(prev[category] + 1, maxIndex)
-    }));
-  };
-
-  const prevSlide = (category) => {
-    setCarouselIndices(prev => ({
-      ...prev,
-      [category]: Math.max(prev[category] - 1, 0)
-    }));
-  };
-
   const getEventsByCategory = (category) => {
     switch (category) {
-      case 'past':
-        return allEvents.filter(event => event.category === 'past');
-      case 'competition':
-        return allEvents.filter(event => event.category === 'competition');
-      case 'hackathon':
-        return allEvents.filter(event => event.category === 'hackathon');
-      default:
-        return [];
+      case 'past': return allEvents.filter(e => e.category === 'past');
+      case 'competition': return allEvents.filter(e => e.category === 'competition');
+      case 'hackathon': return allEvents.filter(e => e.category === 'hackathon');
+      default: return [];
     }
   };
 
-  const renderEventSection = (title, category) => {
-    const events = getEventsByCategory(category);
-    const currentIndex = carouselIndices[category];
+  const handleEventClick = (event) => setSelectedEvent(event);
+  const closeModal = () => setSelectedEvent(null);
 
+  const renderEventSectionGrid = (title, category) => {
+    const events = getEventsByCategory(category);
     if (events.length === 0) return null;
 
     return (
       <div className="mb-8 sm:mb-16">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{title}</h3>
-          <div className="flex gap-2 justify-center sm:justify-end">
-            <button
-              onClick={() => prevSlide(category)}
-              className="bg-black border border-gray-700 hover:border-white/50 text-white p-2 sm:p-3 rounded-full transition-colors"
-              disabled={currentIndex === 0}
-            >
-              <ChevronLeft size={16} className="sm:w-5 sm:h-5" />
-            </button>
-            <button
-              onClick={() => nextSlide(category)}
-              className="bg-black border border-gray-700 hover:border-white/50 text-white p-2 sm:p-3 rounded-full transition-colors"
-              disabled={currentIndex >= Math.max(0, events.length - 3)}
-            >
-              <ChevronRight size={16} className="sm:w-5 sm:h-5" />
-            </button>
-          </div>
-        </div>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8">
+          {title}
+        </h3>
 
-        <div className="overflow-hidden -mx-4 sm:mx-0">
-          <div 
-            className="flex gap-4 sm:gap-6 transition-transform duration-500 ease-in-out px-4 sm:px-0"
-            style={{ transform: `translateX(-${currentIndex * (window.innerWidth < 640 ? 304 : 344)}px)` }}
-          >
-            {events.map((event) => (
-              <EventCard
-                key={event.id}
-                title={event.title}
-                month={event.month}
-                description={event.description}
-                image={event.image}
-                onClick={() => handleEventClick(event)}
-              />
-            ))}
-          </div>
+        {/* Responsive Grid (1 / 2 / 4) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {events.map((event) => (
+            <EventCard
+              key={event.id}
+              title={event.title}
+              month={event.month}
+              description={event.description}
+              image={event.image}
+              onClick={() => handleEventClick(event)}
+            />
+          ))}
         </div>
       </div>
     );
@@ -298,17 +270,17 @@ const FeaturingMTCEvents = () => {
       case 'all':
         return (
           <>
-            {renderEventSection('Rewind the Vibes', 'past')}
-            {renderEventSection('Competitions', 'competition')}
-            {renderEventSection('Hackathons', 'hackathon')}
+            {renderEventSectionGrid('Rewind the Vibes', 'past')}
+            {renderEventSectionGrid('Competitions', 'competition')}
+            {renderEventSectionGrid('Hackathons', 'hackathon')}
             {renderComingSoon('Talk Shows')}
             {renderComingSoon('Workshops')}
           </>
         );
       case 'competitions':
-        return renderEventSection('Competitions', 'competition');
+        return renderEventSectionGrid('Competitions', 'competition');
       case 'hackathons':
-        return renderEventSection('Hackathons', 'hackathon');
+        return renderEventSectionGrid('Hackathons', 'hackathon');
       case 'talks':
         return renderComingSoon('Talk Shows');
       case 'workshops':
@@ -358,16 +330,18 @@ const FeaturingMTCEvents = () => {
 
       {renderContent()}
 
-      {/* Enhanced Modal */}
-      {isModalOpen && selectedEvent && (
+      {/* Modal */}
+      {selectedEvent && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-black border border-gray-700 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="relative">
-              <img 
-                src={selectedEvent.image} 
-                alt={selectedEvent.title}
-                className="w-full h-64 object-cover rounded-t-2xl"
-              />
+              {selectedEvent.image && (
+                <img 
+                  src={selectedEvent.image} 
+                  alt={selectedEvent.title}
+                  className="w-full h-64 object-cover rounded-t-2xl"
+                />
+              )}
               <button
                 onClick={closeModal}
                 className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors text-xl"
@@ -381,10 +355,8 @@ const FeaturingMTCEvents = () => {
             
             <div className="p-8">
               <h2 className="text-white text-3xl font-bold mb-6">{selectedEvent.title}</h2>
-              
               <div className="text-gray-300 leading-relaxed space-y-4">
                 <p>{selectedEvent.fullDescription}</p>
-                
                 {selectedEvent.descriptionImages && selectedEvent.descriptionImages.length > 0 && (
                   <div className="mt-6">
                     <h3 className="text-white text-xl font-semibold mb-3">Event Details</h3>
