@@ -74,7 +74,7 @@ export default function Home() {
           />
         </div>
         <div className="flex items-center mt-10 gap-2 bg-white text-black rounded-3xl px-4 py-3 text-xl">
-          <span className="mr-2">Contact Us Now</span>
+          <span className="mr-2">Contact Us</span>
           <a
             href="mailto:mtc@bpdc.org"
             className="flex items-center gap-2 hover:bg-black hover:text-white transition-colors rounded-3xl p-2"
