@@ -30,9 +30,8 @@ import image24 from "../assets/events/PS2_round_table.jpeg";
 import image25 from "../assets/events/agentic_ai_workshop.jpeg";
 import image26 from "../assets/events/Tri_wizard_Hackathon.jpeg";
 import image27 from "../assets/events/MTC_Cipher.jpeg";
-
-
-
+import image28 from "../assets/events/Kings_School_MTC.jpeg";
+import image29 from "../assets/events/URC.jpeg";
 
 
 
@@ -111,7 +110,7 @@ const allEvents = [
     title: 'Kings School Workshop',
     month: 'January 2025',
     description: 'Educational workshop collaboration with Kings School students',
-    image: null,
+    image: image28,
     fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
@@ -183,7 +182,7 @@ const allEvents = [
     title: 'URC',
     month: 'May 2025',
     description: 'University Rover Challenge preparation and competition event',
-    image: null,
+    image: image29,
     fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
