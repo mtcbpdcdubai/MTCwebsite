@@ -3,18 +3,26 @@ import BlurText from "../components/ui/BlurText.jsx";
 import image1 from "../assets/events/2024-11-21_typing_contest.jpg";
 import image2 from "../assets/unused/DataScience.jpg";
 import image3 from "../assets/events/2025-02-12_cybersecurity_workshop.jpg";
-import image4 from "../assets/unused/ambassador_program_old.jpg";
-import image5 from "../assets/unused/background.jpg";
-import image6 from "../assets/unused/Orientation-5.jpg";
-import image7 from "../assets/unused/Orientation-5_new.jpg";
-import image8 from "../assets/unused/Timeseries1_new.jpg";
-import image9 from "../assets/about_us1.jpg";
-import image10 from "../assets/about_us2.jpg";
-import image11 from "../assets/MTClogo.png";
+import image4 from "../assets/events/2024-09-12_introduction_to_power_bi.jpg";
+import image5 from "../assets/events/2024-10-02_excel_championship.jpg";
+import image6 from "../assets/events/2024-09-17_time_series_analysis.jpg";
+import image7 from "../assets/events/2024-09-02_mtc_x_reflexions_mediathon.jpg";
+import image8 from "../assets/events/2024-09-02_mtc_orientation.jpg";
+import image9 from "../assets/events/2024-08-29_icebreakers_day.jpg";
+import image10 from "../assets/events/2023-12-19_speaker_session_with_prof_nick_pears.jpg";
+import image11 from "../assets/events/2024-08-05_game_week_series.jpg";
 import image12 from "../assets/ThinkAi'24.jpg";
 import image13 from "../assets/events/2025-02-17_hackabot.jpg";
 import image14 from "../assets/events/2025-02-05_membership_stall.jpg";
 import image15 from "../assets/events/2024-12-12_research_talk.jpg";
+import image16 from "../assets/events/2024-10-13_midsem_prep.jpg";
+import image17 from "../assets/events/2024-10-11_cybersecurity_talk.jpg";
+import image18 from "../assets/events/2023-11-28_think_ai23.jpg";
+import image19 from "../assets/events/2023-11-20_vs_code_workshop.jpg";
+import image20 from "../assets/events/2023-10-05_sign_quest.jpg";
+import image21 from "../assets/events/2023-09-20_typing_contest.jpg";
+import image22 from "../assets/events/2023-09-06_how_to_start_programming.jpg";
+
 
 
 
@@ -91,7 +99,7 @@ export default function Media() {
       desc: "MTC hosted Dr. R. Balasubramanian for an inspiring Research Talk on cutting-edge AI innovations.",
     },
         {
-      src: image5,
+      src: image1,
       title: "Typing Contest 2024",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
@@ -101,78 +109,78 @@ export default function Media() {
       desc: "Industry experts sharing insights on emerging technologies.",
     },
         {
-      src: image7,
+      src: image16,
       title: "Midsem Preparation Workshops",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
         {
-      src: image8,
+      src: image17,
       title: "Cybersecurity Talk",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
         {
-      src: image9,
+      src: image5,
       title: "Excel Championship",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
         {
-      src: image10,
+      src: image6,
       title: "Time Series Analysis",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
         {
-      src: image11,
+      src: image4,
       title: "Introduction to Power BI",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
         {
-      src: image12,
+      src: image2,
       title: "Introduction to Data Science",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
             {
-      src: image12,
+      src: image7,
       title: "MTC x Reflexions Mediathon",
       desc: "Industry experts sharing insights on emerging technologies.",
     },        {
-      src: image12,
+      src: image8,
       title: "MTC Orientation",
       desc: "Industry experts sharing insights on emerging technologies.",
     },        {
-      src: image12,
+      src: image9,
       title: "Icebreakers Day",
       desc: "Industry experts sharing insights on emerging technologies.",
     },        {
-      src: image12,
+      src: image11,
       title: "GameWeek Series",
       desc: "Industry experts sharing insights on emerging technologies.",
     },        {
-      src: image12,
-      title: "Speaker Session with Professor Nick Pears",
+      src: image10,
+      title: "Speaker Session with Prof Nick Pears",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
     {
-      src: image12,
+      src: image18,
       title: "ThinkAI’23",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
     {
-      src: image12,
+      src: image19,
       title: "VS Code Workshop",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
     {
-      src: image12,
+      src: image20,
       title: "SignQuest",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
     {
-      src: image12,
+      src: image21,
       title: "Typing Contest 2023",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
     {
-      src: image12,
+      src: image22,
       title: "How To Start Programming",
       desc: "Industry experts sharing insights on emerging technologies.",
     },
