@@ -219,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* Membership Section */}
-      <section className="pt-20">
+      <section className="pt-10">
         <BlurText
           text="Unlock MTC Membership"
           className="text-4xl md:text-6xl font-semibold w-full leading-[1]"
@@ -230,7 +230,7 @@ export default function Home() {
           className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-2"
           delay={150}
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
           {[
             {
               title: "Become a Member",
@@ -321,10 +321,10 @@ export default function Home() {
                   ))}
                 </div>
 
-                <CardItem translateZ="60" className="flex justify-center">
+                <CardItem translateZ="60" className="flex justify-center w-full">
                   <LinkButton
                     to={card.buttonLink}
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 border-2 border-white/20 backdrop-blur-sm w-full sm:w-auto"
+                    className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full sm:w-auto"
                   >
                     {card.buttonText}
                   </LinkButton>
