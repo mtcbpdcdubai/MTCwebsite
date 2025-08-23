@@ -22,6 +22,7 @@ import image19 from "../assets/events/2023-11-20_vs_code_workshop.jpg";
 import image20 from "../assets/events/2023-10-05_sign_quest.jpg";
 import image21 from "../assets/events/2023-09-20_typing_contest.jpg";
 import image22 from "../assets/events/2023-09-06_how_to_start_programming.jpg";
+import image23 from "../assets/events/2023-09-13_matlab_workshop.jpg";
 
 
 
@@ -101,88 +102,93 @@ export default function Media() {
         {
       src: image1,
       title: "Typing Contest 2024",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s Typing Contest 2024 saw 55 participants battle DVORAK, Memory Typing, and T9 challenges.",
     },
         {
       src: image12,
       title: "ThinkAI’24",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s ThinkAI’24 saw 22 teams pitch innovative AI ideas for Imagine Cup 2025.",
     },
         {
       src: image16,
-      title: "Midsem Preparation Workshops",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      title: "Midsem Prep Workshops",
+      desc: "MTC hosted packed exam-prep workshops across core subjects, guiding 150+ students before midsems.",
     },
         {
       src: image17,
       title: "Cybersecurity Talk",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC kicked off the semester with Mathew Medayil’s insightful talk on cybersecurity.",
     },
         {
       src: image5,
       title: "Excel Championship",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s Excel Championship tested skills across themed sessions, crowning three winners.",
     },
         {
       src: image6,
       title: "Time Series Analysis",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s Bootcamp finale covered Time Series EDA with hands-on analysis, forecasting, and prizes.",
     },
         {
       src: image4,
       title: "Introduction to Power BI",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s Data Science Bootcamp introduced Power BI dashboards, reports, and data visualization basics.",
     },
         {
       src: image2,
-      title: "Introduction to Data Science",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      title: "Intro to Data Science",
+      desc: "MTC’s Data Science Bootcamp introduced Python-based analytics with Pandas, NumPy, Matplotlib, and Seaborn.",
     },
             {
       src: image7,
       title: "MTC x Reflexions Mediathon",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC x Reflexions Mediathon challenged teams to design themed BPDC portfolio websites.",
     },        {
       src: image8,
       title: "MTC Orientation",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s orientation welcomed new members with insights, council introductions, and a fun Social Media Hunt",
     },        {
       src: image9,
       title: "Icebreakers Day",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC launched membership registrations on 29 August with perks, renewals, and discounts.",
     },        {
       src: image11,
       title: "GameWeek Series",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s GameWeek Series kept members hooked with thrilling online competitions all August.",
     },        {
       src: image10,
       title: "Speaker Session with Prof Nick Pears",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC hosted Prof. Nick Pears for insights on AI, Cybersecurity, and Computer Vision.",
     },
     {
       src: image18,
       title: "ThinkAI’23",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "ThinkAI’23 showcased 14 teams’ AI solutions, with Tech Titans and IntelliTrack emerging winners.",
     },
     {
       src: image19,
       title: "VS Code Workshop",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s VS Code Workshop explored features, customization, AI tools, and hands-on programming tips.",
     },
     {
       src: image20,
       title: "SignQuest",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s SignQuest promoted ESL awareness and Generative AI through a fun, quiz-based challenge.",
     },
     {
       src: image21,
       title: "Typing Contest 2023",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s Typing Contest challenged speed and accuracy, crowning 9 winners across 3 rounds.",
+    },
+    {
+      src: image23,
+      title: "MATLAB Workshop",
+      desc: "MTC’s MATLAB Workshop covered UI, syntax, data handling, and problem-solving with graphs.",
     },
     {
       src: image22,
       title: "How To Start Programming",
-      desc: "Industry experts sharing insights on emerging technologies.",
+      desc: "MTC’s ‘How To Start Programming’ workshop introduced coding basics, resources, and opportunities at BITS.",
     },
 
     
