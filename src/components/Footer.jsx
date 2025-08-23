@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { SiLinkedin, SiMedium, SiGithub } from "react-icons/si";
 import logo from "../assets/MTClogo.svg";
 
 export default function Footer() {
@@ -43,16 +44,37 @@ export default function Footer() {
       icon: faInstagram,
       href: "https://instagram.com/mtcbpdc",
       label: "@mtcbpdc",
+      type: "fontawesome",
+    },
+    {
+      icon: SiLinkedin,
+      href: "https://www.linkedin.com/company/microsoft-tech-club/",
+      label: "LinkedIn",
+      type: "react-icons",
+    },
+    {
+      icon: SiMedium,
+      href: "https://medium.com/@microsofttechclub",
+      label: "Medium",
+      type: "react-icons",
+    },
+    {
+      icon: SiGithub,
+      href: "https://github.com/mtcbpdcdubai",
+      label: "GitHub",
+      type: "react-icons",
     },
     {
       icon: faEnvelope,
       href: "mailto:mtc@bpdc.org",
       label: "mtc@bpdc.org",
+      type: "fontawesome",
     },
     {
       icon: faPhone,
       href: "tel:+1234567890",
       label: "+1 (234) 567-890",
+      type: "fontawesome",
     },
   ];
 
@@ -76,7 +98,7 @@ export default function Footer() {
               BITS Pilani Dubai Campus student community promoting technology
               learning through events, workshops, and mentorship programs.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -90,10 +112,14 @@ export default function Footer() {
                   className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
                   aria-label={social.label}
                 >
-                  <FontAwesomeIcon
-                    icon={social.icon}
-                    className="text-white text-sm"
-                  />
+                  {social.type === "fontawesome" ? (
+                    <FontAwesomeIcon
+                      icon={social.icon}
+                      className="text-white text-sm"
+                    />
+                  ) : (
+                    <social.icon className="text-white text-sm" />
+                  )}
                 </a>
               ))}
             </div>
@@ -150,37 +176,44 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h3 className="font-semibold text-white text-lg mb-4">Contact</h3>
             <div className="space-y-4">
-              {socialLinks.map((contact, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FontAwesomeIcon
-                    icon={contact.icon}
-                    className="text-gray-400 mt-1 text-sm"
-                  />
-                  <div>
-                    <p className="text-gray-300 text-xs uppercase tracking-wide">
-                      {contact.icon === faEnvelope
-                        ? "Email"
-                        : contact.icon === faInstagram
-                        ? "Instagram"
-                        : "Phone"}
-                    </p>
-                    <a
-                      href={contact.href}
-                      target={
-                        contact.href.startsWith("http") ? "_blank" : undefined
-                      }
-                      rel={
-                        contact.href.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                      className="text-white text-sm hover:text-gray-300 transition-colors"
-                    >
-                      {contact.label}
-                    </a>
+              {socialLinks
+                .filter(
+                  (contact) =>
+                    contact.icon === faEnvelope ||
+                    contact.icon === faInstagram ||
+                    contact.icon === faPhone
+                )
+                .map((contact, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <FontAwesomeIcon
+                      icon={contact.icon}
+                      className="text-gray-400 mt-1 text-sm"
+                    />
+                    <div>
+                      <p className="text-gray-300 text-xs uppercase tracking-wide">
+                        {contact.icon === faEnvelope
+                          ? "Email"
+                          : contact.icon === faInstagram
+                          ? "Instagram"
+                          : "Phone"}
+                      </p>
+                      <a
+                        href={contact.href}
+                        target={
+                          contact.href.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          contact.href.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className="text-white text-sm hover:text-gray-300 transition-colors"
+                      >
+                        {contact.label}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </div>

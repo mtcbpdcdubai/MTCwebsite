@@ -32,12 +32,7 @@ import { Accordion, AccordionItem } from "@heroui/react";
 import RotatingText from "./components/ui/RotatingText.jsx";
 import MTClogo from "./assets/MTClogo.png";
 import LogoLoop from "./components/ui/LogoLoop.jsx";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-} from "react-icons/si";
+import { SiInstagram, SiLinkedin, SiMedium, SiGithub } from "react-icons/si";
 
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -57,17 +52,25 @@ export default function Home() {
   ];
 
   const techLogos = [
-    { node: <SiReact />, title: "React", href: "https://react.dev" },
-    { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
     {
-      node: <SiTypescript />,
-      title: "TypeScript",
-      href: "https://www.typescriptlang.org",
+      node: <SiInstagram />,
+      title: "Instagram",
+      href: "https://www.instagram.com/mtcbpdc/",
     },
     {
-      node: <SiTailwindcss />,
-      title: "Tailwind CSS",
-      href: "https://tailwindcss.com",
+      node: <SiLinkedin />,
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/company/microsoft-tech-club/",
+    },
+    {
+      node: <SiMedium />,
+      title: "Medium",
+      href: "https://medium.com/@microsofttechclub",
+    },
+    {
+      node: <SiGithub />,
+      title: "GitHub",
+      href: "https://github.com/mtcbpdcdubai",
     },
   ];
 
@@ -104,8 +107,8 @@ export default function Home() {
         <Spline scene="https://draft.spline.design/LWpJVH6Z3lriwJZk/scene.splinecode" />
       </div> */}
       <div className="h-screen w-full overflow-hidden relative flex flex-col items-center justify-center text-4xl font-semibold">
-        <p className="text-6xl">Microsoft Tech Club</p>
-        <p className="text-6xl pb-2 font-normal">BITS Pilani Dubai Campus</p>
+        <p className="text-6xl text-center">Microsoft Tech Club</p>
+        <p className="text-6xl pb-2 font-normal text-center">BITS Pilani Dubai Campus</p>
         <div className="flex items-center pt-10 flex-row">
           <p>Build </p>
           <RotatingText
@@ -570,20 +573,22 @@ export default function Home() {
         <p className="text-lg md:text-2xl text-gray-300 my-6 md:mx-[15%]">
           Stay ahead in the tech world with MTC’s dynamic social media lineup!
         </p>
-
-        <LogoLoop
-          className="border-1"
-          logos={techLogos}
-          speed={120}
-          direction="left"
-          logoHeight={48}
-          gap={40}
-          pauseOnHover
-          scaleOnHover
-          fadeOut
-          fadeOutColor="#ffffff"
-          ariaLabel="Technology partners"
-        />
+        <div className="flex flex-wrap justify-center gap-6 mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
+          {techLogos.map((logo, index) => (
+            <a
+              key={index}
+              href={logo.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-2xl lg:text-4xl xl:text-5xl hover:scale-110 transition-transform duration-300 mx-4"
+            >
+              {logo.node}
+              <span className="ml-2 text-gray-300 text-base lg:text-lg xl:text-xl">
+                {logo.title}
+              </span>
+            </a>
+          ))}
+        </div>
       </section>
     </div>
   );
