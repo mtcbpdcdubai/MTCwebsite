@@ -26,10 +26,20 @@ import image20 from "../assets/events/2023-10-05_sign_quest.jpg";
 import image21 from "../assets/events/2023-09-20_typing_contest.jpg";
 import image22 from "../assets/events/2023-09-06_how_to_start_programming.jpg";
 import image23 from "../assets/events/2023-09-13_matlab_workshop.jpg";
+import image24 from "../assets/events/PS2_round_table.jpeg";
+import image25 from "../assets/events/agentic_ai_workshop.jpeg";
+import image26 from "../assets/events/Tri_wizard_Hackathon.jpeg";
+import image27 from "../assets/events/MTC_Cipher.jpeg";
+
+
+
+
+
 
 // new event images to be added here
 import Event01_2025 from "../assets/2025events/2025-08-03_microsoft_powerpynt.png";
 import Event02_2025 from "../assets/2025events/2025-08-17_AI GENESIS.png";
+import { image } from '@heroui/theme';
 
 const allEvents = [
   // Past Events (August 2024 - May 2025)
@@ -137,7 +147,7 @@ const allEvents = [
     title: 'PS-2 Round Table',
     month: 'March 2025',
     description: 'Practice School 2 discussion and guidance session',
-    image: null,
+    image: image24,
     fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
@@ -146,7 +156,7 @@ const allEvents = [
     title: 'MTCipher',
     month: 'April 2025',
     description: 'Cryptography and cybersecurity challenge competition',
-    image: null,
+    image: image27,
     fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
@@ -155,7 +165,7 @@ const allEvents = [
     title: 'No Code Hackathon Tri Wizard',
     month: 'April 2025',
     description: 'Three-phase no-code development competition with magical themes',
-    image: null,
+    image: image26,
     fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
@@ -164,7 +174,7 @@ const allEvents = [
     title: 'Agentic AI Workshop',
     month: 'May 2025',
     description: 'Advanced workshop on autonomous AI agents and their applications',
-    image: null,
+    image: image25,
     fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
     category: 'past'
   },
