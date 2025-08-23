@@ -48,16 +48,16 @@ const allEvents = [
     month: 'August 2024',
     description: 'Welcome session for freshers to get acquainted with MTC community',
     image: image9,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'The Microsoft Tech Club opened their membership registrations on 29 August, in the Sports Complex. Registrations were available for freshmen, all seniors, and renewals were available for existing members who were interested in retaining their subscription to the club. Council members actively participated in marketing the merits of MTC and the perks that the club had to offer to members, but the MTC stall had its own attractive features which incentivised future members to join with a discounted price.',
     category: 'past'
   },
   {
     id: 'past-2',
-    title: 'Mediathon',
+    title: 'MediathoMTC x Reflexions Mediathon',
     month: 'September 2024',
-    description: 'Healthcare innovation hackathon focusing on medical technology solutions',
+    description: 'Hackathon in collaboration with Reflexions, focusing on media solutions',
     image: image7,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'The MTC x Reflexions Mediathon was a week-long event where participants formed teams of 1-4 to create a portfolio website for BPDC. They could use only HTML, CSS, and optionally, JavaScript, and had to use pictures captured around campus during the eligibility period. The website was required to reflect any of the given four themes—Academia, Student Life, Sports, and Nature.',
     category: 'past'
   },
   {
@@ -66,7 +66,7 @@ const allEvents = [
     month: 'September 2024',
     description: 'Intensive data science workshop covering machine learning fundamentals',
     image: image2,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'The Microsoft Tech Club hosted the first session of its Data Science bootcamp; it was an introduction to the world of Data Science by MTC Tech Manager Laya Shree Elango. After a brief talk on the significance of data science on daily life, participants were taken on a step by step tutorial of making an algorithm analyzing the chances of employees quitting a company, taking various factors in consideration, on the programming language Python incorporating python libraries such as Pandas, NumPy, Matplotlib and Seaborn.',
     category: 'past'
   },
   {
@@ -75,7 +75,7 @@ const allEvents = [
     month: 'October 2024',
     description: 'Competitive Excel skills tournament with real-world challenges',
     image: image5,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'MTC’s Excel Championship was a 3-hour Microsoft Excel-based time trial covering themes such as data analysis, financial modeling, and data cleaning, with questions split into easy, medium, and hard levels, each with different weightage for a total of 100 points. The competition was divided into three themed sessions: Harry Potter, Marvel, and Uncharted, where participants solved questions related to each theme, with team support available to clear doubts. The winners for each session were Aaryan Sinha (Session 1), Aakar Mathur (Session 2), and Sreenikethan Iyer (Session 3).',
     category: 'past'
   },
   {
@@ -84,7 +84,7 @@ const allEvents = [
     month: 'October 2024',
     description: 'Expert insights on modern cybersecurity threats and prevention',
     image: image17,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'The Microsoft Tech Club hosted Mathew Medayil, seasoned Security Consultant at First Abu Dhabi Bank, for their very first talk for the semester. The talk was moderated by Reuben Thomas and Joel Joseph. Topics covered include an introduction to cybersecurity and what constitutes it, types of hackers, what goes on in a day in the life of an ethical hacker and how the work is delegated in the company specifically in the banking sector. He also provided several resources to learn about cybersecurity and information on certification available. Joel Joseph gathered topics of interest for Mr. Medayil to provide additional details on cybersecurity. The session ended with a helpful doubts clearing segment.',
     category: 'past'
   },
   {
@@ -93,7 +93,7 @@ const allEvents = [
     month: 'November 2024',
     description: 'Artificial Intelligence conference exploring future possibilities',
     image: image12,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'Microsoft’s Imagine Cup 2025 is a global student startup competition for founders using AI technologies on the Microsoft cloud. To empower and encourage students to participate in the same, Microsoft Tech Club conducted ThinkAI’24. The event was a success, with 30 teams (76 teams) registering, and 22 teams (58 participants) presenting their pitches to a set of 12 judges, including the Director. The pitches covered a wide array of fields, from the healthcare sector to art and technology. Students came up with promising ideas, and the judges provided valuable feedback to guide them. The winners were promised a prize pool of 450 AED, as well as mentoring from the professors to hone their idea for the Imagine Cup 2025. The winners were Team Noor (Pradyun Kumar Sinha, Vrushank Vijay Tipnis, Abhishekh Verma, Shaikh Mohammed Rehan Mairajuddin), Team Vada Visionaries (Mohammed Ruknuddin, Nishal Ahmed Poovatham Kandiyil, Kalyani Baiju Sindhu, Muhammad Fawaz Imran), and Team RoboIntellects (Radhika Khatri).',
     category: 'past'
   },
   {
@@ -102,7 +102,7 @@ const allEvents = [
     month: 'November 2024',
     description: 'Fast-paced typing competition testing speed and accuracy',
     image: image1,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: "Microsoft Tech Club’s flagship event, the Typing Contest, kicked it up a notch this year. Held for three hours, it hosted three different challenges; the DVORAK keyboard layout, memory typing, and the T9 layout. This increased the difficulty levels greatly, and proved to be an interesting challenge for participants. To accommodate the nuances of each of the three challenges, the technical team developed a platform to specifically cater to the DVORAK and T9 keyboard layouts, as well as to time the strings to disappear to make memory typing feasible. Each of the sessions themselves had three levels, easy, medium, and hard, and participants could try each difficulty level any number of times. The Typing Contest had 15 participants for the first session, 27 for the second session, and 49 for the third session; overall, there were 92 submissions, 55 unique participants, 8 players who completed all three challenges, and 5 winners. The winners were awarded cash prizes, and all participants received certificates of participation. The event was a great success, and we look forward to hosting it again next year!",
     category: 'past'
   },
   {
@@ -111,7 +111,7 @@ const allEvents = [
     month: 'January 2025',
     description: 'Educational workshop collaboration with Kings School students',
     image: image28,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'MTC reached greater heights with a successful Scratch programming workshop at Kings’ School, Dubai, conducted by Reuben Thomas Thovelil, Sri Hari Sai Subramanian, and Tanisha Handa. Our members shared their experience from the workshop, with Reuben noting that “the enthusiasm and eagerness of the students to learn and participate made the experience truly enjoyable,” while Tanisha highlighted that “the competition towards the end showcased their creativity and problem-solving abilities.” We extend our gratitude to Kings’ School for the opportunity and to our team for making this workshop both engaging and impactful.',
     category: 'past'
   },
   {
@@ -120,7 +120,7 @@ const allEvents = [
     month: 'February 2025',
     description: 'Robotics hackathon focusing on automation and AI integration',
     image: image13,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'Participants are challenged to build a chatbot coupled with an interactive landing webpage around the themes of Education & Career, Health & Wellness, Entertainment, E-Commerce and Personal Assistance.The Judging Criteria will based on Bot Logic, Pitching & Presentation, Creative Visuals and Theme Relevance.Registration is free for all ACMW and MTC Members, and is only AED 5 for non-members!',
     category: 'past'
   },
   {
@@ -129,7 +129,7 @@ const allEvents = [
     month: 'February 2025',
     description: 'Advanced cybersecurity insights and threat prevention strategies',
     image: image3,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'Cybersecurity Workshop - Foundations of Penetration Testing Speaker: Ashwin Ragav, Founder of Speclar, Co-founder of Nodeshield, Cybersecurity Researcher',
     category: 'past'
   },
   {
@@ -138,7 +138,7 @@ const allEvents = [
     month: 'February 2025',
     description: 'MTC membership drive and community engagement event',
     image: image14,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'MTC hosted a creative and engaging Squid Games-themed Membership Stall next to the vending machine providing an interactive experience where participants tested their skills and knowledge through a thrilling challenge inspired by the popular series.Participants were required to flip a Ddakji and successfully turn it over to qualify for answering questions. Questions ranged from easy, medium, or hard—to earn points and prizes. The competitive element, combined with the fun and strategy, kept participants hooked throughout the event.',
     category: 'past'
   },
   {
@@ -147,7 +147,7 @@ const allEvents = [
     month: 'March 2025',
     description: 'Practice School 2 discussion and guidance session',
     image: image24,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'MTC recently hosted an insightful PS-II Internship Round Table Talk, where seniors shared their experiences working at corporates and startups across various domains. The session provided valuable guidance on understanding company work cultures, optimizing CVs, and approaching work effectively during internships. Key discussions included how to perform well in interviews, the scope of tech roles and the stacks being used in companies, as well as the demand for front-end and back-end technologies. The speakers also emphasized the importance of personality, aptitude, and CGPA in securing better opportunities. A special thanks goes out to our seniors for dedicating their time to mentor juniors and share their experiences.',
     category: 'past'
   },
   {
@@ -156,7 +156,7 @@ const allEvents = [
     month: 'April 2025',
     description: 'Cryptography and cybersecurity challenge competition',
     image: image27,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'Steal, escape, and survive the night, if you dare. When the shadows awaken, only the bold will endure as MTCipher returns on May 3rd–4th, 2025. This 24-hour online challenge, beginning at 12 noon, is free for all participants and promises thrilling competition with epic rewards. Winners will take home AED 250, 150, and 100 for members (AED 175, 100, and 50 for non-members), along with certificates for every participant.',
     category: 'past'
   },
   {
@@ -165,7 +165,7 @@ const allEvents = [
     month: 'April 2025',
     description: 'Three-phase no-code development competition with magical themes',
     image: image26,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'MTC made its mark at the BITS Tech Fest with the No Code Tri-Wizard Hackathon. The event featured a WordPress workshop led by Sri Hari Sai Subramanian and Reuben Thomas Thovelil, introducing participants to the possibilities of building websites without writing code. Mystery prizes added an extra layer of excitement, keeping the participants engaged throughout. We extend our gratitude to everyone who joined and brought their creativity to the hackathon, and to the BITS Tech Fest team for this opportunity. We look forward to seeing more of this digital innovation at future events.',
     category: 'past'
   },
   {
@@ -174,7 +174,7 @@ const allEvents = [
     month: 'May 2025',
     description: 'Advanced workshop on autonomous AI agents and their applications',
     image: image25,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'MTC presents the Agentic AI Workshop for all. In this hands-on session, you’ll explore Agentic AI, an artificial intelligence that acts autonomously to solve complex problems and adapt on its own. The workshop is designed to enhance your PS prospects as you delve into the depths of Agentic AI with our expert speakers. In collaboration with BTF, we will also introduce a low-code platform to help you quickly build and improve your prototypes. The workshop is completely beginner-friendly and requires no prerequisites.',
     category: 'past'
   },
   {
@@ -183,7 +183,7 @@ const allEvents = [
     month: 'May 2025',
     description: 'University Rover Challenge preparation and competition event',
     image: image29,
-    fullDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    fullDescription: 'A prize pool of 6,000 AED is up for grabs at the Undergraduate Research Competition at InterSys 2025. Open to all undergraduate students across the UAE, this competition invites participants to showcase their innovative ideas with no registration fee or prerequisites, just a passion for research. The deadline to register is April 15, 2025, at 11:59 PM GST, and participants will present their research on May 5.',
     category: 'past'
   },
   // Competitions
