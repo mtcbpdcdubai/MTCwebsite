@@ -5,7 +5,7 @@ import { CardBody as Card3DBody, CardContainer, CardItem } from "../components/u
 import CardSpotlight from "../components/CardSpotlight.jsx";
 import CanvasRevealEffect from "../components/CanvasRevealEffect.jsx";
 import InfiniteScrollTestimonials from "../components/InfiniteScrollTestimonials.jsx";
-import CustomPartnershipForm from "../components/CustomPartnershipForm.jsx";
+import CustomPartnershipForm from "../components/CustomPartnerShipForm.jsx";
 
 
 
