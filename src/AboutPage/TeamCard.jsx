@@ -2,6 +2,7 @@ import React from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { CardContainer, CardBody, CardItem } from "../components/ui/3d-card";
 import { councilSections } from "./MemberNames";
+import SplitText from "../components/ui/SplitText.jsx";
 
 const teamComponents = councilSections.map((section) => ({
   name: section.name,
@@ -126,6 +127,20 @@ export const generateTeamByName = (teamName) => {
 export const GenerateAllTeams = () => {
   return (
     <div className="w-full flex flex-col items-center space-y-2 py-8">
+      <SplitText
+            text="Meet the minds driving innovation and community at Microsoft Tech Club."
+            className="text-2xl font-semibold text-center"
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="lines"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            // onLetterAnimationComplete={handleAnimationComplete}
+          />
       {councilSections.map((section) => (
         <div key={section.name} className="w-full">
           {generateTeamByName(section.name)}

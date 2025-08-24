@@ -67,14 +67,14 @@ export default function Footer() {
     },
     {
       icon: faEnvelope,
-      href: "mailto:mtc@bpdc.org",
-      label: "mtc@bpdc.org",
+      href: "mailto:microsofttechclub@dubai.bits-pilani.ac.in",
+      label: "microsofttechclub@dubai.bits-pilani.ac.in",
       type: "fontawesome",
     },
     {
       icon: faPhone,
-      href: "tel:+1234567890",
-      label: "+1 (234) 567-890",
+      href: "tel:+971543187795",
+      label: "+971 54 318 7795",
       type: "fontawesome",
     },
   ];

@@ -175,7 +175,7 @@ const About = () => {
           />
           <SplitText
             text="The Microsoft Tech Club is a student-led organization dedicated to fostering a community of like-minded individuals passionate about technology and innovation. Our goal is to provide members with opportunities to learn, grow, and connect with each other. Join us today and become a part of this exciting community!"
-            className="text-2xl font-light text-center mb-4"
+            className="text-2xl font-light text-center"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -187,9 +187,9 @@ const About = () => {
             textAlign="center"
             // onLetterAnimationComplete={handleAnimationComplete}
           />
-          <SplitText
+          {/* <SplitText
             text="Meet the minds driving innovation and community at Microsoft Tech Club."
-            className="text-2xl font-semibold text-center mb-4"
+            className="text-2xl font-semibold text-center pt-10"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -200,7 +200,7 @@ const About = () => {
             rootMargin="-100px"
             textAlign="center"
             // onLetterAnimationComplete={handleAnimationComplete}
-          />
+          /> */}
         </section>
 
         {/* <CustomCarousel /> */}
@@ -358,7 +358,7 @@ const About = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-1 mt-8">
             Past Ambassador Testimonials
           </h2>
-          <h2 className="text-3xl md:text-2xl font-bold mb-1 mt-1">
+          <h2 className="text-3xl md:text-2xl font-medium mb-1 mt-1">
             Don’t take our word for it. Take theirs:
           </h2>
           <div>
