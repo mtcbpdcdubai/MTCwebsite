@@ -13,7 +13,7 @@ export default function Footer() {
   const quickLinks = [
     { path: "/about#AmbassadorSection", label: "Ambassador Program" },
     { path: "/partners", label: "Partners" },
-    { path: "/sponsors", label: "Sponsors" },
+    // { path: "/sponsors", label: "Sponsors" },
     { path: "/#membership", label: "Membership" },
   ];
 
