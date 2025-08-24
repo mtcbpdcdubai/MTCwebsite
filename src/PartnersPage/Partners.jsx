@@ -71,7 +71,7 @@ const AnimatedCounter = ({
   return (
     <div ref={counterRef} className="text-center">
       <Card className="bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-60 md:h-60 rounded-xl border flex items-center justify-center">
-        <CardBody className="p-4 text-center">
+        <CardBody className="p-4 text-center flex flex-col items-center justify-center">
           <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-600 dark:text-white mb-2">
             {count}
             {suffix}
@@ -92,7 +92,7 @@ const Partners = () => {
     { number: 25, suffix: "+", label: "Active Partners" },
     { number: 50, suffix: "+", label: "Projects Delivered" },
     { number: 1000, suffix: "+", label: "Developer Community" },
-    { number: 8, suffix: "", label: "Years of Innovation" },
+    { number: 25, suffix: "", label: "Years of Innovation" },
   ];
 
   const majorEventPartners = [
