@@ -297,7 +297,7 @@ export default function Home() {
                 ],
               },
               buttonText: "Register Now",
-              buttonLink: "/membership",
+              href: "https://docs.google.com/forms/d/e/1FAIpQLSc-CVM2u-OOfchfLh39cjVraTCAG5ci_k2xSijZPS_lhv9XDw/viewform?usp=header",
             },
             {
               title: "Renew Your Journey",
@@ -320,7 +320,7 @@ export default function Home() {
                 ],
               },
               buttonText: "Renew Now",
-              buttonLink: "/membership",
+              href: "https://docs.google.com/forms/d/e/1FAIpQLSc-CVM2u-OOfchfLh39cjVraTCAG5ci_k2xSijZPS_lhv9XDw/viewform?usp=header",
             },
           ].map((card, idx) => (
             <CardContainer
@@ -367,12 +367,14 @@ export default function Home() {
                   translateZ="60"
                   className="flex justify-center w-full"
                 >
-                  <LinkButton
-                    to={card.buttonLink}
-                    className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-4 md:px-6 py-2 md:py-3 rounded-xl text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full sm:w-auto"
+                  <a
+                    href={card.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-4 md:px-6 py-2 md:py-3 rounded-xl text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full sm:w-auto text-center text-decoration-none"
                   >
                     {card.buttonText}
-                  </LinkButton>
+                  </a>
                 </CardItem>
               </CardBody>
             </CardContainer>
