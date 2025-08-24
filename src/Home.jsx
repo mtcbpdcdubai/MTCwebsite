@@ -108,7 +108,7 @@ export default function Home() {
       </div> */}
       <div className="h-screen w-full overflow-hidden relative flex flex-col items-center justify-center text-4xl font-semibold">
         <p className="text-6xl text-center">Microsoft Tech Club</p>
-        <p className="text-6xl pb-2 font-normal text-center">BITS Pilani Dubai Campus</p>
+        <p className="text-6xl pb-2 font-normal text-center">BITS Pilani Dubai Campuss </p>
         <div className="flex items-center pt-10 flex-row">
           <p>Build </p>
           <RotatingText
