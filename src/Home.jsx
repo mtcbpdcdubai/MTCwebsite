@@ -155,7 +155,7 @@ export default function Home() {
       <section className="pt-20 px-4 text-center flex flex-col items-center text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
         <BlurText
           text="Why Microsoft Tech Club?"
-          className="text-4xl md:text-6xl font-semibold w-full leading-[1]"
+          className="text-4xl md:text-6xl font-semibold w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
           delay={100}
         />
         {/* <ScrollReveal
@@ -172,10 +172,10 @@ export default function Home() {
         </ScrollReveal> */}
         <BlurText
           text="Microsoft Tech Club fosters collaboration through workshops, competitions, and events. Whether you’re into web development, programming, or data analysis, there’s something here for you."
-          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-2"
+          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-3"
           delay={150}
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl py-6">
           {/* Previous grid layout: grid-cols-1 md:grid-cols-3 3xl:grid-cols-4 gap-x-5 */}
           {[
             {
@@ -266,15 +266,15 @@ export default function Home() {
       <section className="pt-10" id="membership">
         <BlurText
           text="Unlock MTC Membership"
-          className="text-4xl md:text-6xl font-semibold w-full leading-[1]"
+          className="text-4xl md:text-6xl font-semibold w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
           delay={100}
         />
         <BlurText
           text="Step into a world of innovation, opportunity, and lifelong connections. Whether you’re just joining or renewing, your journey with MTC keeps getting better!"
-          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-2"
+          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-3"
           delay={150}
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl py-6">
           {[
             {
               title: "Become a Member",
@@ -402,13 +402,13 @@ export default function Home() {
         </ScrollReveal> */}
         <BlurText
           text="MTC Student Ambassador program provides an invaluable opportunity for first-year students to actively participate in MTC by assuming the role of a council member in your chosen domain."
-          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-2"
+          className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-3"
           delay={150}
         />
 
         <LinkButton
           to="/about#AmbassadorSection"
-          className="mt-10 bg-white text-black px-8 py-4 rounded-lg text-lg transition hover:bg-black hover:text-white hover:scale-105 inline-block text-decoration-none"
+          className="mt-10 bg-white text-black px-8 py-6 rounded-lg text-lg transition hover:bg-black hover:text-white hover:scale-105 inline-block text-decoration-none"
         >
           Learn More ➔
         </LinkButton>
@@ -573,10 +573,10 @@ export default function Home() {
           text="Follow Us"
           className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
         />
-        <p className="text-lg md:text-2xl text-gray-300 my-6 md:mx-[15%]">
+        <p className="text-lg md:text-2xl text-gray-300 p-3 leading-[1] md:mx-[15%]">
           Stay ahead in the tech world with MTC’s dynamic social media lineup!
         </p>
-        <div className="flex flex-wrap justify-center gap-6 mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
+        <div className="flex flex-wrap justify-center gap-6 mx-auto max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl py-6">
           {techLogos.map((logo, index) => (
             <a
               key={index}
