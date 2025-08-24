@@ -405,12 +405,12 @@ export default function Home() {
           delay={150}
         />
 
-        <a
-          href="/about#AmbassadorSection"
+        <LinkButton
+          to="/about#AmbassadorSection"
           className="mt-10 bg-white text-black px-8 py-4 rounded-lg text-lg transition hover:bg-black hover:text-white hover:scale-105 inline-block text-decoration-none"
         >
           Learn More ➔
-        </a>
+        </LinkButton>
         {/* <div className="flex flex-wrap gap-3">
           {backdrops.map((b) => (
             <Button
