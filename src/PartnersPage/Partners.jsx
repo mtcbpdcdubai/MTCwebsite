@@ -551,7 +551,7 @@ const Partners = () => {
 
         {/* Simple Modal Replacement */}
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-bladiv70 backdrop-blur-sm flex items-center justify-center z-50">
             <Card className="bg-white/10 backdrop-blur-md border border-white/20 max-w-md w-full mx-4">
               <CardBody className="p-8">
                 <h3 className="text-xl font-bold mb-4 text-white">
