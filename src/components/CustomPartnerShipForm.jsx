@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input, Textarea } from '@heroui/react';
+import { Button } from '@heroui/react';
 import { Send, User, Mail, Building, MessageSquare } from 'lucide-react';
 
 const CustomPartnershipForm = () => {
@@ -10,6 +10,7 @@ const CustomPartnershipForm = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -17,41 +18,44 @@ const CustomPartnershipForm = () => {
       [field]: value
     }));
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitted(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Create mailto link
-      const subject = encodeURIComponent('Partnership Inquiry from ' + formData.name);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Company: ${formData.company}\n\n` +
-        `Message:\n${formData.message}`
-      );
-      
-      const mailtoLink = `mailto:f20230241@dubai.bits-pilani.ac.in?subject=${subject}&body=${body}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      alert('Thank you for your interest! Your email client should open with the partnership inquiry.');
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        message: ''
-      });
-    } catch (error) {
-      alert('There was an error processing your request. Please try again.');
+  try {
+    const url = import.meta.env.VITE_GSHEET_WEBAPP_URL;
+
+    // URL-encoded (simple request, no CORS preflight)
+    const body = new URLSearchParams({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company,
+      message: formData.message,
+    }).toString();
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body
+    });
+
+    const text = await res.text();
+    let json; try { json = JSON.parse(text); } catch { throw new Error(`Unexpected response: ${text.slice(0,200)}...`); }
+
+    if (res.ok && json.ok === true) {
+      setSubmitted(true);
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } else {
+      throw new Error(json?.error || `Non-OK response ${res.status}`);
     }
-    
+  } catch (err) {
+    alert("There was an error submitting your response. Please try again.\n\n" + err.message);
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
 
   return (
     <div className="w-full max-w-2xl mx-auto">
@@ -65,57 +69,53 @@ const CustomPartnershipForm = () => {
           </p>
         </div>
 
+        {submitted && (
+          <p className="text-green-400 mb-4">✅ Your response has been submitted!</p>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="relative">
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-              <User className="text-gray-400" size={20} />
-            </div>
+            <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
               placeholder="Your Name"
               value={formData.name}
-              onChange={(e) => handleInputChange('name', e.target.value)}
+              onChange={(e) => handleInputChange("name", e.target.value)}
               className="w-full bg-gray-800/50 border border-gray-600 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
               required
             />
           </div>
 
           <div className="relative">
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-              <Mail className="text-gray-400" size={20} />
-            </div>
+            <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="email"
               placeholder="Email Address"
               value={formData.email}
-              onChange={(e) => handleInputChange('email', e.target.value)}
+              onChange={(e) => handleInputChange("email", e.target.value)}
               className="w-full bg-gray-800/50 border border-gray-600 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
               required
             />
           </div>
 
           <div className="relative">
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-              <Building className="text-gray-400" size={20} />
-            </div>
+            <Building className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
               placeholder="Company/Organization"
               value={formData.company}
-              onChange={(e) => handleInputChange('company', e.target.value)}
+              onChange={(e) => handleInputChange("company", e.target.value)}
               className="w-full bg-gray-800/50 border border-gray-600 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
               required
             />
           </div>
 
           <div className="relative">
-            <div className="absolute left-4 top-6 z-10">
-              <MessageSquare className="text-gray-400" size={20} />
-            </div>
+            <MessageSquare className="absolute left-4 top-6 text-gray-400" size={20} />
             <textarea
               placeholder="Tell us about your partnership vision..."
               value={formData.message}
-              onChange={(e) => handleInputChange('message', e.target.value)}
+              onChange={(e) => handleInputChange("message", e.target.value)}
               rows={6}
               className="w-full bg-gray-800/50 border border-gray-600 rounded-xl px-12 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors resize-none"
               required
@@ -129,7 +129,7 @@ const CustomPartnershipForm = () => {
             isLoading={isSubmitting}
             startContent={!isSubmitting && <Send size={18} />}
           >
-            {isSubmitting ? 'Sending...' : 'Send Partnership Inquiry'}
+            {isSubmitting ? "Sending..." : "Send Partnership Inquiry"}
           </Button>
         </form>
       </div>

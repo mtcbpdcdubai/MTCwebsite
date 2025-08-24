@@ -15,7 +15,6 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 // Components
 import LinkButton from "./components/ui/LinkButton.jsx";
-
 import BlurText from "./components/ui/BlurText.jsx";
 import { CardBody, CardContainer, CardItem } from "./components/ui/3d-card.jsx";
 import Balatro from "./components/ui/Balatro.jsx";
