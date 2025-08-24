@@ -235,7 +235,7 @@ const Partners = () => {
 
   const partnershipOpportunities = [
     {
-      title: "Corporate Sponsorship",
+      title: "Corporate Partnership",
       description:
         "Support our programs and get brand visibility while making a meaningful impact on education.",
       benefits: [
@@ -370,7 +370,7 @@ const Partners = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {majorEventPartners.map((partner, index) => (
                 <CardContainer key={partner.id} className="inter-var bg-transparent">
-                  <Card3DBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] lg:w-[23rem] h-auto rounded-2xl p-6">
+                  <Card3DBody className="bg-black relative group/card dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] lg:w-[23rem] h-auto rounded-2xl p-6 flex flex-col items-center justify-center">
                     <CardItem
                       translateZ="50"
                       className="text-2xl font-bold text-neutral-600 dark:text-white mb-4 text-center"
@@ -378,7 +378,7 @@ const Partners = () => {
                       {partner.title}
                     </CardItem>
 
-                    <CardItem translateZ="100" className="w-full mb-4">
+                    <CardItem translateZ="100" className="w-full mb-4 flex justify-center">
                       <img
                         src={
                           index === 0
@@ -397,7 +397,7 @@ const Partners = () => {
                     <CardItem
                       as="p"
                       translateZ="60"
-                      className="text-neutral-500 text-base max-w-sm mb-4 dark:text-neutral-300 flex-grow text-center"
+                      className="text-neutral-500 text-base max-w-sm mb-4 dark:text-neutral-300 text-left"
                     >
                       {partner.description}
                     </CardItem>
@@ -487,8 +487,9 @@ const Partners = () => {
             </div>
           </div>
         </section>
-
+  
         {/* Testimonials */}
+        {/*
         <section className="py-10 md:py-16 px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -500,7 +501,7 @@ const Partners = () => {
             <InfiniteScrollTestimonials testimonials={testimonials} />
           </div>
         </section>
-
+          */}
         {/* Partnership Types */}
         <section className="py-10 md:py-16 px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
@@ -531,7 +532,7 @@ const Partners = () => {
             </div>
           </div>
         </section>
-
+              
         {/* Join Hands Section */}
         <section className="py-10 md:py-16 px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
