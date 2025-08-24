@@ -61,7 +61,7 @@ const handleSubmit = async (e) => {
     <div className="w-full max-w-2xl mx-auto">
       <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-white mb-4">
+          <h3 className="text-2xl font-bold text-white mb-4 justify-center flex">
             Start the Conversation
           </h3>
           <p className="text-gray-400 leading-relaxed">
@@ -125,7 +125,7 @@ const handleSubmit = async (e) => {
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-gray-700 hover:bg-gray-600 text-white font-medium py-4 rounded-xl transition-colors"
+            className="w-full bg-neutral-900 text-white font-semibold py-4 px-6 rounded-xl border-2 border-white dark:border-white/[0.2] transition-all duration-300 ease-out transform hover:scale-105 hover:bg-neutral-800 flex items-center justify-center gap-2 cursor-pointer"
             isLoading={isSubmitting}
             startContent={!isSubmitting && <Send size={18} />}
           >
