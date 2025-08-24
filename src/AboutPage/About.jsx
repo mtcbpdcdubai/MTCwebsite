@@ -279,13 +279,13 @@ const About = () => {
               {(onClose) => (
                 <>
                   <ModalHeader className="flex flex-col gap-1">
-                    <h2 className="text-2xl font-bold">Ambassador Program</h2>
-                    <p className="text-sm text-gray-400">
+                    <h2 className="text-2xl font-bold text-center">Ambassador Program</h2>
+                    <p className="text-sm text-gray-400 text-center">
                       For First Year Students
                     </p>
                   </ModalHeader>
                   <ModalBody>
-                    <div className="space-y-4">
+                    {/* <div className="space-y-4">
                       <p className="text-gray-300">
                         The Microsoft Tech Club Ambassador Program provides an
                         invaluable opportunity for first-year students to
@@ -329,7 +329,8 @@ const About = () => {
                           </li>
                         </ul>
                       </div>
-                    </div>
+                    </div> */}
+                    <p className="text-center text-xl">Coming Soon..</p>
                   </ModalBody>
                   <ModalFooter>
                     <Button
@@ -340,13 +341,13 @@ const About = () => {
                     >
                       Close
                     </Button>
-                    <Button
+                    {/* <Button
                       color="primary"
                       onPress={onClose}
-                      className="bg-purple-900 hover:bg-purple-800 text-white"
+                      className="bg-slate-900 hover:bg-slate-800 text-white"
                     >
                       Apply Now
-                    </Button>
+                    </Button> */}
                   </ModalFooter>
                 </>
               )}
