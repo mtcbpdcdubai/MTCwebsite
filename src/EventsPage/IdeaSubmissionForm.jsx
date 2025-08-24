@@ -1,119 +1,202 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { Send, Lightbulb, User, Mail, MessageSquare } from 'lucide-react';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Send, Lightbulb, User, Mail, MessageSquare, Loader2 } from "lucide-react";
 
 const IdeaSubmissionForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-  
-  const isAnonymous = watch('isAnonymous');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log('Form submitted:', data);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      reset();
-    }, 3000);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const isAnonymous = watch("isAnonymous");
+
+  const onSubmit = async (data) => {
+    try {
+      setIsSubmitting(true);
+
+      const url = import.meta.env.VITE_GSHEET_WEBAPP_URL;
+      if (!url) {
+        alert("Missing VITE_GSHEET_WEBAPP_URL in your .env");
+        return;
+      }
+
+      // Map fields to Apps Script columns: name, email, company, message
+      const nameToSend = isAnonymous ? (data.aliasName || "Anonymous") : (data.name || "");
+      const emailToSend = isAnonymous ? "" : (data.email || "");
+      const companyToSend = "Idea Submission"; // tag to identify the source
+      const messageToSend =
+        `Category: ${data.category || ""}\n\n` +
+        `Idea:\n${data.idea || ""}\n\n` +
+        `Submitted: ${isAnonymous ? "Anonymous" : "Identified"}`;
+
+      const body = new URLSearchParams({
+        name: nameToSend,
+        email: emailToSend,
+        company: companyToSend,
+        message: messageToSend,
+      }).toString();
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body,
+      });
+
+      const text = await res.text();
+      const json = JSON.parse(text);
+
+      if (res.ok && json.ok === true) {
+        setIsSubmitted(true);
+        reset();
+        setTimeout(() => setIsSubmitted(false), 4000);
+      } else {
+        throw new Error(json?.error || `Non-OK response ${res.status}`);
+      }
+    } catch (err) {
+      alert("There was an error submitting your idea.\n\n" + err.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="bg-black border border-gray-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 max-w-2xl mx-auto">
-      <div className="text-center mb-6 sm:mb-8">
-        <div className="flex justify-center mb-4">
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full">
-            <Lightbulb className="text-white" size={24} />
+    <div className="relative bg-black border border-gray-700 rounded-2xl p-8 max-w-2xl mx-auto">
+      {/* Loading overlay */}
+      {isSubmitting && (
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-2xl">
+          <div className="flex items-center gap-3 text-white">
+            <Loader2 className="animate-spin" size={22} />
+            <span className="text-sm md:text-base text-gray-200">Submitting…</span>
           </div>
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+      )}
+
+      <div className="text-center mb-8">
+        <div className="flex justify-center mb-4">
+          <div className="p-3 rounded-full border-2 border-white/20 bg-neutral-900 relative overflow-hidden group">
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out rounded-full" />
+            <Lightbulb className="text-white relative z-10" size={32} />
+          </div>
+        </div>
+        <h2 className="text-3xl font-bold text-white mb-2">
           Your idea today, our next big play.
         </h2>
-        <p className="text-gray-300 text-sm sm:text-base px-4 sm:px-0">
+        <p className="text-gray-300">
           Share your innovative ideas with MTC and help shape the future of technology
         </p>
       </div>
 
       {isSubmitted ? (
-        <div className="text-center py-8 sm:py-12">
-          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 sm:p-6 mb-4">
-            <h3 className="text-green-400 text-lg sm:text-xl font-semibold mb-2">Idea Submitted Successfully!</h3>
-            <p className="text-gray-300 text-sm sm:text-base">Thank you for sharing your idea with us. We'll review it and get back to you soon.</p>
+        <div className="text-center py-12">
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-4">
+            <h3 className="text-green-400 text-xl font-semibold mb-2">
+              Idea Submitted Successfully!
+            </h3>
+            <p className="text-gray-300">
+              Thank you for sharing your idea with us. We'll review it and get back to you soon.
+            </p>
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Full Name */}
             <div>
-              <label className="block text-white font-medium mb-2 text-sm sm:text-base">
-                <User size={14} className="inline mr-2 sm:w-4 sm:h-4" />
+              <label className="block text-white font-medium mb-2">
+                <User size={16} className="inline mr-2" />
                 Full Name
               </label>
               <input
-                {...register('name', { required: 'Name is required' })}
+                {...register("name", {
+                  required: !isAnonymous || "Name is required unless anonymous",
+                })}
                 type="text"
-                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white focus:border-white/50 focus:outline-none transition-colors text-sm sm:text-base"
+                disabled={isAnonymous || isSubmitting}
+                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-white/50 focus:outline-none transition-colors disabled:opacity-60"
                 placeholder="Enter your full name"
               />
-              {errors.name && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.name.message}</p>}
+              {errors.name && (
+                <p className="text-red-400 text-sm mt-1">{String(errors.name.message)}</p>
+              )}
             </div>
 
+            {/* Email */}
             <div>
-              <label className="block text-white font-medium mb-2 text-sm sm:text-base">
-                <Mail size={14} className="inline mr-2 sm:w-4 sm:h-4" />
+              <label className="block text-white font-medium mb-2">
+                <Mail size={16} className="inline mr-2" />
                 Email Address
               </label>
               <input
-                {...register('email', { 
-                  required: 'Email is required',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address'
-                  }
+                {...register("email", {
+                  required: !isAnonymous || "Email is required unless anonymous",
+                  pattern: isAnonymous
+                    ? undefined
+                    : {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address",
+                      },
                 })}
                 type="email"
-                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white focus:border-white/50 focus:outline-none transition-colors text-sm sm:text-base"
+                disabled={isAnonymous || isSubmitting}
+                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-white/50 focus:outline-none transition-colors disabled:opacity-60"
                 placeholder="Enter your email"
               />
-              {errors.email && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-red-400 text-sm mt-1">{String(errors.email.message)}</p>
+              )}
             </div>
           </div>
 
-          <div className="bg-gray-900 border border-gray-700 rounded-lg p-3 sm:p-4">
+          {/* Anonymous toggle */}
+          <div className="bg-gray-900 border border-gray-700 rounded-lg p-4">
             <div className="flex items-center justify-between">
-              <span className="text-white text-sm sm:text-base pr-4">Submit anonymously (we'll use an alias to contact you if selected)</span>
+              <span className="text-white">
+                Submit anonymously (we'll use an alias to contact you if selected)
+              </span>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
-                  {...register('isAnonymous')}
+                  {...register("isAnonymous")}
                   type="checkbox"
                   className="sr-only peer"
+                  disabled={isSubmitting}
                 />
-                <div className="w-9 h-5 sm:w-11 sm:h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-purple-500 peer-checked:to-pink-500"></div>
+                <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-purple-500 peer-checked:to-pink-500"></div>
               </label>
             </div>
           </div>
 
+          {/* Alias if anonymous */}
           {isAnonymous && (
             <div>
-              <label className="block text-white font-medium mb-2 text-sm sm:text-base">
-                Alias Name (for contact purposes)
-              </label>
+              <label className="block text-white font-medium mb-2">Alias Name (for contact purposes)</label>
               <input
-                {...register('aliasName', { required: isAnonymous ? 'Alias name is required for anonymous submissions' : false })}
+                {...register("aliasName", {
+                  required: isAnonymous ? "Alias name is required for anonymous submissions" : false,
+                })}
                 type="text"
-                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white focus:border-white/50 focus:outline-none transition-colors text-sm sm:text-base"
+                disabled={isSubmitting}
+                className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-white/50 focus:outline-none transition-colors"
                 placeholder="Enter an alias name"
               />
-              {errors.aliasName && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.aliasName.message}</p>}
+              {errors.aliasName && (
+                <p className="text-red-400 text-sm mt-1">{String(errors.aliasName.message)}</p>
+              )}
             </div>
           )}
 
+          {/* Category */}
           <div>
-            <label className="block text-white font-medium mb-2 text-sm sm:text-base">
-              Idea Category
-            </label>
+            <label className="block text-white font-medium mb-2">Idea Category</label>
             <select
-              {...register('category', { required: 'Please select a category' })}
-              className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white focus:border-white/50 focus:outline-none transition-colors text-sm sm:text-base"
+              {...register("category", { required: "Please select a category" })}
+              disabled={isSubmitting}
+              className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-white/50 focus:outline-none transition-colors"
             >
               <option value="">Select a category</option>
               <option value="web-development">Web Development</option>
@@ -124,40 +207,57 @@ const IdeaSubmissionForm = () => {
               <option value="cybersecurity">Cybersecurity</option>
               <option value="other">Other</option>
             </select>
-            {errors.category && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.category.message}</p>}
+            {errors.category && (
+              <p className="text-red-400 text-sm mt-1">{String(errors.category.message)}</p>
+            )}
           </div>
 
+          {/* Idea */}
           <div>
-            <label className="block text-white font-medium mb-2 text-sm sm:text-base">
-              <MessageSquare size={14} className="inline mr-2 sm:w-4 sm:h-4" />
+            <label className="block text-white font-medium mb-2">
+              <MessageSquare size={16} className="inline mr-2" />
               Your Idea
             </label>
             <textarea
-              {...register('idea', { 
-                required: 'Please describe your idea',
-                minLength: {
-                  value: 50,
-                  message: 'Please provide at least 50 characters'
-                }
+              {...register("idea", {
+                required: "Please describe your idea",
+                minLength: { value: 50, message: "Please provide at least 50 characters" },
               })}
               rows={6}
-              className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white focus:border-white/50 focus:outline-none transition-colors resize-none text-sm sm:text-base"
+              disabled={isSubmitting}
+              className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-white/50 focus:outline-none transition-colors resize-none"
               placeholder="Describe your idea in detail. What problem does it solve? How would you implement it? What makes it unique?"
             />
-            {errors.idea && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.idea.message}</p>}
+            {errors.idea && (
+              <p className="text-red-400 text-sm mt-1">{String(errors.idea.message)}</p>
+            )}
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
+            disabled={isSubmitting}
+            className={`w-full font-semibold py-4 px-6 rounded-xl border-2 border-white/20 transition-all duration-300 ease-out transform flex items-center justify-center gap-2 ${
+              isSubmitting
+                ? "bg-gray-700 text-gray-300 cursor-not-allowed"
+                : "bg-neutral-900 text-white hover:scale-105 hover:bg-neutral-800"
+            }`}
           >
-            <Send size={16} className="sm:w-5 sm:h-5" />
-            Submit Your Idea
+            {isSubmitting ? (
+              <>
+                <Loader2 className="animate-spin" size={20} />
+                Submitting…
+              </>
+            ) : (
+              <>
+                <Send size={20} />
+                Submit Your Idea
+              </>
+            )}
           </button>
 
-          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 sm:p-4">
-            <p className="text-blue-400 text-xs sm:text-sm">
-              <strong>Rewards:</strong> Selected ideas may receive mentorship, funding opportunities, 
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-blue-400 text-sm">
+              <strong>Rewards:</strong> Selected ideas may receive mentorship, funding opportunities,
               or the chance to lead a project team. We believe in turning great ideas into reality!
             </p>
           </div>
