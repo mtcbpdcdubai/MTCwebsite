@@ -71,12 +71,12 @@ export default function Footer() {
       label: "microsofttechclub@dubai.bits-pilani.ac.in",
       type: "fontawesome",
     },
-    {
-      icon: faPhone,
-      href: "tel:+971543187795",
-      label: "+971 54 318 7795",
-      type: "fontawesome",
-    },
+    // {
+    //   icon: faPhone,
+    //   href: "tel:+971543187795",
+    //   label: "+971 54 318 7795",
+    //   type: "fontawesome",
+    // },
   ];
 
   const legalLinks = [
