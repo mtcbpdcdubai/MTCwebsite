@@ -182,12 +182,12 @@ export default function Home() {
             {
               img: imgOffer_workshops,
               title: "Workshops",
-              link: "/workshops",
+              link: "/events#workshops",
             },
             {
               img: imgOffer_speakerSessions,
               title: "Speaker Sessions",
-              link: "https://mtcbpdc.org",
+              link: "/events#talks",
             },
             {
               img: imgOffer_technicalBlogs,
@@ -197,7 +197,7 @@ export default function Home() {
             {
               img: imgOffer_competitions,
               title: "Competitions",
-              link: "https://mtcbpdc.org",
+              link: "/events#competitions",
             },
           ].map((card, idx) => (
             <CardContainer className="inter-var bg-transparent" key={idx}>
@@ -264,7 +264,7 @@ export default function Home() {
       </section>
 
       {/* Membership Section */}
-      <section className="pt-10">
+      <section className="pt-10" id="membership">
         <BlurText
           text="Unlock MTC Membership"
           className="text-4xl md:text-6xl font-semibold w-full leading-[1]"
