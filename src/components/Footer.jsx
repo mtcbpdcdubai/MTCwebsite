@@ -5,27 +5,28 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { SiLinkedin, SiMedium, SiGithub } from "react-icons/si";
 import logo from "../assets/MTClogo.svg";
+import LinkButton from "./ui/LinkButton.jsx";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { path: "/about#ambassador", label: "Ambassador Program" },
+    { path: "/about#AmbassadorSection", label: "Ambassador Program" },
     { path: "/partners", label: "Partners" },
     { path: "/sponsors", label: "Sponsors" },
-    { path: "/media#blogs", label: "Blogs" },
+    { path: "/#membership", label: "Membership" },
   ];
 
   const programs = [
     {
       label: "Workshops",
-      href: "/workshops",
+      href: "/events#workshops",
       external: false,
     },
     {
       label: "Speaker Sessions",
-      href: "https://mtcbpdc.org",
-      external: true,
+      href: "/events#talks",
+      external: false,
     },
     {
       label: "Technical Blogs",
@@ -34,8 +35,8 @@ export default function Footer() {
     },
     {
       label: "Competitions",
-      href: "https://mtcbpdc.org",
-      external: true,
+      href: "/events#competitions",
+      external: false,
     },
   ];
 
@@ -133,12 +134,21 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.path.includes("#") ? (
+                    <LinkButton
+                      to={link.path}
+                      className="text-gray-300 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </LinkButton>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="text-gray-300 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -159,6 +169,13 @@ export default function Footer() {
                     >
                       {program.label}
                     </a>
+                  ) : program.href.includes("#") ? (
+                    <LinkButton
+                      to={program.href}
+                      className="text-gray-300 hover:text-white transition-colors text-sm"
+                    >
+                      {program.label}
+                    </LinkButton>
                   ) : (
                     <Link
                       to={program.href}
