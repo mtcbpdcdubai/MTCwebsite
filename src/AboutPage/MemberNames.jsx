@@ -415,7 +415,7 @@ const creativeTeam = [
   {
     image: teamImages["Tarunikka"],
     title: "Tarunikka Suresh",
-    subtitle: "Creative Executive",
+    subtitle: "Creative Advisor",
     handle: "@tarunikka",
     borderColor: borderColor,
     gradient: darkGradient,
