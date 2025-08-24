@@ -9,18 +9,18 @@ import {
   ModalFooter,
   useDisclosure,
 } from "@heroui/react";
+import { useEffect } from "react";
 import Balatro from "../components/ui/Balatro.jsx";
 import { AnimatedTestimonials } from "../components/ui/animated-testimonials.jsx";
 import { GenerateAllTeams } from "./TeamCard.jsx";
 import SplitText from "../components/ui/SplitText.jsx";
 import CustomCarousel from "./CustomCarousel.jsx";
-import amintaPhoto from "./mtc-members-photos/testemonial-photos/Aminta.jpg"
-import chhaviPhoto from "./mtc-members-photos/testemonial-photos/Chhavi.jpg"
-import priyanshuPhoto from "./mtc-members-photos/testemonial-photos/Priyanshu.jpg"
-import smredhiPhoto from "./mtc-members-photos/testemonial-photos/Smredhi.jpeg"
-import surajPhoto from "./mtc-members-photos/testemonial-photos/Suraj.jpg"
-import tanishaPhoto from "./mtc-members-photos/testemonial-photos/Tanisha.jpg"
-
+import amintaPhoto from "./mtc-members-photos/testemonial-photos/Aminta.jpg";
+import chhaviPhoto from "./mtc-members-photos/testemonial-photos/Chhavi.jpg";
+import priyanshuPhoto from "./mtc-members-photos/testemonial-photos/Priyanshu.jpg";
+import smredhiPhoto from "./mtc-members-photos/testemonial-photos/Smredhi.jpeg";
+import surajPhoto from "./mtc-members-photos/testemonial-photos/Suraj.jpg";
+import tanishaPhoto from "./mtc-members-photos/testemonial-photos/Tanisha.jpg";
 
 const About = () => {
   const {
@@ -33,6 +33,60 @@ const About = () => {
     onOpen: onAmbassadorModalOpen,
     onOpenChange: onAmbassadorModalOpenChange,
   } = useDisclosure();
+
+  // Handle hash scrolling on page load
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.getElementById(hash.replace("#", ""));
+        if (element) {
+          // Use multiple attempts to ensure scrolling works on mobile
+          const scrollToElement = (attempt = 0) => {
+            setTimeout(() => {
+              element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+
+              // Additional fallback for mobile
+              setTimeout(() => {
+                const rect = element.getBoundingClientRect();
+                const elementTop = rect.top + window.scrollY;
+                window.scrollTo({
+                  top: elementTop - 100, // Account for any fixed headers
+                  behavior: "smooth",
+                });
+              }, 100);
+            }, 200 + attempt * 100);
+
+            // Retry if not scrolled properly
+            if (attempt < 3) {
+              setTimeout(() => {
+                const currentPos = window.scrollY;
+                const targetPos = element.offsetTop - 100;
+                if (Math.abs(currentPos - targetPos) > 50) {
+                  scrollToElement(attempt + 1);
+                }
+              }, 500 + attempt * 200);
+            }
+          };
+
+          scrollToElement();
+        }
+      }
+    };
+
+    // Handle hash on initial load
+    handleHashScroll();
+
+    // Handle hash changes (if user navigates with hash)
+    window.addEventListener("hashchange", handleHashScroll);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashScroll);
+    };
+  }, []);
 
   const testimonials = [
     {
@@ -94,7 +148,6 @@ const About = () => {
       </div>
       {/* Banner Image */}
       <div className="relative z-10 w-full bg-transparent flex flex-col items-center">
-
         {/* <div className="max-w-7xl mx-auto px-4 w-full">
           <img
             src={aboutImage}
@@ -118,11 +171,11 @@ const About = () => {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-          // onLetterAnimationComplete={handleAnimationComplete}
+            // onLetterAnimationComplete={handleAnimationComplete}
           />
           <SplitText
             text="The Microsoft Tech Club is a student-led organization dedicated to fostering a community of like-minded individuals passionate about technology and innovation.Our goal is to provide members with opportunities to learn, grow, and connect with each other. Join us today and become a part of this exciting community!"
-            className="text-2xl font-semibold text-center mb-4"
+            className="text-2xl font-light text-center mb-4"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -132,7 +185,7 @@ const About = () => {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-          // onLetterAnimationComplete={handleAnimationComplete}
+            // onLetterAnimationComplete={handleAnimationComplete}
           />
           <SplitText
             text="Meet the minds driving innovation and community at Microsoft Tech Club."
@@ -146,7 +199,7 @@ const About = () => {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-          // onLetterAnimationComplete={handleAnimationComplete}
+            // onLetterAnimationComplete={handleAnimationComplete}
           />
         </section>
 
@@ -156,10 +209,13 @@ const About = () => {
           <GenerateAllTeams />
         </div>
 
-        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-8">
-          {/* <h2 className="text-3xl md:text-5xl font-bold mb-10 mt-10">
+        <section
+          id="AmbassadorSection"
+          className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-8"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-10 mt-10">
             Your journey starts here — council or ambassador, take the gear.
-          </h2> */}
+          </h2>
           <div className="flex flex-row gap-x-4 justify-center">
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -173,13 +229,16 @@ const About = () => {
                 damping: 20,
               }}
             >
-              {/* <Button
+              <Button
                 radius="full"
-                className="w-full sm:w-auto text-white bg-black border border-white hover:bg-white hover:text-black focus:ring-2 focus:outline-none focus:ring-white/40 font-semibold rounded-lg px-10 py-6 text-lg transition-colors duration-300 ease-in-out "
+                className="w-full sm:w-auto border border-white focus:ring-2 focus:outline-none focus:ring-white/40 font-semibold transition-colors duration-300 ease-in-out bg-white text-black px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-4 rounded-lg text-sm sm:text-base md:text-lg hover:bg-black hover:text-white hover:scale-105"
                 onPress={onAmbassadorModalOpen}
               >
-                Ambassador Program (For First Year Students)
-              </Button> */}
+                <span className="hidden sm:inline">
+                  Ambassador Program (For First Year Students)
+                </span>
+                <span className="sm:hidden">Ambassador Program</span>
+              </Button>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -295,7 +354,7 @@ const About = () => {
           </Modal>
         </section>
 
-        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-30">
+        <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-1 mt-8">
             Past Ambassador Testimonials
           </h2>

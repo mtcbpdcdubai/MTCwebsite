@@ -224,16 +224,16 @@ const Partners = () => {
     return (
         <>
             {/* Balatro Background */}
-            <Balatro
-                isRotate={true}
-                mouseInteraction={true}
-                pixelFilter={700}
-                color1="#000000"
-                color2="#0a0a0a"
-                color3="#111111"
-                spinSpeed={2.0}
-                contrast={2.5}
-            />
+            <div className="fixed inset-0 -z-10">
+                    <Balatro
+                      isRotate={false}
+                      mouseInteraction={true}
+                      pixelFilter={700}
+                      color1="#000000"
+                      color2="#0a0a0a"
+                      color3="#111111"
+                    />
+                  </div>
 
             <div className="relative min-h-screen text-white">
                 {/* Hero Section */}

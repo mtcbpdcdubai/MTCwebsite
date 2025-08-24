@@ -106,9 +106,11 @@ export default function Home() {
       {/* <div className="h-screen w-full overflow-hidden relative">
         <Spline scene="https://draft.spline.design/LWpJVH6Z3lriwJZk/scene.splinecode" />
       </div> */}
-      <div className="h-screen w-full overflow-hidden relative flex flex-col items-center justify-center text-4xl font-semibold">
+      <div className="h-[calc(100vh-4rem)] w-full overflow-hidden relative flex flex-col items-center justify-center text-4xl font-semibold">
         <p className="text-6xl text-center">Microsoft Tech Club</p>
-        <p className="text-6xl pb-2 font-normal text-center">BITS Pilani Dubai Campus</p>
+        <p className="text-6xl pb-2 font-normal text-center">
+          BITS Pilani Dubai Campus
+        </p>
         <div className="flex items-center pt-10 flex-row">
           <p>Build </p>
           <RotatingText
@@ -403,12 +405,12 @@ export default function Home() {
           delay={150}
         />
 
-        <LinkButton
-          to="/workshops"
-          className="mt-10 bg-white text-black px-8 py-4 rounded-lg text-lg transition hover:bg-black hover:text-white hover:scale-105"
+        <a
+          href="/about#AmbassadorSection"
+          className="mt-10 bg-white text-black px-8 py-4 rounded-lg text-lg transition hover:bg-black hover:text-white hover:scale-105 inline-block text-decoration-none"
         >
           Learn More ➔
-        </LinkButton>
+        </a>
         {/* <div className="flex flex-wrap gap-3">
           {backdrops.map((b) => (
             <Button
