@@ -9,7 +9,7 @@ import {
 import CardSpotlight from "../components/CardSpotlight.jsx";
 import CanvasRevealEffect from "../components/CanvasRevealEffect.jsx";
 import CustomPartnershipForm from "../components/CustomPartnerShipForm.jsx";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 import InfiniteScrollTestimonials from "../components/InfiniteScrollTestimonials";
 
 // Import partner logos
