@@ -8,8 +8,9 @@ import {
 } from "../components/ui/3d-card";
 import CardSpotlight from "../components/CardSpotlight.jsx";
 import CanvasRevealEffect from "../components/CanvasRevealEffect.jsx";
-import InfiniteScrollTestimonials from "../components/InfiniteScrollTestimonials.jsx";
 import CustomPartnershipForm from "../components/CustomPartnerShipForm.jsx";
+import emailjs from "emailjs-com";
+import InfiniteScrollTestimonials from "../components/InfiniteScrollTestimonials";
 
 // Import partner logos
 import lablabAILogo from "../assets/Partners/lablabAI.png";
@@ -18,6 +19,7 @@ import ubmLogo from "../assets/Partners/UBM.png";
 import descoLogo from "../assets/Partners/desco.png";
 import sukarLogo from "../assets/Partners/sukar.png";
 import burgerLogo from "../assets/Partners/burger.png";
+import smartlifeLogo from "../assets/Partners/smartlife.png";
 
 const AnimatedCounter = ({
   targetValue,
@@ -147,7 +149,7 @@ const Partners = () => {
       impact:
         "Our SmartLife initiative has transformed how people see technology by giving them exposure to basic technical solutions needed to make a living.",
       duration: "Feb 2025 - Present",
-      link: "",
+      link: "https://www.linkedin.com/posts/microsoft-tech-club_mtc-smartlife-smartcomputer-activity-7322230018447736832-YuAR?utm_source=share&utm_medium=member_android&rcm=ACoAAD7lMl8BWpnBHuQORjJ5-hi6FVQN-Lo8b-A",
     },
   ];
 
@@ -231,6 +233,63 @@ const Partners = () => {
     },
   ];
 
+  const partnershipOpportunities = [
+    {
+      title: "Corporate Sponsorship",
+      description:
+        "Support our programs and get brand visibility while making a meaningful impact on education.",
+      benefits: [
+        "Logo placement on materials",
+        "Event speaking opportunities",
+        "Student networking access",
+      ],
+    },
+    {
+      title: "Educational Partnership",
+      description:
+        "Collaborate with us to provide learning resources and mentoring sessions to students.",
+      benefits: [
+        "Curriculum development",
+        "Organize Guest lectures",
+        "Mentorship programs",
+      ],
+    },
+    {
+      title: "Technology Partnership",
+      description:
+        "Provide tools, platforms, or technical expertise to enhance our educational offerings.",
+      benefits: [
+        "Platform access",
+        "Technical workshops",
+        "Innovation projects",
+      ],
+    },
+  ];
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS Service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
+        e.target,
+        "YOUR_USER_ID" // Replace with your EmailJS User ID
+      )
+      .then(
+        (result) => {
+          console.log("Email successfully sent!", result.text);
+          alert("Your partnership inquiry has been sent successfully!");
+        },
+        (error) => {
+          console.error("Error sending email:", error.text);
+          alert("Failed to send your inquiry. Please try again later.");
+        }
+      );
+
+    e.target.reset();
+  };
+
   return (
     <>
       {/* Balatro Background */}
@@ -310,10 +369,7 @@ const Partners = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {majorEventPartners.map((partner, index) => (
-                <CardContainer
-                  key={partner.id}
-                  className="inter-var bg-transparent"
-                >
+                <CardContainer key={partner.id} className="inter-var bg-transparent">
                   <Card3DBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] lg:w-[23rem] h-auto rounded-2xl p-6">
                     <CardItem
                       translateZ="50"
@@ -329,7 +385,9 @@ const Partners = () => {
                             ? ubmLogo
                             : index === 1
                             ? weDesiLogo
-                            : burgerLogo
+                            : index === 2
+                            ? smartlifeLogo
+                            : ""
                         }
                         alt={partner.title}
                         className="h-40 w-full object-cover rounded-lg group-hover/card:shadow-xl"
@@ -344,10 +402,7 @@ const Partners = () => {
                       {partner.description}
                     </CardItem>
 
-                    <CardItem
-                      translateZ="50"
-                      className="text-white text-sm mb-1 text-center"
-                    >
+                    <CardItem translateZ="50" className="text-white text-sm mb-1 text-center">
                       {partner.duration}
                     </CardItem>
 
@@ -455,81 +510,24 @@ const Partners = () => {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-              <CanvasRevealEffect
-                animationSpeed={0.3}
-                opacities={[0.2, 0.2, 0.2, 0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8]}
-                colors={[
-                  [0, 120, 212],
-                  [40, 120, 240],
-                  [0, 71, 255],
-                ]}
-              >
-                <div className="text-center space-y-4">
-                  <h3 className="text-xl font-bold text-neutral-600 dark:text-white">
-                    Corporate Sponsorship
-                  </h3>
-                  <p className="text-neutral-500 dark:text-neutral-300 text-sm">
-                    Support our programs and get brand visibility while making a
-                    meaningful impact on education.
-                  </p>
-                  <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-1">
-                    <li>• Logo placement on materials</li>
-                    <li>• Event speaking opportunities</li>
-                    <li>• Student networking access</li>
-                  </ul>
-                </div>
-              </CanvasRevealEffect>
-
-              <CanvasRevealEffect
-                animationSpeed={0.3}
-                opacities={[0.2, 0.2, 0.2, 0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8]}
-                colors={[
-                  [0, 120, 212],
-                  [40, 120, 240],
-                  [0, 71, 255],
-                ]}
-              >
-                <div className="text-center space-y-4">
-                  <h3 className="text-xl font-bold text-neutral-600 dark:text-white">
-                    Educational Partnership
-                  </h3>
-                  <p className="text-neutral-500 dark:text-neutral-300 text-sm">
-                    Collaborate with us to provide learning resources and
-                    mentoring sessions to students.
-                  </p>
-                  <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-1">
-                    <li>• Curriculum development </li>
-                    <li>• Organize Guest lectures</li>
-                    <li>• Mentorship programs</li>
-                  </ul>
-                </div>
-              </CanvasRevealEffect>
-
-              <CanvasRevealEffect
-                animationSpeed={0.3}
-                opacities={[0.2, 0.2, 0.2, 0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8]}
-                colors={[
-                  [0, 120, 212],
-                  [40, 120, 240],
-                  [0, 71, 255],
-                ]}
-              >
-                <div className="text-center space-y-4">
-                  <h3 className="text-xl font-bold text-neutral-600 dark:text-white">
-                    Technology Partnership
-                  </h3>
-                  <p className="text-neutral-500 dark:text-neutral-300 text-sm">
-                    Provide tools, platforms, or technical expertise to enhance
-                    our educational offerings.
-                  </p>
-                  <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-1">
-                    <li>• Platform access</li>
-                    <li>• Technical workshops</li>
-                    <li>• Innovation projects</li>
-                  </ul>
-                </div>
-              </CanvasRevealEffect>
+            <div className="grid md:grid-cols-3 gap-6 justify-center">
+              {partnershipOpportunities.map((opportunity, index) => (
+                <CardSpotlight key={index} className="h-64 w-full md:w-[22rem] lg:w-[23rem]">
+                  <div className="text-center space-y-4 h-full flex flex-col justify-center">
+                    <h3 className="text-xl font-bold text-neutral-600 dark:text-white">
+                      {opportunity.title}
+                    </h3>
+                    <p className="text-neutral-500 dark:text-neutral-300 text-sm">
+                      {opportunity.description}
+                    </p>
+                    <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-1">
+                      {opportunity.benefits.map((benefit, idx) => (
+                        <li key={idx}>• {benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardSpotlight>
+              ))}
             </div>
           </div>
         </section>
@@ -545,7 +543,7 @@ const Partners = () => {
               </h2>
             </div>
 
-            <CustomPartnershipForm />
+            <CustomPartnershipForm onSubmit={sendEmail} />
           </div>
         </section>
 
