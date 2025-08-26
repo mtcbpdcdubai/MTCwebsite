@@ -175,7 +175,7 @@ const About = () => {
           />
           <SplitText
             text="The Microsoft Tech Club is a student-led organization dedicated to fostering a community of like-minded individuals passionate about technology and innovation. Our goal is to provide members with opportunities to learn, grow, and connect with each other. Join us today and become a part of this exciting community!"
-            className="text-2xl font-light text-center"
+            className="text-2xl font-light text-center leading-[1] py-1"
             delay={100}
             duration={0.6}
             ease="power3.out"

@@ -210,7 +210,7 @@ export default function Media() {
         </h1>
 
         <p className="text-lg md:text-2xl text-gray-300 text-center mb-12">
-          Pixels speek louder than words
+          Pixels speak louder than words
         </p>
 
         <div className="max-w-7xl mx-auto px-4 md:px-6 mb-12">

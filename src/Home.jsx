@@ -231,27 +231,27 @@ export default function Home() {
                   and connect with like-minded individuals.
                 </CardItem>
 
-                <div className="flex justify-between items-center">
+                <div className="flex justify-center items-center w-full mt-4">
                   {card.link.startsWith("http") ? (
                     <CardItem
                       translateZ={20}
                       as="a"
                       href={card.link}
                       target="_blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white text-center w-full justify-center flex"
                     >
-                      Learn more →
+                      Learn more
                     </CardItem>
                   ) : (
                     <CardItem
                       translateZ={20}
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white w-full flex justify-center"
                     >
                       <LinkButton
                         to={card.link}
-                        className="w-full h-full cursor-pointer"
+                        className="w-full h-full cursor-pointer text-center flex justify-center"
                       >
-                        Learn more →
+                        Learn more
                       </LinkButton>
                     </CardItem>
                   )}
@@ -263,7 +263,10 @@ export default function Home() {
       </section>
 
       {/* Membership Section */}
-      <section className="pt-10" id="membership">
+      <section
+        className="pt-20 px-4 text-center flex flex-col items-center bg-transparent rounded-t-lg text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
+        id="membership"
+      >
         <BlurText
           text="Unlock MTC Membership"
           className="text-4xl md:text-6xl font-semibold w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
@@ -383,23 +386,11 @@ export default function Home() {
       </section>
 
       {/* Ambassador Section */}
-      <section className="py-20 px-4 text-center flex flex-col items-center bg-transparent rounded-t-lg text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
+      <section className="pt-20 px-4 text-center flex flex-col items-center bg-transparent rounded-t-lg text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
         <BlurText
           text="Student Ambassador Program"
           className="text-4xl md:text-6xl font-semibold w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
         />
-        {/* <ScrollReveal
-          baseOpacity={0}
-          enableBlur={true}
-          baseRotation={1}
-          blurStrength={10}
-          containerClassName="mt-6 md:mx-[15%] text-gray-300 text-sm md:text-md"
-          // textClassName="text-gray-300 text-2xl md:text-3xl"
-        >
-          MTC Student Ambassador program provides an invaluable opportunity for
-          first-year students to actively participate in MTC by assuming the
-          role of a council member in your chosen domain.
-        </ScrollReveal> */}
         <BlurText
           text="MTC Student Ambassador program provides an invaluable opportunity for first-year students to actively participate in MTC by assuming the role of a council member in your chosen domain."
           className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-3"
@@ -496,76 +487,79 @@ export default function Home() {
       </section>
 
       {/* FAQ section */}
-      <BlurText
-        text="Frequently Asked Questions"
-        className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
-      />
-      <Accordion
-        className="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl w-full rounded-xl border border-neutral-700 shadow-lg backdrop-blur-lg mt-5"
-        variant="shadow" // You can also try "splitted" or "bordered"
-        size="lg"
-      >
-        <AccordionItem
-          key="1"
-          aria-label="Accordion 1"
-          title="What is Microsoft Tech Club?"
-          className="border-b border-neutral-700"
+      <div className="pt-20 px-4 text-center flex flex-col items-center bg-transparent rounded-t-lg text-white max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl">
+        <BlurText
+          text="Frequently Asked Questions"
+          className="text-4xl md:text-6xl font-semibold max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl"
+        />
+        <Accordion
+          className="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-6xl xl:max-w-7xl w-full rounded-xl border border-neutral-700 shadow-lg backdrop-blur-lg mt-5"
+          variant="shadow" // You can also try "splitted" or "bordered"
+          size="lg"
         >
-          <p className="text-gray-300 text-lg md:text-xl p-4">
-            Microsoft Tech Club is a student community that promotes technology
-            learning through events, workshops, and mentorship programs.
-          </p>
-        </AccordionItem>
+          <AccordionItem
+            key="1"
+            aria-label="Accordion 1"
+            title="What is Microsoft Tech Club?"
+            className="border-b border-neutral-700"
+          >
+            <p className="text-gray-300 text-lg md:text-xl p-4">
+              Microsoft Tech Club is a student community that promotes
+              technology learning through events, workshops, and mentorship
+              programs.
+            </p>
+          </AccordionItem>
 
-        <AccordionItem
-          key="2"
-          aria-label="Accordion 2"
-          title="Who can join MTC?"
-          className="border-b border-neutral-700"
-        >
-          <p className="text-gray-300 text-lg md:text-xl p-4">
-            Any student who is passionate about technology, regardless of their
-            year or department, is welcome to join.
-          </p>
-        </AccordionItem>
+          <AccordionItem
+            key="2"
+            aria-label="Accordion 2"
+            title="Who can join MTC?"
+            className="border-b border-neutral-700"
+          >
+            <p className="text-gray-300 text-lg md:text-xl p-4">
+              Any student who is passionate about technology, regardless of
+              their year or department, is welcome to join.
+            </p>
+          </AccordionItem>
 
-        <AccordionItem
-          key="3"
-          aria-label="Accordion 3"
-          title="How can I participate in events?"
-          className="border-b border-neutral-700"
-        >
-          <p className="text-gray-300 text-lg md:text-xl p-4">
-            You can register for upcoming events through our website or follow
-            us on social media to stay updated on announcements.
-          </p>
-        </AccordionItem>
+          <AccordionItem
+            key="3"
+            aria-label="Accordion 3"
+            title="How can I participate in events?"
+            className="border-b border-neutral-700"
+          >
+            <p className="text-gray-300 text-lg md:text-xl p-4">
+              You can register for upcoming events through our website or follow
+              us on social media to stay updated on announcements.
+            </p>
+          </AccordionItem>
 
-        <AccordionItem
-          key="4"
-          aria-label="Accordion 4"
-          title="What resources are available for learning?"
-          className="border-b border-neutral-700"
-        >
-          <p className="text-gray-300 text-lg md:text-xl p-4">
-            We offer a variety of resources including online courses, workshops,
-            and mentorship programs to help you learn and grow in your tech
-            journey.
-          </p>
-        </AccordionItem>
+          <AccordionItem
+            key="4"
+            aria-label="Accordion 4"
+            title="What resources are available for learning?"
+            className="border-b border-neutral-700"
+          >
+            <p className="text-gray-300 text-lg md:text-xl p-4">
+              We offer a variety of resources including online courses,
+              workshops, and mentorship programs to help you learn and grow in
+              your tech journey.
+            </p>
+          </AccordionItem>
 
-        <AccordionItem
-          key="5"
-          aria-label="Accordion 5"
-          title="How can I get involved with MTC?"
-          className="border-b border-neutral-700"
-        >
-          <p className="text-gray-300 text-lg md:text-xl p-4">
-            You can get involved with MTC by attending our events, joining our
-            workshops, and participating in our online community.
-          </p>
-        </AccordionItem>
-      </Accordion>
+          <AccordionItem
+            key="5"
+            aria-label="Accordion 5"
+            title="How can I get involved with MTC?"
+            className="border-b border-neutral-700"
+          >
+            <p className="text-gray-300 text-lg md:text-xl p-4">
+              You can get involved with MTC by attending our events, joining our
+              workshops, and participating in our online community.
+            </p>
+          </AccordionItem>
+        </Accordion>
+      </div>
 
       {/* Social Media Cards */}
       <section className="mt-20 px-4 text-center rounded-t-lg">
