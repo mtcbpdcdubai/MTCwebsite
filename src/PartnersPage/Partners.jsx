@@ -13,6 +13,8 @@ import CustomPartnershipForm from "../components/CustomPartnerShipForm.jsx";
 import InfiniteScrollTestimonials from "../components/InfiniteScrollTestimonials";
 
 // Import partner logos
+import hpLogo from "../assets/Partners/hp.png";
+import ciscoLogo from "../assets/Partners/cisco.png";
 import lablabAILogo from "../assets/Partners/lablabAI.png";
 import weDesiLogo from "../assets/Partners/weDesi.png";
 import ubmLogo from "../assets/Partners/UBM.png";
@@ -154,6 +156,20 @@ const Partners = () => {
   ];
 
   const thankYouPartners = [
+    {
+      id: "hp",
+      logo: hpLogo,
+      title: "HP",
+      subtitle: "Technology Innovation",
+      description: "Computing & Technology Solutions",
+    },
+    {
+      id: "cisco",
+      logo: ciscoLogo,
+      title: "Cisco",
+      subtitle: "Networking Solutions",
+      description: "Network Infrastructure & Security",
+    },
     {
       id: "lablabAI",
       logo: lablabAILogo,
@@ -341,22 +357,39 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* Stats and Major Events Section */}
+        {/* Our Partners Section */}
         <section
           id="partnerships-section"
           className="py-10 md:py-16 px-4 relative z-10"
         >
           <div className="max-w-6xl mx-auto">
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-10 md:mb-16 justify-center">
-              {stats.map((stat, index) => (
-                <AnimatedCounter
-                  key={index}
-                  targetValue={stat.number}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                  duration={2000 + index * 200}
-                />
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                Our Partners
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20">
+              {thankYouPartners.map((partner) => (
+                <CardSpotlight key={partner.id} className="h-48 md:h-56">
+                  <div className="text-center space-y-4 h-full flex flex-col justify-center">
+                    {/* Logo */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-white/10 rounded-2xl flex items-center justify-center p-3">
+                      <img
+                        src={partner.logo}
+                        alt={partner.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    {/* Title */}
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white">
+                        {partner.title}
+                      </h3>
+                    </div>
+                  </div>
+                </CardSpotlight>
               ))}
             </div>
 
@@ -369,7 +402,10 @@ const Partners = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {majorEventPartners.map((partner, index) => (
-                <CardContainer key={partner.id} className="inter-var bg-transparent">
+                <CardContainer
+                  key={partner.id}
+                  className="inter-var bg-transparent"
+                >
                   <Card3DBody className="bg-black relative group/card dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] lg:w-[23rem] h-auto rounded-2xl p-6 flex flex-col items-center justify-center">
                     <CardItem
                       translateZ="50"
@@ -378,7 +414,10 @@ const Partners = () => {
                       {partner.title}
                     </CardItem>
 
-                    <CardItem translateZ="100" className="w-full mb-4 flex justify-center">
+                    <CardItem
+                      translateZ="100"
+                      className="w-full mb-4 flex justify-center"
+                    >
                       <img
                         src={
                           index === 0
@@ -402,7 +441,10 @@ const Partners = () => {
                       {partner.description}
                     </CardItem>
 
-                    <CardItem translateZ="50" className="text-white text-sm mb-1 text-center">
+                    <CardItem
+                      translateZ="50"
+                      className="text-white text-sm mb-1 text-center"
+                    >
                       {partner.duration}
                     </CardItem>
 
@@ -430,78 +472,6 @@ const Partners = () => {
           </div>
         </section>
 
-        {/* Original Stats Section - Removed as it's now integrated above */}
-        <section
-          className="py-8 px-4 relative z-10"
-          style={{ display: "none" }}
-        >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-white">
-              Our Impact in Numbers
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <AnimatedCounter
-                  key={index}
-                  targetValue={stat.number}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                  duration={2000 + index * 200}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Thank You Section */}
-        <section className="py-10 md:py-16 px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                Our Partners
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
-              {thankYouPartners.map((partner) => (
-                <CardSpotlight key={partner.id} className="h-48 md:h-56">
-                  <div className="text-center space-y-4 h-full flex flex-col justify-center">
-                    {/* Logo */}
-                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-white/10 rounded-2xl flex items-center justify-center p-3">
-                      <img
-                        src={partner.logo}
-                        alt={partner.title}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-
-                    {/* Title */}
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white">
-                        {partner.title}
-                      </h3>
-                    </div>
-                  </div>
-                </CardSpotlight>
-              ))}
-            </div>
-          </div>
-        </section>
-  
-        {/* Testimonials */}
-        {/*
-        <section className="py-10 md:py-16 px-4 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                What Our Partners Say
-              </h2>
-            </div>
-
-            <InfiniteScrollTestimonials testimonials={testimonials} />
-          </div>
-        </section>
-          */}
         {/* Partnership Types */}
         <section className="py-10 md:py-16 px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
@@ -513,7 +483,10 @@ const Partners = () => {
 
             <div className="grid md:grid-cols-3 gap-6 justify-center">
               {partnershipOpportunities.map((opportunity, index) => (
-                <CardSpotlight key={index} className="h-64 w-full md:w-[22rem] lg:w-[23rem]">
+                <CardSpotlight
+                  key={index}
+                  className="h-64 w-full md:w-[22rem] lg:w-[23rem]"
+                >
                   <div className="text-center space-y-4 h-full flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-neutral-600 dark:text-white">
                       {opportunity.title}
@@ -532,7 +505,7 @@ const Partners = () => {
             </div>
           </div>
         </section>
-              
+
         {/* Join Hands Section */}
         <section className="py-10 md:py-16 px-4 relative z-10">
           <div className="max-w-6xl mx-auto">

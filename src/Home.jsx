@@ -277,10 +277,11 @@ export default function Home() {
           className="text-lg md:text-xl xl:text-2xl font-normal max-w-7xl leading-[1] p-3"
           delay={150}
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 justify-center mx-auto max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 justify-center mx-auto max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl py-6 px-2 sm:px-0">
           {[
             {
               title: "Become a Member",
+              price: "30 AED",
               content: {
                 intro:
                   "Join Dubai's boldest tech community! Access exclusive events, hands-on workshops, and real challenges to boost your skills and confidence.",
@@ -304,6 +305,7 @@ export default function Home() {
             },
             {
               title: "Renew Your Journey",
+              price: "15 AED",
               content: {
                 intro:
                   "We're excited to have you back! Returning members get first dibs on new opportunities, perks, and real-world experiences.",
@@ -331,35 +333,41 @@ export default function Home() {
               key={idx}
             >
               <CardBody
-                className={`bg-gradient-to-br from-black-600/20 to-stone-600/20 backdrop-blur-xl relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border-white/[0.2] w-full h-auto rounded-2xl p-4 md:p-5 border-2 transition-all duration-300 hover:scale-[1.02]`}
+                className={`bg-gradient-to-br from-black-600/20 to-stone-600/20 backdrop-blur-xl relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border-white/[0.2] w-full h-auto rounded-2xl p-3 sm:p-4 md:p-5 border-2 transition-all duration-300 hover:scale-[1.02]`}
               >
-                <CardItem
-                  translateZ="50"
-                  className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-3"
-                >
-                  {card.title}
-                </CardItem>
+                {/* Mobile Header with Title and Price */}
+                <div className="flex items-start justify-between mb-4 sm:mb-3">
+                  <CardItem
+                    translateZ="50"
+                    className="text-lg sm:text-xl md:text-2xl font-bold text-white flex-1"
+                  >
+                    {card.title}
+                  </CardItem>
+                  <div className="bg-gradient-to-r from-gray-700 to-gray-900 text-white px-3 py-2 sm:px-3 sm:py-1 rounded-lg text-sm sm:text-sm font-bold shadow-lg border border-gray-600 ml-3 flex-shrink-0">
+                    {card.price}
+                  </div>
+                </div>
 
                 <CardItem
                   as="p"
                   translateZ="40"
-                  className="text-gray-200 text-sm md:text-base leading-relaxed mb-3 md:mb-4"
+                  className="text-gray-200 text-sm sm:text-sm md:text-base leading-relaxed mb-4 md:mb-4 text-center"
                 >
                   {card.content.intro}
                 </CardItem>
 
-                <div className="space-y-2 md:space-y-3 mb-4 md:mb-5">
+                <div className="space-y-3 md:space-y-3 mb-5 md:mb-5">
                   {card.content.points.map((point, pointIdx) => (
                     <CardItem
                       key={pointIdx}
                       translateZ="30"
                       className="flex flex-col gap-1"
                     >
-                      <h4 className="text-white font-semibold text-sm md:text-base flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-gradient-to-r from-neutral-800 to-neutral-600 rounded-full flex-shrink-0"></span>
+                      <h4 className="text-white font-semibold text-sm sm:text-sm md:text-base flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 sm:w-1.5 sm:h-1.5 bg-gradient-to-r from-neutral-800 to-neutral-600 rounded-full flex-shrink-0"></span>
                         {point.title}
                       </h4>
-                      <p className="text-gray-300 text-xs md:text-sm leading-relaxed ml-3.5">
+                      <p className="text-gray-300 text-sm sm:text-sm md:text-sm leading-relaxed ml-3.5 sm:ml-3.5 text-left">
                         {point.desc}
                       </p>
                     </CardItem>
@@ -374,7 +382,7 @@ export default function Home() {
                     href={card.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-4 md:px-6 py-2 md:py-3 rounded-xl text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full sm:w-auto text-center text-decoration-none"
+                    className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-4 sm:px-4 md:px-6 py-3 sm:py-3 md:py-3 rounded-xl text-sm sm:text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full text-center text-decoration-none"
                   >
                     {card.buttonText}
                   </a>
