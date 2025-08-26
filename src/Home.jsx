@@ -297,7 +297,7 @@ export default function Home() {
                 ],
               },
               buttonText: "Register Now",
-              href: "https://docs.google.com/forms/d/e/1FAIpQLSc-CVM2u-OOfchfLh39cjVraTCAG5ci_k2xSijZPS_lhv9XDw/viewform?usp=header",
+              href: "https://docs.google.com/forms/d/e/1FAIpQLSfh_m2IPL4JTgLDtxdCMRmkcLAF-SSQ-CWBsNge7jEBvuciEw/viewform",
             },
             {
               title: "Renew Your Journey",
@@ -320,7 +320,7 @@ export default function Home() {
                 ],
               },
               buttonText: "Renew Now",
-              href: "https://docs.google.com/forms/d/e/1FAIpQLSc-CVM2u-OOfchfLh39cjVraTCAG5ci_k2xSijZPS_lhv9XDw/viewform?usp=header",
+              href: "https://docs.google.com/forms/d/e/1FAIpQLSfh_m2IPL4JTgLDtxdCMRmkcLAF-SSQ-CWBsNge7jEBvuciEw/viewform",
             },
           ].map((card, idx) => (
             <CardContainer
