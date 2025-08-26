@@ -309,12 +309,12 @@ const FeaturingMTCEvents = () => {
 
     return (
       <div className="mb-8 sm:mb-16">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 text-center sm:text-left">
           {title}
         </h3>
 
         {/* Responsive Grid (1 / 2 / 4) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center sm:justify-items-stretch">
           {events.map((event) => (
             <EventCard
               key={event.id}
@@ -332,7 +332,7 @@ const FeaturingMTCEvents = () => {
 
   const renderComingSoon = (title) => (
     <div className="mb-8 sm:mb-16">
-      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 text-center sm:text-left">
         {title}
       </h3>
       <div className="flex items-center justify-center h-48 sm:h-64 bg-black border border-gray-700 rounded-xl mx-4 sm:mx-0">
@@ -372,7 +372,7 @@ const FeaturingMTCEvents = () => {
   return (
     <div className="mb-8 sm:mb-16" data-events-section>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center sm:text-left">
           Featuring MTC Events
         </h2>
 

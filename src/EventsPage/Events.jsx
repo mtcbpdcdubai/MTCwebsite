@@ -23,7 +23,7 @@ const Events = () => {
           <section className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center mb-2 mt-20">
             <SplitText
               text="MTC Events"
-              className="text-6xl font-bold text-center mb-4"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-4 whitespace-nowrap"
               delay={100}
               duration={0.6}
               ease="power3.out"
