@@ -120,7 +120,7 @@ export default function Home() {
         <div className="flex items-center mt-10 gap-2 bg-white text-black rounded-3xl px-4 py-3 text-xl">
           <span className="mr-2">Contact Us</span>
           <a
-            href="mailto:mtc@bpdc.org"
+            href="mailto:microsofttechclub@dubai.bits-pilani.ac.in"
             className="flex items-center gap-2 hover:bg-black hover:text-white transition-colors rounded-3xl p-2"
           >
             <FontAwesomeIcon icon={faEnvelope} />
@@ -134,7 +134,7 @@ export default function Home() {
             <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a
-            href="tel:+1234567890"
+            href="tel:+971585947262"
             className="flex items-center gap-2 hover:bg-black hover:text-white transition-colors rounded-3xl p-2"
           >
             <FontAwesomeIcon icon={faPhone} />
