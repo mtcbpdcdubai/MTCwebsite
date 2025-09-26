@@ -22,8 +22,8 @@ const coreMembers = [
     handle: "@purpleone",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram: "https://www.instagram.com/venn.by/",
-    linkedIn: "https://www.linkedin.com/in/venn-v/",
+    instagram: "https://instagram.com/venn.by",
+    linkedIn: "https://linkedin.com/in/venn-v",
     github: "https://github.com/vennby",
   },
   {
@@ -33,9 +33,8 @@ const coreMembers = [
     handle: "@purpletwo",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram:
-      "https://www.instagram.com/siddharath_nagesh/profilecard/?igsh=eG11d2JwNmhscGEx",
-    linkedIn: "http://linkedin.com/in/siddharath-malavalli-nagesh-270b571ba",
+    instagram: "https://instagram.com/siddharath_nagesh",
+    linkedIn: "https://linkedin.com/in/siddharath-malavalli-nagesh-270b571ba",
     github: "https://github.com/Siddharath-Malavalli-Nagesh",
   },
   {
@@ -45,8 +44,8 @@ const coreMembers = [
     handle: "@purpletwo",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram: "https://www.instagram.com/ameiya.w",
-    linkedIn: "http://www.linkedin.com/in/ameiya-wankhede",
+    instagram: "https://instagram.com/ameiya.w",
+    linkedIn: "https://linkedin.com/in/ameiya-wankhede",
     github: "https://github.com/aw2106",
   },
   {
@@ -56,9 +55,9 @@ const coreMembers = [
     handle: "@purpletwo",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram: "http://www.instagram.com/ft.hyper",
-    linkedIn: "https://www.linkedin.com/in/sri-hari-sai-subramanian-737279322",
-    github: "http://www.github.com/HyperPlexG",
+    instagram: "https://instagram.com/ft.hyper",
+    linkedIn: "https://linkedin.com/in/sri-hari-sai-subramanian-737279322",
+    github: "https://github.com/HyperPlexG",
   },
   {
     image: teamImages["Ankita"],
@@ -68,8 +67,8 @@ const coreMembers = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/ankita_menon_04",
-    linkedIn: "https://github.com/ankita-17-09",
-    github: "https://www.linkedin.com/in/k-ankita-menon-4513b8232/",
+    linkedIn: "https://linkedin.com/in/k-ankita-menon-4513b8232",
+    github: "https://github.com/ankita-17-09",
   },
   {
     image: teamImages["Chhavi"],
@@ -79,7 +78,7 @@ const coreMembers = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/chhavithegreat",
-    linkedIn: "https://www.linkedin.com/in/fnu-chhavi-094b6b286/",
+    linkedIn: "https://linkedin.com/in/fnu-chhavi-094b6b286",
     github: "https://github.com/chhaavii",
   },
 ];
@@ -93,7 +92,7 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/stellin_15",
-    linkedIn: "https://www.linkedin.com/in/stellin-john-george-1bb757163/",
+    linkedIn: "https://linkedin.com/in/stellin-john-george-1bb757163",
     github: "https://github.com/Stellin-15",
   },
   {
@@ -104,7 +103,7 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/Akshatlovesyou",
-    linkedIn: "https://www.linkedin.com/in/akshatsingh-ind/",
+    linkedIn: "https://linkedin.com/in/akshatsingh-ind",
     github: "https://github.com/Akshatcodesyou",
   },
   {
@@ -115,7 +114,7 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/_.astha.ad_",
-    linkedIn: "https://www.linkedin.com/in/astha-adhikary-420713279/",
+    linkedIn: "https://linkedin.com/in/astha-adhikary-420713279",
     github: "https://github.com/astro-prog",
   },
   {
@@ -126,7 +125,7 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/nishalahmxd",
-    linkedIn: "https://www.linkedin.com/in/nishalahmed",
+    linkedIn: "https://linkedin.com/in/nishalahmed",
     github: "https://github.com/nishalahmedpk",
   },
   {
@@ -137,7 +136,7 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/raghubir_0512",
-    linkedIn: "http://www.linkedin.com/in/raghubir-prasad",
+    linkedIn: "https://linkedin.com/in/raghubir-prasad",
     github: "https://github.com/raghubirPrasad",
   },
   {
@@ -148,8 +147,8 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/sachin.premkumar",
-    linkedIn: "https://www.linkedin.com/in/sachin-premkumar-74b66b30a/",
-    github: "https://github.com/SachinBits/MTC.git",
+    linkedIn: "https://linkedin.com/in/sachin-premkumar-74b66b30a",
+    github: "https://github.com/SachinBits",
   },
   {
     image: teamImages["Tarakeshwar"],
@@ -159,7 +158,7 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/_tarakexwar_",
-    linkedIn: "https://www.linkedin.com/in/ktarakeshwar/",
+    linkedIn: "https://linkedin.com/in/ktarakeshwar",
     github: "https://github.com/Tarak101",
   },
   {
@@ -170,7 +169,7 @@ const technicalTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/neillaturkar",
-    linkedIn: "https://www.linkedin.com/in/neillaturkar/",
+    linkedIn: "https://linkedin.com/in/neillaturkar",
     github: "https://github.com/orangebead",
   },
 ];
@@ -184,7 +183,7 @@ const devOpsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/XantimaX_isMe",
-    linkedIn: "https://www.linkedin.com/in/adithya-nandakumar-8b8061286/",
+    linkedIn: "https://linkedin.com/in/adithya-nandakumar-8b8061286",
     github: "https://github.com/XantimaX",
   },
   {
@@ -195,8 +194,8 @@ const devOpsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/sreenikethan.i",
-    linkedIn: "http://linkedin.com/in/sreenikethan-i",
-    github: "http://github.com/SreenikethanI",
+    linkedIn: "https://linkedin.com/in/sreenikethan-i",
+    github: "https://github.com/SreenikethanI",
   },
   {
     image: teamImages["Shanmukha"],
@@ -206,7 +205,7 @@ const devOpsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/shanmu.kha",
-    linkedIn: "https://www.linkedin.com/in/shanmukha-rapeti-724212254/",
+    linkedIn: "https://linkedin.com/in/shanmukha-rapeti-724212254",
     github: "https://github.com/eatingmangoes",
   },
 ];
@@ -220,7 +219,7 @@ const eventsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/shainaa04",
-    linkedIn: "https://www.linkedin.com/in/shahna-shajahan-208821307/",
+    linkedIn: "https://linkedin.com/in/shahna-shajahan-208821307",
     github: "https://github.com/ShahnaShaj",
   },
   {
@@ -231,7 +230,7 @@ const eventsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/jahnavi_angiras",
-    linkedIn: "https://www.linkedin.com/in/jahnavi-angiras-1755a0300",
+    linkedIn: "https://linkedin.com/in/jahnavi-angiras-1755a0300",
     github: "https://github.com/Janny18",
   },
   {
@@ -242,7 +241,7 @@ const eventsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/manogna0_0",
-    linkedIn: "https://www.linkedin.com/in/manognaraju/",
+    linkedIn: "https://linkedin.com/in/manognaraju",
     github: "https://github.com/Manognaaaaaa",
   },
   {
@@ -253,7 +252,7 @@ const eventsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/nir__247",
-    linkedIn: "https://www.linkedin.com/in/nirenjhena-venkatesan/",
+    linkedIn: "https://linkedin.com/in/nirenjhena-venkatesan",
     github: "https://github.com/nirenjena",
   },
   {
@@ -264,8 +263,8 @@ const eventsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/simply.shaurya",
-    linkedIn: "http://linkedin.com/in/shauryasrivastava05",
-    github: "http://github.com/pingu2024",
+    linkedIn: "https://linkedin.com/in/shauryasrivastava05",
+    github: "https://github.com/pingu2024",
   },
 ];
 
@@ -277,8 +276,8 @@ const mediaOperationsTeam = [
     handle: "@sathvik",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram: "https://instagram.com/@sathvikboseman",
-    linkedIn: "https://www.linkedin.com/in/sathvik-sreeram-06b350280/",
+    instagram: "https://instagram.com/sathvikboseman",
+    linkedIn: "https://linkedin.com/in/sathvik-sreeram-06b350280",
     github: "https://github.com/sathvikboseman",
   },
   {
@@ -289,7 +288,7 @@ const mediaOperationsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "",
-    linkedIn: "http://www.linkedin.com/in/saad-shafath-rehman-3928a6376",
+    linkedIn: "https://linkedin.com/in/saad-shafath-rehman-3928a6376",
     github: "https://github.com/Saerzaer27",
   },
   {
@@ -300,7 +299,7 @@ const mediaOperationsTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/smithsterrrr____",
-    linkedIn: "https://www.linkedin.com/in/smrithi-ganesh-283900309/",
+    linkedIn: "https://linkedin.com/in/smrithi-ganesh-283900309",
     github: "",
   },
 ];
@@ -314,8 +313,7 @@ const marketingTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/_kxyati_",
-    linkedIn:
-      "https://www.linkedin.com/in/khyati-jetly-085792306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedIn: "https://linkedin.com/in/khyati-jetly-085792306",
     github: "https://github.com/khyati2107",
   },
   {
@@ -325,10 +323,8 @@ const marketingTeam = [
     handle: "@srinjita",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram:
-      "https://www.instagram.com/srinxie?igsh=MXVmNmpqNzFnbHExNA%3D%3D&utm_source=qr",
-    linkedIn:
-      "https://www.linkedin.com/in/srinjita-roy-chowdhury-99707531a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    instagram: "https://instagram.com/srinxie",
+    linkedIn: "https://linkedin.com/in/srinjita-roy-chowdhury-99707531a",
     github: "https://github.com/Srinjita-RC",
   },
   {
@@ -339,7 +335,7 @@ const marketingTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/amintaa_bt",
-    linkedIn: "https://www.linkedin.com/in/aminta-binu-thomas-435731331/",
+    linkedIn: "https://linkedin.com/in/aminta-binu-thomas-435731331",
     github: "https://github.com/aminta-bt",
   },
   {
@@ -350,7 +346,7 @@ const marketingTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/_itz_me_prerana__",
-    linkedIn: "http://www.linkedin.com/in/prerana-cs-0934b5366",
+    linkedIn: "https://linkedin.com/in/prerana-cs-0934b5366",
     github: "https://github.com/preranaaa0711",
   },
   {
@@ -375,7 +371,7 @@ const creativeTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/dya.vnu",
-    linkedIn: "https://www.linkedin.com/in/diya-vinu-058b7732a/",
+    linkedIn: "https://linkedin.com/in/diya-vinu-058b7732a",
     github: "https://github.com/non-stickpanko",
   },
   {
@@ -386,7 +382,7 @@ const creativeTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/smrredhi",
-    linkedIn: "https://www.linkedin.com/in/smredhi-shankar-926210331/",
+    linkedIn: "https://linkedin.com/in/smredhi-shankar-926210331",
     github: "https://github.com/smredhi",
   },
   {
@@ -397,7 +393,7 @@ const creativeTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/arav.offcl",
-    linkedIn: "https://www.linkedin.com/in/aravoffcl/",
+    linkedIn: "https://linkedin.com/in/aravoffcl",
     github: "https://github.com/aravindrenjith",
   },
   {
@@ -408,8 +404,7 @@ const creativeTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/khyaati_rungta",
-    linkedIn:
-      "https://www.linkedin.com/in/khyaati-rungta-4a2a6021b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    linkedIn: "https://linkedin.com/in/khyaati-rungta-4a2a6021b",
     github: "https://github.com/KhyaatiRungta",
   },
   {
@@ -420,7 +415,7 @@ const creativeTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/itztaruz",
-    linkedIn: "https://www.linkedin.com/in/tarunikka-suresh-a39065278/",
+    linkedIn: "https://linkedin.com/in/tarunikka-suresh-a39065278",
     github: "https://github.com/TarunikkaS",
   },
 ];
@@ -433,8 +428,8 @@ const outreachTeam = [
     handle: "@prasannah",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram: "https://instagram.com/@_prasannargh",
-    linkedIn: "https://www.linkedin.com/in/prasannah-raman-0a7a6926b/",
+    instagram: "https://instagram.com/_prasannargh",
+    linkedIn: "https://linkedin.com/in/prasannah-raman-0a7a6926b",
     github: "https://github.com/prastostart",
   },
   {
@@ -445,8 +440,7 @@ const outreachTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/hitesheesh",
-    linkedIn:
-      "https://www.linkedin.com/in/hiteshi-rajkumar-312668313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    linkedIn: "https://linkedin.com/in/hiteshi-rajkumar-312668313",
     github: "https://github.com/HiteshiRajkumar",
   },
   {
@@ -457,8 +451,7 @@ const outreachTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/Saanviidutta",
-    linkedIn:
-      "https://www.linkedin.com/in/saanvi-dutta-b21706317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedIn: "https://linkedin.com/in/saanvi-dutta-b21706317",
     github: "https://github.com/SAAN3108",
   },
   {
@@ -469,7 +462,7 @@ const outreachTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/vx.bav.yes3",
-    linkedIn: "http://www.linkedin.com/in/vaibav-krishnan-1aa211321",
+    linkedIn: "https://linkedin.com/in/vaibav-krishnan-1aa211321",
     github: "https://github.com/vaibav07",
   },
 ];
@@ -483,7 +476,7 @@ const communitySandboxTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/vaibhav_vinil",
-    linkedIn: "https://www.linkedin.com/in/vaibhav-vinil-87683a280/",
+    linkedIn: "https://linkedin.com/in/vaibhav-vinil-87683a280",
     github: "https://github.com/Vaibhav-Vinil",
   },
   {
@@ -494,7 +487,7 @@ const communitySandboxTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/abigail.1007",
-    linkedIn: "https://www.linkedin.com/in/crystal-nazareth-824a542b4/",
+    linkedIn: "https://linkedin.com/in/crystal-nazareth-824a542b4",
     github: "https://github.com/Crystal-Nazareth",
   },
   {
@@ -504,8 +497,8 @@ const communitySandboxTeam = [
     handle: "@diya",
     borderColor: borderColor,
     gradient: darkGradient,
-    instagram: "https://instagram.com/@diya.freddy",
-    linkedIn: "https://ae.linkedin.com/in/diya-freddy-1592012b4",
+    instagram: "https://instagram.com/diya.freddy",
+    linkedIn: "https://linkedin.com/in/diya-freddy-1592012b4",
     github: "https://github.com/diyastudio1",
   },
   {
@@ -516,8 +509,7 @@ const communitySandboxTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/moi_shristi",
-    linkedIn:
-      "https://www.linkedin.com/in/shristi-mukerjee-684803218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedIn: "https://linkedin.com/in/shristi-mukerjee-684803218",
     github: "https://github.com/Shristi7777",
   },
   {
@@ -528,8 +520,8 @@ const communitySandboxTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/mrangwala16",
-    linkedIn: "https://www.linkedin.com/in/murtaza-rangwala-85438b297/",
-    github: "https://github.com/Azatrum2005/Azatrum2005",
+    linkedIn: "https://linkedin.com/in/murtaza-rangwala-85438b297",
+    github: "https://github.com/Azatrum2005",
   },
   {
     image: teamImages["Reuben"],
@@ -539,7 +531,7 @@ const communitySandboxTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/reuben_thoo",
-    linkedIn: "https://www.linkedin.com/in/reuben-thomas-thovelil-689893263/",
+    linkedIn: "https://linkedin.com/in/reuben-thomas-thovelil-689893263",
     github: "https://github.com/reuben-tho",
   },
   {
@@ -550,7 +542,7 @@ const communitySandboxTeam = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "https://instagram.com/gouri_s_menon25",
-    linkedIn: "http://www.linkedin.com/in/sree-gouri-menon-6a45512b4",
+    linkedIn: "https://linkedin.com/in/sree-gouri-menon-6a45512b4",
     github: "https://github.com/sree-gouri",
   },
 ];
@@ -564,7 +556,7 @@ const facultyInCharge = [
     borderColor: borderColor,
     gradient: darkGradient,
     instagram: "",
-    linkedIn: "https://www.linkedin.com/in/elakkiya-r-581884b1/",
+    linkedIn: "https://linkedin.com/in/elakkiya-r-581884b1",
     github: "",
   },
 ];
