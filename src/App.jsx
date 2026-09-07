@@ -15,6 +15,12 @@ import Partners from "./PartnersPage/Partners";
 // import Contact    from './pages/Contact/Contact';
 import Articles from "./Articles";
 import NotFound from "./NotFoundPage";
+import Leaderboard from "./LeaderboardPage/Leaderboard";
+import MyPoints from "./LeaderboardPage/MyPoints";
+import Join from "./JoinPage/Join";
+import AdminLogin from "./AdminPage/AdminLogin";
+import AdminDashboard from "./AdminPage/AdminDashboard";
+import AdminAuthGuard from "./AdminPage/AdminAuthGuard";
 
 
 function ScrollToTop() {
@@ -36,6 +42,18 @@ const App = () => {
           <Route path="/media" element={<Media />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/articles" element={<Articles />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/leaderboard/my-points" element={<MyPoints />} />
+          <Route path="/join" element={<Join />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
+            path="/admin"
+            element={
+              <AdminAuthGuard>
+                <AdminDashboard />
+              </AdminAuthGuard>
+            }
+          />
           <Route path="*" element={<NotFound />} />
           <Route path="/partners" element={<Partners />} />
         </Routes>

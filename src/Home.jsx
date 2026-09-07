@@ -301,7 +301,7 @@ export default function Home() {
                 ],
               },
               buttonText: "Register Now",
-              href: "https://docs.google.com/forms/d/e/1FAIpQLSfh_m2IPL4JTgLDtxdCMRmkcLAF-SSQ-CWBsNge7jEBvuciEw/viewform",
+              href: "/join",
             },
             {
               title: "Renew Your Journey",
@@ -378,14 +378,23 @@ export default function Home() {
                   translateZ="60"
                   className="flex justify-center w-full"
                 >
-                  <a
-                    href={card.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-4 sm:px-4 md:px-6 py-3 sm:py-3 md:py-3 rounded-xl text-sm sm:text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full text-center text-decoration-none"
-                  >
-                    {card.buttonText}
-                  </a>
+                  {card.href.startsWith("http") ? (
+                    <a
+                      href={card.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-4 sm:px-4 md:px-6 py-3 sm:py-3 md:py-3 rounded-xl text-sm sm:text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full text-center text-decoration-none block"
+                    >
+                      {card.buttonText}
+                    </a>
+                  ) : (
+                    <LinkButton
+                      to={card.href}
+                      className="bg-gradient-to-r from-stone-500 to-stone-700 hover:from-stone-700 hover:to-stone-900 text-white font-semibold px-4 sm:px-4 md:px-6 py-3 sm:py-3 md:py-3 rounded-xl text-sm sm:text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black-500/25 border-2 border-white/20 backdrop-blur-sm w-full text-center text-decoration-none block"
+                    >
+                      {card.buttonText}
+                    </LinkButton>
+                  )}
                 </CardItem>
               </CardBody>
             </CardContainer>

@@ -454,17 +454,6 @@ const Partners = () => {
                     >
                       Partners: {partner.stats}
                     </CardItem>
-
-                    <CardItem
-                      translateZ={20}
-                      as="a"
-                      href={partner.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-auto bg-blue-600 text-white rounded-lg px-6 py-2 text-base font-semibold text-center transition-all duration-200 ease-in-out hover:bg-white hover:text-blue-600 hover:scale-105 block"
-                    >
-                      Read More →
-                    </CardItem>
                   </Card3DBody>
                 </CardContainer>
               ))}
