@@ -15,13 +15,17 @@ export default function Footer() {
     { path: "/partners", label: "Partners" },
     // { path: "/sponsors", label: "Sponsors" },
     { path: "/#membership", label: "Membership" },
-    { path: "/leaderboard", label: "Leaderboard" },
   ];
 
   const programs = [
     {
       label: "Workshops",
       href: "/events#workshops",
+      external: false,
+    },
+    {
+      label: "Speaker Sessions",
+      href: "/events#talks",
       external: false,
     },
     {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ChevronDown, Calendar, Trophy, Code, Users } from "lucide-react";
+import { ChevronDown, Calendar, Trophy, Code, Mic, Users } from "lucide-react";
 import EventCard from "./EventCard";
 import GlitchText from "./GlitchText";
 
@@ -236,106 +236,6 @@ const allEvents = [
     category: "hackathon",
     descriptionImages: [],
   },
-  {
-    id: "hack-2",
-    title: "Ready Player One",
-    month: "November 2025",
-    description:
-      "Agentic AI-themed inter-university hackathon with 120+ teams from 7 universities",
-    image: null, // TODO: add event image once provided
-    fullDescription:
-      "MTC conducted Ready Player One, an Agentic AI-themed inter-university hackathon, on November 3rd and 4th, 2025. Over 120 teams from 7 universities registered to take part. Day 1 kicked off with the draw of theme cards — participants drew three cards to determine the domain, function, and wildcard theme they had to incorporate into their models, before getting 24 hours to build. Teams were required to use either LangFlow or n8n, and could also bring in oLLama and other open-source tools; workshops on LangFlow, n8n, and oLLama were held online on Day 1 to help participants get started. The submission deadline was 12:30 PM on Day 2, after which presentations began. Judges were enthralled by presentations spanning a wide range of themes, and faced the challenging task of picking winners. At the end of Day 2, judges were presented with mementos, and winners were awarded by Prof. Souri Banerjee, Director of BITS Pilani Dubai Campus, along with Dr. Yess and Dr. Mahmoud Alkhouli.",
-    category: "hackathon",
-    descriptionImages: [],
-    winners: {
-      main: [
-        {
-          place: "1st Prize",
-          prize: "AED 2,500",
-          team: "Incognito",
-          members: [
-            "Dhruv Bajpai",
-            "Syed Ahmad Peer Quadri",
-            "Mohammed Owais Chaudhary",
-            "Abhay Hamath",
-          ],
-        },
-        {
-          place: "2nd Prize",
-          prize: "AED 1,500",
-          team: "The Boys",
-          members: ["Riya Chanchalani", "Shreesh Chaturvedi", "Garima Singh", "Sebastian Thalakkottur"],
-        },
-        {
-          place: "3rd Prize",
-          prize: "AED 1,000",
-          team: "ABCD & Vidit",
-          members: ["Vidit Jain", "Aadithya Ramesh", "Adithya Sharath Kumar"],
-        },
-      ],
-      special: [
-        {
-          category: "Top UI/UX",
-          entries: [
-            { place: "1st", team: "AI Ascend", members: ["Sanah Joseph", "Justin Koshy", "Ronak Rajpurohit"] },
-            {
-              place: "2nd",
-              team: "4GB VRAM",
-              members: ["Ryan Phillip", "Aakar Mathur", "Mustafa Fatehi", "Manav Singh"],
-            },
-          ],
-        },
-        {
-          category: "Most Promising Idea",
-          entries: [
-            {
-              place: "1st",
-              team: "Trinova",
-              members: ["Shreya Nambiar", "Tanaush Sarfaraz Ahmad", "Deekshita Suresh"],
-            },
-            {
-              place: "2nd",
-              team: "Hackrebels",
-              members: ["Ankith Surapani", "Arjun Ramanathan", "Saaranya Saran", "Snovy Stany Dabre"],
-            },
-          ],
-        },
-        {
-          category: "Most Creative Design",
-          entries: [
-            {
-              place: "1st",
-              team: "Neuronexus",
-              members: ["Shivam Chavan", "Irtiza Saleem", "Aashish Jindal", "Ved Ravindra Prakash"],
-            },
-            {
-              place: "2nd",
-              team: "The Visionary",
-              members: ["Saif Khalid", "Jansen Laurence Lao", "Veron Dias", "Mohammed Amaan Zahid"],
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: "hack-3",
-    title: "Odoo Buildathon",
-    month: "March 2026",
-    description:
-      "MTC x ACM buildathon challenging teams to design and build a real solution on Odoo",
-    image: null, // TODO: add event image once provided
-    fullDescription:
-      "The MTC x ACM Odoo Buildathon '26 was a hands-on software-building competition centered on Odoo, running from March 27th to April 7th, 2026. Participants were challenged to identify a real-world problem, design a solution, and build it using Odoo's modules and development capabilities — going beyond coding from scratch to deliver and present a functional product. The event carried a prize pool of AED 1,000.",
-    category: "hackathon",
-    descriptionImages: [],
-    workshops: [
-      "Workshop 1: Models, Fields, and Views",
-      "Workshop 2: Compute Functions, Relations Between Models (One-to-One and One-to-Many), and Advanced Fields",
-      "Workshop 3: Widgets, Buttons, Actions, and Decorations",
-      "Workshop 4: Constraints and Advanced Views",
-    ],
-  },
 ];
 
 const FeaturingMTCEvents = () => {
@@ -347,6 +247,7 @@ const FeaturingMTCEvents = () => {
     { value: "all", label: "All Events", icon: Calendar },
     { value: "competitions", label: "Competitions", icon: Trophy },
     { value: "hackathons", label: "Hackathons", icon: Code },
+    { value: "talks", label: "Talk Shows", icon: Mic },
     { value: "workshops", label: "Workshops", icon: Users },
   ];
 
@@ -359,6 +260,7 @@ const FeaturingMTCEvents = () => {
       const hashToCategoryMap = {
         workshops: "workshops",
         competitions: "competitions",
+        talks: "talks",
         hackathons: "hackathons",
       };
 
@@ -450,6 +352,7 @@ const FeaturingMTCEvents = () => {
             {renderEventSectionGrid("Rewind the Vibes", "past")}
             {renderEventSectionGrid("Competitions", "competition")}
             {renderEventSectionGrid("Hackathons", "hackathon")}
+            {renderComingSoon("Talk Shows")}
             {renderComingSoon("Workshops")}
           </>
         );
@@ -457,6 +360,8 @@ const FeaturingMTCEvents = () => {
         return renderEventSectionGrid("Competitions", "competition");
       case "hackathons":
         return renderEventSectionGrid("Hackathons", "hackathon");
+      case "talks":
+        return renderComingSoon("Talk Shows");
       case "workshops":
         return renderComingSoon("Workshops");
       default:
@@ -558,65 +463,6 @@ const FeaturingMTCEvents = () => {
                       </div>
                     </div>
                   )}
-
-                {selectedEvent.winners && (
-                  <div className="mt-6">
-                    <h3 className="text-white text-xl font-semibold mb-3">🏆 Winners</h3>
-                    <div className="space-y-3">
-                      {selectedEvent.winners.main.map((w, idx) => (
-                        <div
-                          key={idx}
-                          className="bg-gray-900 border border-gray-700 rounded-lg p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
-                        >
-                          <div>
-                            <p className="text-white font-semibold">
-                              {w.place} — {w.team}
-                            </p>
-                            <p className="text-gray-400 text-sm">{w.members.join(", ")}</p>
-                          </div>
-                          <span className="text-yellow-400 font-semibold text-sm whitespace-nowrap">
-                            {w.prize}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {selectedEvent.winners.special && selectedEvent.winners.special.length > 0 && (
-                      <div className="mt-6 space-y-4">
-                        <h4 className="text-white text-lg font-semibold">Special Awards</h4>
-                        {selectedEvent.winners.special.map((group, idx) => (
-                          <div key={idx}>
-                            <p className="text-gray-200 font-medium mb-2">{group.category}</p>
-                            <div className="space-y-2">
-                              {group.entries.map((e, i) => (
-                                <div
-                                  key={i}
-                                  className="bg-gray-900 border border-gray-800 rounded-lg p-3"
-                                >
-                                  <p className="text-white text-sm font-semibold">
-                                    {e.place} — {e.team}
-                                  </p>
-                                  <p className="text-gray-400 text-xs">{e.members.join(", ")}</p>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {selectedEvent.workshops && selectedEvent.workshops.length > 0 && (
-                  <div className="mt-6">
-                    <h3 className="text-white text-xl font-semibold mb-3">Workshops</h3>
-                    <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm">
-                      {selectedEvent.workshops.map((w, idx) => (
-                        <li key={idx}>{w}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             </div>
           </div>

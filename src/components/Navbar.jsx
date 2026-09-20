@@ -13,7 +13,6 @@ export default function Navbar() {
     { path: "/events", label: "Events" },
     { path: "/media", label: "Media" },
     { path: "/partners", label: "Partners" },
-    { path: "/leaderboard", label: "Leaderboard" },
   ];
 
   return (
