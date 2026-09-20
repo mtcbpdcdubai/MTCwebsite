@@ -32,8 +32,6 @@ import image26 from "../assets/events/Tri_wizard_Hackathon.jpeg";
 import image27 from "../assets/events/MTC_Cipher.jpeg";
 import image28 from "../assets/events/Kings_School_MTC.jpeg";
 import image29 from "../assets/events/URC.jpeg";
-import readyPlayerOneWinners from "../assets/events/ready_player_one_winners.jpeg";
-import odooBuildathonPoster from "../assets/events/odoo_buildathon_poster.jpeg";
 
 // new event images to be added here
 import Event01_2025 from "../assets/2025events/2025-08-03_microsoft_powerpynt.png";
@@ -244,7 +242,7 @@ const allEvents = [
     month: "November 2025",
     description:
       "Agentic AI-themed inter-university hackathon with 120+ teams from 7 universities",
-    image: readyPlayerOneWinners,
+    image: null, // TODO: add event image once provided
     fullDescription:
       "MTC conducted Ready Player One, an Agentic AI-themed inter-university hackathon, on November 3rd and 4th, 2025. Over 120 teams from 7 universities registered to take part. Day 1 kicked off with the draw of theme cards — participants drew three cards to determine the domain, function, and wildcard theme they had to incorporate into their models, before getting 24 hours to build. Teams were required to use either LangFlow or n8n, and could also bring in oLLama and other open-source tools; workshops on LangFlow, n8n, and oLLama were held online on Day 1 to help participants get started. The submission deadline was 12:30 PM on Day 2, after which presentations began. Judges were enthralled by presentations spanning a wide range of themes, and faced the challenging task of picking winners. At the end of Day 2, judges were presented with mementos, and winners were awarded by Prof. Souri Banerjee, Director of BITS Pilani Dubai Campus, along with Dr. Yess and Dr. Mahmoud Alkhouli.",
     category: "hackathon",
@@ -326,7 +324,7 @@ const allEvents = [
     month: "March 2026",
     description:
       "MTC x ACM buildathon challenging teams to design and build a real solution on Odoo",
-    image: odooBuildathonPoster,
+    image: null, // TODO: add event image once provided
     fullDescription:
       "The MTC x ACM Odoo Buildathon '26 was a hands-on software-building competition centered on Odoo, running from March 27th to April 7th, 2026. Participants were challenged to identify a real-world problem, design a solution, and build it using Odoo's modules and development capabilities — going beyond coding from scratch to deliver and present a functional product. The event carried a prize pool of AED 1,000.",
     category: "hackathon",
