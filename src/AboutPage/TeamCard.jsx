@@ -26,19 +26,40 @@ const [
 // Create AllTeams array
 const AllTeams = teamComponents.map((item) => item.component);
 
+const getInitials = (name) =>
+  (name ?? "")
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
 const MemberCard = ({ member }) => {
   return (
     <CardContainer className="inter-var border-3 rounded-2xl">
       <CardBody className="bg-black relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-64 h-84 rounded-xl p-4 border flex flex-col items-center">
         <CardItem translateZ="100" className="w-full flex justify-center mb-3">
-          <img
-            src={member.image}
-            height="160"
-            width="160"
-            className="h-44 w-44 object-cover rounded-full group-hover/card:shadow-xl border-2"
-            style={{ borderColor: `#${member.borderColor}` }}
-            alt={member.title}
-          />
+          {member.image ? (
+            <img
+              src={member.image}
+              height="160"
+              width="160"
+              className="h-44 w-44 object-cover rounded-full group-hover/card:shadow-xl border-2"
+              style={{
+                borderColor: `#${member.borderColor}`,
+                objectPosition: member.imagePosition || "center",
+              }}
+              alt={member.title}
+            />
+          ) : (
+            <div
+              className="h-44 w-44 rounded-full border-2 flex items-center justify-center text-3xl font-bold text-white group-hover/card:shadow-xl"
+              style={{ borderColor: `#${member.borderColor}`, background: member.gradient }}
+            >
+              {getInitials(member.title)}
+            </div>
+          )}
         </CardItem>
 
         <CardItem

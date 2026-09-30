@@ -10,6 +10,10 @@ lerna-debug.log*
 # Environment variables
 .env
 
+# Raw source photo staging (originals live outside the repo; only the
+# processed copies in src/AboutPage/mtc-members-photos/ are committed)
+/photos
+
 # Dependencies
 node_modules
 
